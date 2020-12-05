@@ -1,0 +1,88 @@
+﻿
+@using Hotel_Web.Areas.Receptionists.Data
+@using Hotel_Web.Areas.Receptionists.Models
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    string staffidstring = "0";
+    HttpContextAccessor.HttpContext.Request.Cookies.TryGetValue("staffid", out staffidstring);
+    int staffid = int.Parse(staffidstring);
+    Staff staff = StaffDA0.GetStaff(staffid);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="~/receptionists/lib/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="~/receptionists/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/receptionists/lib/bootstrap.min.css">
+
+    <script type="text/javascript" src="~/receptionists/js/_layout.js"></script>
+    <link rel="stylesheet" href="~/receptionists/css/_layout.css">
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-dashboard select" href="/Receptionists/Activities">Activities</a></li>
+                    <li><a class="menu-rooms" href="/Receptionists/Rooms">Rooms</a></li>
+                    <li><a class="menu-bookings" href="/Receptionists/Bookings">Bookings</a></li>
+                    <li><a class="menu-guests" href="/Receptionists/Guests">Guests</a></li>
+                    <li><a class="menu-statistics" href="/Receptionists/Statistics">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="avatar-wrapper"><div class="avatar"></div></div>
+                <div class="infor-wrapper">
+                    <ul>
+                        <li><a class="name"> @staff.FullName </a></li>
+                        <li><a class="position"> @staff.Position </a> </li>
+                    </ul>
+                </div>
+                <div class="detail-wrapper hidden">
+                    <ul class="user-header hidden">
+                        <li class="name"><span> @staff.FullName </span></li>
+                        <li class="position"><span> @staff.Position </span></li>
+                    </ul>
+                    <ul class="user-infor">
+                    </ul>
+                    <ul class="user-actions">
+                        <li id="logout-btn" class="logout"><a>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="comfirm-logout-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Comfirm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you really want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" id="comfirm-logout-btn">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

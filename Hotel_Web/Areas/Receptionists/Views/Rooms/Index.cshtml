@@ -1,0 +1,211 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using System.Collections;
+@using Hotel_Web.Areas.Receptionists.Models.Rooms
+@using Hotel_Web.Areas.Receptionists.Data
+@{
+    Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
+    var StylesSelected = ViewBag.StylesSelected as List<string>;
+    var SizesSelected = ViewBag.SizesSelected as List<string>;
+}
+
+
+@model RoomsViewModel
+
+
+<link rel="stylesheet" href="~/receptionists/css/rooms.css">
+
+<div>
+    <div class="top-container">
+        <div class="row">
+            <div class="col-6">
+                <img class="datetime-icon" height="22" width="22" src="~/receptionists/img/datetime_icon.png" />
+                <div class="datetime-text" id="datetime"> </div>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary" onclick="window.location = '/Receptionists/Rooms/RoomsManagement';">Rooms Management</button>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search by room or guest's phone or guest's IDcard">
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="panel-container" action="/Receptionists/Rooms/Index" method="post">
+        <div class="control-group">
+            <div class="group-title">ROOM STASTUS</div>
+            <div class="group-item empty-bg">
+                <div class="item-left"> Empty </div>
+                <div class="item-right">@Model.EmptyCount</div>
+            </div>
+            <div class="group-item reserved-bg">
+                <div class="item-left"> Reserved </div>
+                <div class="item-right">@Model.ReservedCount</div>
+            </div>
+            <div class="group-item occupied-bg">
+                <div class="item-left"> Occupied </div>
+                <div class="item-right">@Model.OccupiedCount</div>
+            </div>
+            <div class="group-item stayover-bg">
+                <div class="item-left"> Stayover </div>
+                <div class="item-right">@Model.StayoverCount</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="group-title">ROOM STYLES</div>
+            @{
+                foreach (var style in Model.RoomStyles)
+                {
+                    <div class="group-item">
+                        <input class="item-checkbox" type="checkbox" name="roomstyle" value="@style.RoomStyle.RoomStyleID" @((StylesSelected.Contains(style.RoomStyle.RoomStyleID.ToString())) ? ("checked") : ("")) />
+                        <div class="item-left"> @style.RoomStyle.RoomStyleName </div>
+                        <div class="item-right">@style.Count</div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="control-group">
+            <div class="group-title">ROOM SIZES</div>
+            @{
+                foreach (var size in Model.RoomSizes)
+                {
+                    <div class="group-item">
+                        <input class="item-checkbox" type="checkbox" name="roomsize" value="@size.RoomSize.RoomSizeID" @((SizesSelected.Contains(size.RoomSize.RoomSizeID.ToString())) ? ("checked") : ("")) />
+                        <div class="item-left"> @size.RoomSize.RoomSizeName </div>
+                        <div class="item-right">@size.Count</div>
+                    </div>
+                }
+            }
+        </div>
+        <button type="submit" class="refine-btn">REFINE</button>
+    </form>
+    <div class="rooms-container container-fluid">
+        <div class="row">
+            @{
+                foreach (var room in Model.Rooms)
+                {
+                    if (room.Status == "Empty")
+                    {
+                        <div class="room-container col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                            <div class="room-wrapper container-fluid">
+                                <div class="room-type empty-bg row">
+                                    <span class="ml-0"> @room.RoomType.RoomStyle.RoomStyleName </span>
+                                    <span class="ml-auto"> @room.RoomType.RoomSize.RoomSizeName </span>
+                                </div>
+                                <div class="room-number row empty-bg justify-content-center"> @room.RoomID </div>
+                                <div class="room-status row">
+                                    @for (int i = 0; i < room.RoomType.RoomSize.GuestCount; i++)
+                                    {
+                                        <img class="non-guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
+                                    }
+                                    <img class="options-btn ml-auto" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/menu_vertical_icon.png" />
+                                    <div class="options-hidden-container">
+                                        <div class="options-hidden-wrapper">
+                                            <div class="row menu-item">Detail</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    if (room.Status == "Reserved")
+                    {
+                        <div class="room-container col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                            <div class="room-wrapper container-fluid">
+                                <div class="room-type reserved-bg row">
+                                    <span class="ml-0"> @room.RoomType.RoomStyle.RoomStyleName </span>
+                                    <span class="ml-auto"> @room.RoomType.RoomSize.RoomSizeName </span>
+                                </div>
+                                <div class="room-number row reserved-bg justify-content-center"> @room.RoomID </div>
+                                <div class="room-status row">
+                                    <img class="remaining-time remaining-time-icon" data-toggle="tooltip" title="remaining time" style="margin: 2px;" width="18" height="18" src="~/receptionists/img/time_icon.png" />
+                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @room.RemainingTime.TotalDays d @room.RemainingTime.TotalHours h </span>
+                                    @for (int i = 0; i < room.RoomType.RoomSize.GuestCount; i++)
+                                    {
+                                        <img class="non-guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
+                                    }
+                                    <img class="options-btn ml-auto" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/menu_vertical_icon.png" />
+                                    <div class="options-hidden-container">
+                                        <div class="options-hidden-wrapper">
+                                            <div class="row menu-item">Detail</div>
+                                            <div class="row menu-item"><a href="/Receptionists/Activities/Checkin?id=@BookingDAO.GetCurrentBookingOfRoom(room.RoomID)"><img src="~/receptionists/img/checkin_icon.png" height="20" /></a>Check-in</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    if (room.Status == "Occupied")
+                    {
+                        <div class="room-container col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                            <div class="room-wrapper container-fluid">
+                                <div class="room-type occupied-bg row">
+                                    <span class="ml-0"> @room.RoomType.RoomStyle.RoomStyleName </span>
+                                    <span class="ml-auto"> @room.RoomType.RoomSize.RoomSizeName </span>
+                                </div>
+                                <div class="room-number row occupied-bg justify-content-center"> @room.RoomID </div>
+                                <div class="room-status row">
+                                    <img class="remaining-time remaining-time-icon" style="margin: 2px;" width="18" height="18" src="~/receptionists/img/time_icon.png" />
+                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @room.RemainingTime.TotalDays d @room.RemainingTime.TotalHours h </span>
+                                    @foreach (var guest in room.Guests)
+                                    {
+                                        <img class="guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
+                                    }
+                                    @for (int i = 0; i < room.RoomType.RoomSize.GuestCount - room.Guests.Count; i++)
+                                    {
+                                        <img class="non-guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
+                                    }
+                                    <img class="options-btn ml-auto" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/menu_vertical_icon.png" />
+                                    <div class="options-hidden-container">
+                                        <div class="options-hidden-wrapper">
+                                            <div class="row menu-item">Detail</div>
+                                            <div class="row menu-item">Check-out</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    if (room.Status == "Stayover")
+                    {
+                        <div class="room-container col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                            <div class="room-wrapper container-fluid">
+                                <div class="room-type stayover-bg row">
+                                    <span class="ml-0"> @room.RoomType.RoomStyle.RoomStyleName </span>
+                                    <span class="ml-auto"> @room.RoomType.RoomSize.RoomSizeName </span>
+                                </div>
+                                <div class="room-number row stayover-bg justify-content-center"> @room.RoomID </div>
+                                <div class="room-status row">
+                                    <img class="remaining-time remaining-time-icon" style="margin: 2px;" width="18" height="18" src="~/receptionists/img/time_icon.png" />
+                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @room.RemainingTime.TotalDays d @room.RemainingTime.TotalHours h </span>
+                                    @foreach (var guest in room.Guests)
+                                    {
+                                        <img class="guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
+                                    }
+                                    @for (int i = 0; i < room.RoomType.RoomSize.GuestCount - room.Guests.Count; i++)
+                                    {
+                                        <img class="non-guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
+                                    }
+                                    <img class="options-btn ml-auto" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/menu_vertical_icon.png" />
+                                    <div class="options-hidden-container">
+                                        <div class="options-hidden-wrapper">
+                                            <div class="row menu-item">Detail</div>
+                                            <div class="row menu-item">Check-out</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="~/receptionists/js/rooms.js"></script>
+

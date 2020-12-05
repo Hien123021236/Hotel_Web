@@ -1,0 +1,157 @@
+﻿.empty-bg {
+    background-color:#35DE50;
+    color: white;
+}
+.reserved-bg {
+    background-color: #DEC235;
+    color: white;
+}
+.occupied-bg {
+    background-color: #F07800;
+    color: white;
+}
+.stayover-bg {
+    background-color: #C93838;
+    color: white;
+}
+
+
+.top-container {
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.2),0 1px 8px rgba(0,0,0,0.15);
+    z-index:99;
+}
+    .top-container .datetime-icon {
+        float: left;
+        margin-left: 5px;
+        margin-top: 6px;
+        margin-right: 15px;
+    }
+    .top-container .datetime-text {
+        float: left;
+        margin-top: 6px;
+    }
+
+.panel-container {
+    top:115px;
+    padding:0 15px 15px 15px;
+    position: fixed;
+    width: 230px;
+    background-color: white;
+    height: 800px;
+    float: left;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.2),0 1px 8px rgba(0,0,0,0.15);
+}
+    .panel-container .control-group {
+        margin-top: 20px;
+    }
+        .panel-container .control-group .group-title {
+            font-size: 14px;
+            color: rgb(120,120,120);
+            font-weight: bold;
+        }
+        .panel-container .control-group .group-item {
+            font-size: 14px;
+            height: 30px;
+            margin: 10px 10px 10px 10px;
+            border-radius: 2px;
+            padding: 4px 10px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.2),0 1px 8px rgba(0,0,0,0.15);
+        }
+            .panel-container .control-group .group-item .item-checkbox {
+                float: left;
+                height: 16px;
+                width: 16px;
+                margin:3px 10px 3px 0;
+            }
+            .panel-container .control-group .group-item .item-left {
+                float: left;
+            }
+            .panel-container .control-group .group-item .item-right {
+                float: right;
+            }
+
+    .panel-container .refine-btn {
+        text-align: center;
+        padding: 5px 0;
+        width: 100%;
+        border: solid 1px Highlight;
+        color: Highlight;
+        margin-top: 0px;
+        font-weight: bold;
+    }
+    .panel-container .refine-btn:hover {
+        background-color: blue; 
+        color: white;
+        cursor: pointer;
+    }
+
+.rooms-container {
+    padding: 80px 20px 50px 270px;
+    min-height: 800px;
+    background-color: #DEE0E8;
+}
+
+    .rooms-container .floor-name {
+        font-size: 14px;
+        color: rgb(120,120,120);
+        font-weight: bold;
+    }
+    .rooms-container .room-container {
+        padding: 10px;
+    }
+        .rooms-container .room-container .room-wrapper {
+            background-color: white;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.2),0 1px 8px rgba(0,0,0,0.15);
+        }
+            .rooms-container  .room-container .room-wrapper .room-type {
+                padding: 3px 8px;
+                font-size: 14px;
+                color: white;
+            }
+            .rooms-container  .room-container .room-wrapper .room-number {
+                padding: 10px 0;
+                font-size: 20px;
+                font-weight:bold;
+                text-align: center;
+                color: white;
+            }
+            .rooms-container  .room-container .room-wrapper .room-status {
+                padding: 3px 5px;
+                height: 29px;
+                font-size: 14px;
+                border-top: solid 1px rgb(200,200,200);
+            }
+                .rooms-container  .room-container .room-wrapper .room-status .options-btn:hover {
+                    outline: solid 2px lightgray;
+                }
+                .rooms-container  .room-container .room-wrapper .room-status .options-hidden-container {
+                    display: none;
+                    position: absolute;
+                    z-index: 1;
+                    box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 1px 8px rgba(0,0,0,0.15) !important;
+                    background-color: white;
+                    font-size: 14px;
+                    width: 100px;
+                    margin: 0;
+                    top: 100px;
+                    right: 35px;
+                }
+                    .rooms-container  .room-container .room-wrapper .room-status .options-hidden-container .line {
+                        border-top: solid 1px rgb(200,200,200);
+                        width: 100px;
+                        height: 1px;
+                    }
+
+                    .rooms-container  .room-container .room-wrapper .room-status .options-hidden-container .menu-item {
+                        margin: 2px;
+                        padding: 2px 5px;
+                    }
+                    .rooms-container  .room-container .room-wrapper .room-status .options-hidden-container .menu-item:hover {
+                        background-color: rgb(230,230,230);
+                        cursor: pointer;
+                    }

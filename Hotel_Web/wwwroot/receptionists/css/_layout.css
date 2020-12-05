@@ -1,0 +1,159 @@
+﻿.header {
+    height: 70px;
+    width:100%;
+    background-color: white;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    z-index:100;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+    .header .menu {
+        float: left;
+    }
+
+        .menu ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        .menu li {
+            float: left;
+            padding: 0px 10px;
+        }
+
+        .menu a {
+            font-family: "Roboto",Helvetica,Arial,sans-serif;
+            text-transform: uppercase;
+            line-height: 70px;
+            font-weight: 700;
+            font-size: 12px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .menu a:hover{
+            color: blue;
+        }
+
+        .menu .select {
+            line-height: 60px;
+            border-top: 5px solid gray;
+            padding-bottom: 5px;
+            color: blue;
+        }
+
+    .header .user{
+        float:right;
+        padding-right: 30px;
+    }
+
+        .header .user div {
+            float: right;
+            height: 70px;
+        }
+
+        .header .user .detail-wrapper {
+            display: none;
+            position:absolute;
+            z-index: 101;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 1px 8px rgba(0,0,0,0.15) !important;
+            background-color: white;
+            font-size:14px;
+            width: 200px;
+            height: 300px;
+            padding: 20px 0;
+            top: 60px;
+            right: 30px;
+        
+        }
+
+            .header .user .detail-wrapper ul{
+                list-style-type: none;
+                padding: 0;
+            
+            }
+
+            .header .user .detail-wrapper li {
+                padding: 0px 20px;
+            }
+
+            .header .user .detail-wrapper a {
+                cursor: pointer;
+            }
+
+            .header .user .detail-wrapper .user-header {
+                margin-bottom: 20px;
+            }
+
+                .header .user .detail-wrapper .user-header .name {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: gray;
+                }
+
+                .header .user .detail-wrapper .user-header .position {
+                    font-size: 13px;
+                    color: blue;
+                }
+
+            .header .user .detail-wrapper .user-infor{
+                margin-bottom: 20px;
+            }
+
+            .header .user .detail-wrapper .user-actions{
+                margin-bottom: 20px;
+            }
+
+                .header .user .detail-wrapper .user-actions li{
+                    padding: 5px 20px;
+                }
+
+                .header .user .detail-wrapper .user-actions li:hover {
+                   background-color: rgb(230,230,230);
+                }
+
+            .header .user .detail-wrapper .logout {
+               margin-top: 20px;
+            }
+
+        .header .user .avatar {
+            width: 40px;
+            height: 40px;
+            margin-top: 15px;
+            border-radius: 20px;
+            background-color: #2a6496;
+            cursor: pointer;
+        }
+
+        .header .user .infor-wrapper {
+            margin: 0px 10px;
+            padding: 15px 0;
+        }
+
+            .header .user .infor-wrapper ul {
+                list-style-type: none;
+            }
+
+            .header .user .infor-wrapper .name {
+                font-size: 14px;
+                font-weight: bold;
+                color: gray;
+                text-align: right;
+                float:right;
+            }
+
+            .header .user .infor-wrapper .position {
+                font-size: 13px;
+                color: blue;
+                text-align: right;
+                float: right;
+            }
+
+.content-wrapper {
+    padding-top: 70px;
+}

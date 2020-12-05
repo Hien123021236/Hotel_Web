@@ -1,0 +1,106 @@
+﻿.checkin-container {
+
+}
+
+    .checkin-container .top-container {
+        padding: 10px;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.2), 0 1px 8px rgba(0,0,0,0.15);
+        z-index: 1;
+    }
+
+    .checkin-container .title-group {
+        font-size: 20px;
+        color: gray;
+        font-weight: bold;
+    }
+
+    .checkin-container .body-group {
+        margin-top: 20px;
+        padding: 20px 40px;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.2), 0 1px 8px rgba(0,0,0,0.15);
+    }
+
+        .checkin-container .body-group .group-item {
+            padding: 10px 0;
+        }
+
+    .checkin-container .booking-container {
+        margin: 30px;
+    }
+        
+    .checkin-container .room-container {
+        margin: 30px;
+    }
+
+    .checkin-container .guests-container {
+        margin: 30px;
+    }
+    .checkin-container .guests-container .guest-slot{
+        text-align: center;
+        margin:0;
+        padding:0;
+        height: 40px;
+        line-height:40px;
+        width: 100%;
+        background-color: rgb(250,250,250);
+        border: solid 1px lightgray;
+        margin-top: 20px;
+        border-radius: 50px;
+    }
+        .checkin-container .guests-container .guest-slot .guest {
+            margin:0;
+            padding:0;
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: #0288D1;
+            border: solid 1px lightblue;
+            border-radius: 50px;
+        }
+
+        .checkin-container .guests-container .guest-slot .add-guest {
+            margin: 0;
+            padding: 0;
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            color: black;
+            font-weight: bold;
+            cursor:pointer;
+            text-align: center;
+            background-color: whitesmoke;
+            border: solid 1px lightblue;
+            border-radius: 50px;
+        }
+
+        .HideremoveGuest {
+            color:black;
+            background:none;
+            border:none;
+            transform: translate(120px,-40px);
+            cursor: pointer;
+            display:none;
+        }
+
+        .HideremoveGuest:focus {
+            border: none;
+            outline: none;
+        }
+        .removeGuest {
+            color: black;
+            background: none;
+            border: none;
+            transform: translate(120px,-40px);
+            cursor: pointer;
+        }
+
+        .removeGuest:focus {
+            border: none;
+            outline: none;
+        }
+
+
+        

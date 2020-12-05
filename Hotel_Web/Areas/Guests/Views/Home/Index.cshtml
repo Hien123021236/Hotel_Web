@@ -1,0 +1,625 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hotel Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/guests/css/jquery-ui.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/guests/css/flexslider.css" rel="stylesheet">
+    <link href="~/guests/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/guests/css/owl.theme.default.css" rel="stylesheet">
+    <link href="~/guests/css/slick.css" rel="stylesheet">
+    <link href="~/guests/css/slick-theme.css" rel="stylesheet">
+    <link href="~/guests/css/style-m.css" rel="stylesheet">
+    <link href="~/guests/css/styles.css" rel="stylesheet">
+    <link href="~/guests/css/responsive.css" rel="stylesheet">
+    <link href="~/guests/css/Css-page-detail.css" rel="stylesheet">
+    <link href="~/guests/css/Slider-mobile.css" rel="stylesheet">
+    <link href="~/guests/css/styleHome.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/guests/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body style="font-family: Raleway, sans-serif;">
+    <div class="flex-viewport" style="width: 100% ;">
+        <div>
+            <img class="mySlides1" src="~/guests/img/home-5.jpg" width="100%">
+            <img class="mySlides1" src="~/guests/img/home-3.jpg" width="100%">
+            <img class="mySlides1" src="~/guests/img/home-1-1.jpg" width="100%">
+
+            <script>
+                var myIndex = 0;
+                carousel();
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides1");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) { myIndex = 1 }
+                    x[myIndex - 1].style.display = "block";
+                    setTimeout(carousel, 2000); // Change image every 2 seconds
+                }
+            </script>
+        </div>
+        @*<div class="wrap-banner">
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#dialog-mox-search">
+                <div class="wrap-mode-check-desktop" style=" margin-bottom:20px">
+                    <div class="content-mode-check-desktop">
+                        <div class="row">
+                            <form target="dispoprice" name="idForm" class="fbqs">
+                                <div class="col-md-3">
+                                    <h4 class="title-check">RESERVE</h4>
+                                </div>
+                                <div class="col-md-3 border-left-mode">
+                                    <svg class="mode-icon-date" focusable="false" width="20px" height="19px" viewBox="0 0 20 19" tabindex="-1"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icons/Calendar" fill="#867050"><path d="M0,4.6604 L0,0.3744 L20,0.3744 L20,4.6604 L0,4.6604 Z M0,11.8034 L0,6.0894 L5.714,6.0894 L5.714,11.8034 L0,11.8034 Z M7.143,11.8034 L7.143,6.0894 L12.857,6.0894 L12.857,11.8034 L7.143,11.8034 Z M14.286,11.8034 L14.286,6.0894 L20,6.0894 L20,11.8034 L14.286,11.8034 Z M0,18.9464 L0,13.2324 L5.714,13.2324 L5.714,18.9464 L0,18.9464 Z M7.143,18.9464 L7.143,13.2324 L12.857,13.2324 L12.857,18.9464 L7.143,18.9464 Z M14.286,18.9464 L14.286,13.2324 L20,13.2324 L20,18.9464 L14.286,18.9464 Z" id="Combined-Shape"></path></g></g></svg>
+                                    <input class="input-text-date" type="date" id="check-in" placeholder="Check in">
+                                </div>
+                                <div class="col-md-3 border-left-mode">
+                                    <svg class="mode-icon-date" focusable="false" width="20px" height="19px" viewBox="0 0 20 19" tabindex="-1"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icons/Calendar" fill="#867050"><path d="M0,4.6604 L0,0.3744 L20,0.3744 L20,4.6604 L0,4.6604 Z M0,11.8034 L0,6.0894 L5.714,6.0894 L5.714,11.8034 L0,11.8034 Z M7.143,11.8034 L7.143,6.0894 L12.857,6.0894 L12.857,11.8034 L7.143,11.8034 Z M14.286,11.8034 L14.286,6.0894 L20,6.0894 L20,11.8034 L14.286,11.8034 Z M0,18.9464 L0,13.2324 L5.714,13.2324 L5.714,18.9464 L0,18.9464 Z M7.143,18.9464 L7.143,13.2324 L12.857,13.2324 L12.857,18.9464 L7.143,18.9464 Z M14.286,18.9464 L14.286,13.2324 L20,13.2324 L20,18.9464 L14.286,18.9464 Z" id="Combined-Shape"></path></g></g></svg>
+                                    <input class="input-text-date" type="date" id="check-out" placeholder="Check out">
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn-mode-check text-uppercase btn-hover" type="button">Check Availability</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>*@
+    </div>
+    <div class="container overview mg-top-50 mg-top-m-0">
+        <div class=" head-info-content">
+            <div class="row">
+                <div class="col-md-12 text-center mobile-top-30 mg-bot-10">
+                    <span class="title-small">Welcome to</span>
+                    <h1 class="mg-top-0"> # hanoi hotel &amp; spa</h1>
+                </div>
+
+                <div class="wrap-about-us">
+                    <div class="col-md-8">
+                        <div class="owl-carousel owl-theme list-image owl-loaded owl-drag">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;">
+                                    <div class="owl-item active" style="width: 750px; padding-left: 50px;">
+                                        <div class="item">
+                                            <div class="flex-viewport" style="width: 100%">
+                                                <div>
+                                                    <img class="mySlides" src="~/guests/img/about-us-1.jpg" width="100%">
+                                                    <img class="mySlides" src="~/guests/img/about-us-2.jpg" width="100%">
+                                                    <script>
+                                                        var myIndex = 0;
+                                                        carousel();
+                                                        function carousel() {
+                                                            var i;
+                                                            var x = document.getElementsByClassName("mySlides");
+                                                            for (i = 0; i < x.length; i++) {
+                                                                x[i].style.display = "none";
+                                                            }
+                                                            myIndex++;
+                                                            if (myIndex > x.length) { myIndex = 1 }
+                                                            x[myIndex - 1].style.display = "block";
+                                                            setTimeout(carousel, 2000); // Change image every 2 seconds
+                                                        }
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-justify padding-22 pd-top-m-20" style="font-size: 14px;">
+                            Located at the center of Hanoi’s Old Quarter, just steps away from Hoan Kiem Lake, our luxury boutique # Hanoi Hotel &amp; Spa is a popular choice for travelers. Enjoy a wealth of unrivaled services and amenities at the hotel where we offers access to many services &amp; facilities such as HD Tivi channels, free Wi-Fi &amp; laptop in all rooms, 24-hour front desk &amp; room service, tour desk, complimentary afternoon tea, express check-in/check-out.<br>
+                            The award-winning hotel is carefully appointed to the highest degree of comfort and convenience served by a professional and dedicated team. Our famous # Restaurant specialized in authentic Vietnamese cuisine, our Kitonali Tailors or Heydi Boutique are for shopping lovers and the favourite Essencia Spa is designed for escape and total relaxation.
+                            <br>
+                            <button type="button" class="btn-check btn-white" style="width: auto">
+                                <a href="/Guests/ContactUs/Index" target="_blank">Contact Us</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-white pb-bot-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mg-top-50 mg-bot-30 text-center" style="position: relative;">
+                    <span class="title-small ">FEATURED</span>
+                    <h2 class="title-h2 mg-bot-0">SPECIAL OFFERS</h2>
+                    <a class="btn btn-view-all  btn-view-all-desk" href="/Guests/SpecialOffers/Index" style="right: 15px;">
+                        View all offers<svg class="svg-inline--fa" width="11px" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg><!-- <i class="fal fa-plus ml-2"></i> -->
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-4 mg-bot-20">
+                    <div class="wrap-special">
+                        <div class="over-hide">
+                            <div class="images-well zoom">
+                                <a href="#" target="_blank">
+                                    <img src="~/guests/img/dinnin.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info-special position-relative" style="min-height: 222px;">
+                            <h3 class="title-h3"><a href="#" target="_blank">RESTAURANT</a></h3>
+                            <div class="balance">
+                                In this month, # restaurant is offering 10% discount for lunch (not applied for drinks) for all in-house Guestss
+                            </div>
+                            <div class="div-both mg-left-20">
+                                <br>
+                                <a class="btn-underline" href="#" target="_blank">Discover more</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-4 mg-bot-20">
+                    <div class="wrap-special">
+                        <div class="over-hide">
+                            <div class="images-well zoom">
+                                <a href="#" target="_blank">
+                                    <img src="~/guests/img/tour.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info-special position-relative" style="min-height: 222px;">
+                            <h3 class="title-h3"><a href="#" target="_blank">ESSENCIA SPA</a></h3>
+                            <div class="balance">
+                                BUY 1 service from 60mins or over GET 1 service 30mins for FREE "from 13:00 until 16:00 every day at Essencia Spa OR 20% discount..
+                            </div>
+                            <div class="div-both mg-left-20">
+                                <br>
+                                <a class="btn-underline" href="#" target="_blank">Discover more</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-4 mg-bot-20">
+                    <div class="wrap-special">
+                        <div class="over-hide">
+                            <div class="images-well zoom">
+                                <a href="#" target="_blank">
+                                    <img src="~/guests/img/RoomK-01.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info-special position-relative" style="min-height: 222px;">
+                            <h3 class="title-h3"><a href="#" target="_blank">LAST MINUTE</a></h3>
+                            <div class="balance">
+                                we offer discounted rates for certain room allotment on certain days. Please click on certain dates to check the best rates available <a href="#">HERE</a>
+                            </div>
+                            <div class="div-both mg-left-20">
+                                <br>
+                                <a class="btn-underline" href="#" target="_blank">Discover more</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-blook">
+                    <a class="btn btn-view-all  btn-view-all-mobile" href="/Guests/SpecialOffers/Index">
+                        View all offers
+                        <svg class="svg-inline--fa" width="11px" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg><!-- <i class="fal fa-plus ml-2"></i> -->
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="list-room-home row ">
+            <div class="mg-top-40 text-center" style="position: relative;">
+                <span class="title-small ">ELEGANT</span>
+                <h2 class="title-h2">ACCOMMODATION</h2>
+                <a class="btn btn-view-all  btn-view-all-desk" href="/Guests/Rooms/Index">
+                    View all rooms<svg class="svg-inline--fa" width="11px" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg><!-- <i class="fal fa-plus ml-2"></i> -->
+                </a>
+            </div>
+
+            <section class="center slider center-stick slick-initialized slick-slider">
+                <button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="">Previous</button>
+                <div aria-live="polite" class="slick-list draggable" style="padding: 0px 15%;">
+                    <div class="slick-track" style="opacity: 1; width: 10374px; transform: translate3d(-1596px, 0px, 0px);" role="listbox">
+                        <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 792px;" tabindex="-1">
+                            <img src="~/guests/img/RoomJ-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Suite City view</h3>
+                                <p class="lh-15 mb-0">A spacious, on upper floor, comfortable &amp; luxurious room, with open panoramic windows &amp; city view.&nbsp;<span style="color:rgb(115, 112, 112)">An extra bed is available for extra person.</span></p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 792px;" tabindex="-1">
+                            <img src="~/guests/img/RoomK-02.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Junior Suite Balcony</h3>
+                                <p class="lh-15 mb-0">A spacious, comfortable &amp; well-appointed, with a balcony outdoor having table &amp; sitting chairs &amp; street view. A perfect choice for a business person or leisure travellers alike.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide slick-current slick-active slick-center" data-slick-index="0" aria-hidden="false" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide00">
+                            <img src="~/guests/img/RoomB-02.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Superior Double/Twin</h3>
+                                <p class="lh-15 mb-0">A cozy quiet room on the back side of the building, fully furnished and equipped. Suitable for 1 or 2 people. Extra bed for the 3rd person is available on request.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="0">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide01">
+                            <img src="~/guests/img/RoomA-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Deluxe window</h3>
+                                <p class="lh-15 mb-0">A comfortable &amp; well-appointed room with open window &amp; city view or street view. This room is a perfect choice for 1-2 persons. Extra bed is available on request.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide02">
+                            <img src="~/guests/img/RoomL-02.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Family inter-connecting </h3>
+                                <p class="lh-15 mb-0">Two rooms that connect one to another. Very comfortable &amp; well-appointed, with internal windows &amp; 2 separate bathrooms. A perfect choice for a FAMILY of 3 – 5 persons</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide03">
+                            <img src="~/guests/img/RoomD-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Junior Suite window</h3>
+                                <p class="lh-15 mb-0">A spacious, comfortable &amp; well-appointed room with big open window &amp; city view. This room is perfect for 1-2 persons. Extra bed is available on request.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide04">
+                            <img src="~/guests/img/RoomF-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0"># Suite Balcony</h3>
+                                <p class="lh-15 mb-0">
+                                    A luxuriously separate bedroom &amp; living room, with 10 meter-long balcony providing street &amp; city view. An extra bed is available for extra person.<br>
+                                    <br>
+                                    &nbsp;
+                                </p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide05">
+                            <img src="~/guests/img/RoomH-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Deluxe Balcony</h3>
+                                <p class="lh-15 mb-0">A spacious, comfortable &amp; well-appointed room with a balcony &amp; city view. This room is a perfect choice for 1-2 persons.&nbsp;</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide06">
+                            <img src="~/guests/img/RoomI-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Family Premier </h3>
+                                <p class="lh-15 mb-0">An unique, comfortable &amp; well-appointed room with an opening window to Air-well. Consisting of 2 bedrooms, it is a perfect choice for a FAMILY up to 5 people</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide07">
+                            <img src="~/guests/img/RoomJ-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Suite City view</h3>
+                                <p class="lh-15 mb-0">A spacious, on upper floor, comfortable &amp; luxurious room, with open panoramic windows &amp; city view.&nbsp;<span style="color:rgb(115, 112, 112)">An extra bed is available for extra person.</span></p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide" data-slick-index="8" aria-hidden="true" style="width: 792px;" tabindex="-1" role="option" aria-describedby="slick-slide08">
+                            <img src="~/guests/img/RoomK-02.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Junior Suite Balcony</h3>
+                                <p class="lh-15 mb-0">A spacious, comfortable &amp; well-appointed, with a balcony outdoor having table &amp; sitting chairs &amp; street view. A perfect choice for a business person or leisure travellers alike.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide slick-cloned slick-center" data-slick-index="9" aria-hidden="true" style="width: 792px;" tabindex="-1">
+                            <img src="~/guests/img/RoomB-02.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Superior Double/Twin</h3>
+                                <p class="lh-15 mb-0">A cozy quiet room on the back side of the building, fully furnished and equipped. Suitable for 1 or 2 people. Extra bed for the 3rd person is available on request.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div><div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 792px;" tabindex="-1">
+                            <img src="~/guests/img/RoomA-01.gif">
+                            <div class="info-item-room-home">
+                                <h3 class="font-family-secondary h3 mb-2 mg-top-0">Deluxe window</h3>
+                                <p class="lh-15 mb-0">A comfortable &amp; well-appointed room with open window &amp; city view or street view. This room is a perfect choice for 1-2 persons. Extra bed is available on request.</p>
+                                <a href="/Guests/Detail/RoomsDetail" class="btn-booking btn-mode-check btn-hover" tabindex="-1">View Detail</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="">Next</button>
+            </section>
+            <a class="btn btn-view-all  btn-view-all-mobile" href="/Guests/RoomsRates/Rooms">
+                View all rooms
+                <svg class="svg-inline--fa" width="20px" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+        </div>
+        <div class="row mg-top-30">
+            <div class="col-md-6 col-md-offset-2 col-sm-12">
+
+                <div class="list-icon-room">
+                    <div class="item-icon-room">
+                        <img style="width: 24px;" src="~/guests/img/city-center.png" alt="City center location">
+                        <span class="d-block">City center location</span>
+                    </div>
+                    <div class="item-icon-room">
+                        <img style="width:24px;" src="~/guests/img/eco-friend.png" alt="Eco friendly">
+                        <span class="d-block" style="margin-top:12px; ">Eco friendly</span>
+                    </div>
+                    <div class="item-icon-room">
+                        <img style="width: 24px;" src="~/guests/img/personalize.png" alt="Personalized service">
+                        <span class="d-block">Personalized service</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class=" text-center">
+                    <p class="mg-bot-0" style="margin-top: -10px"><strong>TripAdvisor Traveler Rating:</strong></p>
+                    <p class="mg-bot-0"><img class="alignnone size-full wp-image-210" src="~/guests/img/logo_trip.png" alt="" width="304" height="30"></p>
+                    <p class="mg-bot-0">Based on 1357 traveler reviews</p>
+                    <p><a href="#" target="_blank" rel="noopener"><span style="color: #bf882e;">Read review</span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid bg-gray" style="padding-top: 40px;">
+        <div class="container wrap-service-home">
+            <div class="col-md-12 mg-bot-10 text-center">
+                <span class="title-small ">our</span>
+                <h2 class="title-h2">Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4 padding-0 pd-right-8">
+                        <div class="destinations-left-all">
+                            <div class="position">
+                                <div class="destinations-left zoom" style="        background-image: url(https://www.hospitalitynewsmag.com/wp-content/uploads/2018/12/hospitality-news-spa-and-wellness-main.jpg);">
+                                </div>
+                            </div>
+                            <div class="destinations-left-text-plungepool">
+                                <div class="w-des-cd info-spa-height position-relative" style="text-align: center;">
+                                    <div class="destinations-left-text">
+                                        <h4 style="width: 100%; text-align: center;">SPA</h4>
+                                    </div>
+                                    <div class="info-item-tour">
+                                        <p>
+                                            We integrate local spa rituals with indigenous ingredients...
+                                        </p>
+                                    </div>
+                                    <div class="div-both">
+                                        <a class="btn-underline" href="#">Discover more</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 padding-0 pd-left-8 pd-right-8 ">
+                        <div class="pb-m-b-15">
+                            <div class="content-service-home">
+                                <div>
+                                    <div class="a-dfde">
+                                        <div class="bg-image-item" style="background:#fff"></div>
+                                        <span class="boder-image-white-large"></span>
+
+                                        <div class="info-item-service position-relative">
+                                            <div class="info-item-service-visa">
+                                                <h4>VISA ON ARRIVAL SERVICE &amp; TRANSFER SERVICE</h4>
+                                                <p>
+                                                    Tour &amp; Airport transfer service
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="div-both text-center">
+                                            <a class="btn-underline" href="#">Discover more</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 padding-0 pd-left-8 mg-bot-m-16">
+                        <div class="pb-m-b-15">
+                            <div class="over-hide" style="width: 100%;float:left">
+                                <div class="content-service-home">
+                                    <div>
+                                        <div class="a-dfde ">
+                                            <div class="bg-image-item zoom" style="        background-image: url(https://coventrytoday.co.uk/wp-content/uploads/2016/12/Fine-Dining.jpg)"></div>
+                                            <div class="wrap-item-service">
+                                                <div class="info-service-img-home">
+                                                    <div>
+                                                        <h3 class="title-h3"># RESTAURANT</h3>
+                                                        <p class="p-service-home">
+                                                            The # Restaurant offers authentic Vietnamese...
+                                                        </p>
+                                                        <a href="#">READ MORE</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="bg-white full-width">
+                        <div class="col-md-4">
+                            <div class="full-height">
+                                <div class="info-tour-service ">
+                                    <h4>TOURS</h4>
+                                    <p></p><div style="text-align:justify">
+                                        <br>
+                                        Go beyond the usual itinerary through extended, customised trips that take you from one unique destination to another. AIRA seeks ways to make the most Vietnam beautiful destinations accessible, through exceptional, individually curated expeditions and adventures.<br>
+                                        <br>
+                                        &nbsp;
+                                    </div>
+                                    <p></p>
+                                    <br>
+                                    <a class="btn-underline" href="#">Discover more</a>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-8 padding-0">
+                            <div class="over-hide">
+                                <img class="zoom" src="~/guests/img/tour-1.jpg" style="width: 100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid bg-ghi pb-bot-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mg-top-50 mg-bot-10 text-center">
+                    <span class="title-small ">our</span>
+                    <h2 class="title-h2">LOCATION</h2>
+                    <p>
+                        Ta Hien Street - the beer street Hanoi is known as the first street where the majority of foreign tourists set foot on when coming and before leaving Hanoi
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <div id="map" style="height: 450px; width: 100%; margin-bottom: 20px">
+                        <iframe src="https://maps.google.com/maps?q=uit&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <p class="text-center">
+                        Lake of Restored Sword: 300m | Opera Theater: 700m | Hoa Lo Prison: 2km | Temple of Literature: 4km | HCM complex: 3km
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pad-bot-50">
+        <div class="container">
+            <div class="row">
+                <div class="head-info-content">
+                    <h1 style="margin-top:0px;">Destinations</h1>
+                    <p style="margin: 0px auto; max-width: 1000px;">
+                        Aira &amp; # Boutique Hotels can be found in 3 destinations in Vietnam, offering exceptional home sweet home in unique settings in prime location of historical Hanoi Old Quarter, the An Bang beach, natural rocky Sapa mountain. Aira &amp; # are enjoyed by discerning individuals, couples, families and friends looking to explore exciting destinations in unparalleled comfort and privacy.<a href="https://www.replica-magic.to/" style="text-decoration:none; color:#F2F2F3;">Replica Watch</a>
+                    </p>
+                </div>
+
+                <div class="destinations group-destination">
+                    <div class="col-md-4 col-sm-6 w-center">
+                        <div class="destinations-left-all over-hide">
+                            <div class="destinations-left zoom" style="        background-image: url(https://ak.picdn.net/shutterstock/videos/21058174/thumb/1.jpg);">
+                            </div>
+                            <div class="destinations-left-text-plungepool">
+                                <div class="w-des-cd" style="height: auto">
+                                    <div class="destinations-left-text">
+                                        <h4>HANOI</h4>
+                                        <h6>4 destinations</h6>
+                                    </div>
+                                    <h5>Experience in the heart of Hanoi – 3 minutes walk from the Lake of the Restored Sword, yet nestled in the vibrancy, excitement and captivation of Hanoi’s most historic location – the Old Quarter.</h5>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank"># Hanoi Hotel &amp; Spa</a>
+                                    </button>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank"># Palace Hotel &amp; Spa</a>
+                                    </button>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank"># d’Orient Hotel &amp; Spa</a>
+                                    </button>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank">PERIDOT GRAND HOTEL &amp; SPA</a>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 w-center">
+                        <div class="destinations-left-all over-hide">
+                            <div class="destinations-left zoom" style="        background-image: url(https://www.sensasia.com/wp-content/uploads/2019/07/japanese-bridge-hoian-vietnam.jpg);">
+                            </div>
+                            <div class="destinations-left-text-plungepool">
+                                <div class="w-des-cd" style="height: auto">
+                                    <div class="destinations-left-text">
+                                        <h4>HOI AN</h4>
+                                        <h6>3 destinations</h6>
+                                    </div>
+                                    <h5>
+                                        Located on An Bang beach side, hiding underneath the shade of the cool casuarina tree, listening to the song of wind and waves, one will find the ultimate relaxation in our luxury Hotel or Private villa in Lea Garden.
+                                    </h5>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank">AIRA BOUTIQUE HOI AN HOTEL &amp; VILLA</a>
+                                    </button>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank">THE BLUE ALCOVE HOTEL</a>
+                                    </button>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank">LEA GARDEN PRIVATE VILLA</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 w-center">
+                        <div class="destinations-left-all over-hide">
+                            <div class="destinations-left zoom" style="        background-image: url(https://newgem.com.vn/wp-content/uploads/2019/02/spa-co-bao-nhieu-loai-hinh-1.jpg);">
+                            </div>
+                            <div class="destinations-left-text-plungepool">
+                                <div class="w-des-cd" style="height: auto">
+                                    <div class="destinations-left-text">
+                                        <h4>SAPA</h4>
+                                        <h6>1 destination</h6>
+                                    </div>
+                                    <h5>
+                                        Ultimate tranquility, breath-taking view of the Fanxipan mountain &amp; Muong Hoa valley yet 5 minutes walk from Sapa center.
+                                        Enjoy moments of sunset or sunrise with a clear blue sky above or a cloudy bed right beneath your foot.
+                                    </h5>
+                                    <button type="button" class="btn-check btn-white">
+                                        <a href="/Guests/Maintenance/Index" target="_blank">Aira Boutique Sapa HOTEL &amp; SPA</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

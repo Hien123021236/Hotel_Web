@@ -1,0 +1,486 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using System.Collections;
+@using Hotel_Web.Areas.Receptionists.Models.Rooms
+@using Hotel_Web.Areas.Receptionists.Data
+@using Hotel_Web.Areas.Receptionists.Models
+@{
+    Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
+}
+
+@model RoomsManagerViewModel
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Manage Rooms</title>
+    <link rel="stylesheet" href="~/receptionists/lib/DataTables/datatables.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="~/receptionists/lib/DataTables/datatables.min.js"></script>
+    <style>
+
+        .pagination .active a {
+            z-index: 1;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .table-infor {
+            font-size: 15px;
+            height: 100%;
+            line-height: 34px;
+        }
+
+        .page-btn a {
+            padding: 0.25rem 0.75rem;
+        }
+
+        .rooms-manager-container {
+        }
+
+            .rooms-manager-container .crud-room-container .table-title {
+                height: 40px;
+                width: 250px;
+                line-height: 40px;
+                background-color: #1879B9;
+                color: white;
+                font-weight: bold;
+                top: 15px;
+                left: 20px;
+                padding-left: 10px;
+                border-radius: 3px 40px 40px 3px;
+                text-transform: uppercase;
+            }
+
+            .rooms-manager-container .crud-roomtype-container .table-title {
+                height: 40px;
+                width: 390px;
+                line-height: 40px;
+                background-color: #1879B9;
+                color: white;
+                font-weight: bold;
+                top: 15px;
+                left: 20px;
+                padding-left: 10px;
+                border-radius: 3px 40px 40px 3px;
+                text-transform: uppercase;
+            }
+
+            .rooms-manager-container .crud-roomstyle-container .table-title {
+                height: 40px;
+                width: 390px;
+                line-height: 40px;
+                background-color: #1879B9;
+                color: white;
+                font-weight: bold;
+                top: 15px;
+                left: 20px;
+                padding-left: 10px;
+                border-radius: 3px 40px 40px 3px;
+                text-transform: uppercase;
+            }
+
+            .rooms-manager-container .crud-roomsize-container .table-title {
+                height: 40px;
+                width: 390px;
+                line-height: 40px;
+                background-color: #1879B9;
+                color: white;
+                font-weight: bold;
+                top: 15px;
+                left: 20px;
+                padding-left: 10px;
+                border-radius: 3px 40px 40px 3px;
+                text-transform: uppercase;
+            }
+
+            .rooms-manager-container .crud-room-container {
+                padding: 20px;
+            }
+
+            .rooms-manager-container .crud-roomstyle-container {
+                padding: 20px;
+            }
+
+            .rooms-manager-container .crud-roomsize-container {
+                padding: 20px;
+            }
+
+        /* Modal styles */
+        .modal .modal-dialog {
+            max-width: 400px;
+        }
+
+        .modal .modal-header, .modal .modal-body, .modal .modal-footer {
+            padding: 20px 30px;
+        }
+
+        .modal .modal-content {
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .modal .modal-footer {
+            background: #ecf0f1;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .modal .modal-title {
+            display: inline-block;
+        }
+
+        .modal .form-control {
+            border-radius: 2px;
+            box-shadow: none;
+            border-color: #dddddd;
+        }
+
+        .modal textarea.form-control {
+            resize: vertical;
+        }
+
+        .modal .btn {
+            border-radius: 2px;
+            min-width: 100px;
+        }
+
+        .modal form label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="rooms-manager-container">
+        <div class="row">
+            <div class="col-lg-5 crud-room-container">
+                <div class="row table-title crud-room-title">
+                    <div class="col-sm-8">
+                        <span>Room Manager</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#addRoomModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success create-new-room" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                    </div>
+                </div>
+
+                <table id="crud-room-table" class="table table-sm dataTable">
+                    <thead class="thead-light">
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="crud-room-table" aria-sort="ascending" style="width: 40px; ">RoomNumber</th>
+                            <th class="sorting" aria-controls="crud-room-table" style="width: 40px;">RoomStyleName</th>
+                            <th class="sorting" aria-controls="crud-room-table" style="width: 40px;">RoomSizeName</th>
+                            <th class="sorting" aria-controls="crud-room-table" style="width: 60px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var room in Model.RoomModels)
+                            {
+                                <tr role="row">
+                                    <td>@room.RoomID</td>
+                                    <td>@room.RoomType.RoomStyle.RoomStyleName</td>
+                                    <td>@room.RoomType.RoomSize.RoomSizeName</td>
+                                    <td>
+                                        <a href="#editRoomModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a href="#deleteRoomModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-7">
+                <div class="row crud-roomstyle-container">
+                    <div class="row table-title crud-roomstyle-title">
+                        <div class="col-sm-8">
+                            <span>Room Style Manager</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#addRoomStyleModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                        </div>
+                    </div>
+                    <table id="crud-roomstyle-table" class="table table-sm dataTable">
+                        <thead class="thead-light">
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="crud-roomstyle-table" aria-sort="ascending" style="width: 40px; ">RoomStyleID</th>
+                                <th class="sorting" aria-controls="crud-roomstyle-table" style="width: 40px;">RoomStyleName</th>
+                                <th class="sorting" aria-controls="crud-roomstyle-table" style="width: 40px;">RoomStyleShortName</th>
+                                <th class="sorting" aria-controls="crud-roomstyle-table" style="width: 40px;">Description</th>
+                                <th class="sorting" aria-controls="crud-roomstyle-table" style="width: 60px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var roomstyle in Model.RoomStyles)
+                                {
+                                    <tr role="row">
+                                        <td>@roomstyle.RoomStyleID</td>
+                                        <td>@roomstyle.RoomStyleName</td>
+                                        <td>@roomstyle.RoomStyleShortName</td>
+                                        <td>@roomstyle.Description</td>
+                                        <td>
+                                            <a href="#editRoomStyleModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteRoomStyleModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row crud-roomsize-container">
+                    <div class="row table-title crud-roomsize-title">
+                        <div class="col-sm-8">
+                            <span>RoomSizeManager</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#addRoomSizeModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                        </div>
+                    </div>
+                    <table id="crud-roomsize-table" class="table table-sm dataTable">
+                        <thead class="thead-light">
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="crud-roomsize-table" aria-sort="ascending" style="width: 40px; ">RoomSizeID</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">RoomSizeName</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">RoomSizeShortName</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">GuestCount</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">Description</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 60px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var roomsize in Model.RoomSizes)
+                                {
+                                    <tr role="row">
+                                        <td>@roomsize.RoomSizeID</td>
+                                        <td>@roomsize.RoomSizeName</td>
+                                        <td>@roomsize.RoomSizeShortName</td>
+                                        <td>@roomsize.GuestCount</td>
+                                        <td>@roomsize.Description</td>
+                                        <td>
+                                            <a href="#editRoomSizeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteRoomSizeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row crud-roomtype-container">
+                    <div class="row table-title crud-roomtype-title">
+                        <div class="col-sm-8">
+                            <span>Room Type Manager</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#addRoomTypeModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                        </div>
+                    </div>
+
+                    <table id="crud-roomtype-table" class="table table-sm dataTable">
+                        <thead class="thead-light">
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="crud-roomtype-table" aria-sort="ascending" style="width: 40px; ">RoomTypeID</th>
+                                <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">RoomStyleName</th>
+                                <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">RoomSizeName</th>
+                                <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">Price</th>
+                                <th class="sorting" aria-controls="crud-roomtype-table" style="width: 60px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var roomtype in Model.RoomTypeModels)
+                                {
+                                    <tr role="row">
+                                        <td>@roomtype.RoomTypeID</td>
+                                        <td>@roomtype.RoomStyle.RoomStyleName</td>
+                                        <td>@roomtype.RoomSize.RoomSizeName</td>
+                                        <td>@roomtype.Price</td>
+                                        <td>
+                                            <a href="#editRoomTypeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteRoomTypeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @{
+        var roomstyles = RoomStyleDAO.GetAllRoomStyle();
+        var roomsizes = RoomSizeDAO.GetAllRoomSize();
+     }
+    <!-- Create Modal HTML -->
+    <div id="addRoomModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Room</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>RoomNumber</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="select-roomstylename">RoomStyleName</label>
+                            <select class="form-control" id="select-roomstylename">
+                                @{
+                                    for (int i = 0; i < roomstyles.Count; i++)
+                                    {
+                                        <option>@roomstyles[i].RoomStyleName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="select-roomsizename">RoomSizeName</label>
+                            <select class="form-control" id="select-roomsizename">
+                                @{
+                                    for (int i = 0; i < roomsizes.Count; i++)
+                                    {
+                                        <option>@roomsizes[i].RoomSizeName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success submit-add-new-room">Add Room</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="editRoomModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Room</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>RoomNumber</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="select-roomstylename">RoomStyleName</label>
+                            <select class="form-control" id="select-roomstylename">
+                                @{
+                                    for (int i = 0; i < roomstyles.Count; i++)
+                                    {
+                                        <option>@roomstyles[i].RoomStyleName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="select-roomsizename">RoomSizeName</label>
+                            <select class="form-control" id="select-roomsizename">
+                                @{
+                                    for (int i = 0; i < roomsizes.Count; i++)
+                                    {
+                                        <option>@roomsizes[i].RoomSizeName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-info submit-update-room">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Modal HTML -->
+    <div id="deleteRoomModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Room</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger submit-delete-room" >Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fn.dataTable.ext.classes.sPageButton = 'page-btn';
+            $.fn.dataTable.ext.classes.sInfo = 'table-infor';
+
+            $('#crud-room-table').DataTable({
+                pageLength: 10,
+                bLengthChange: false,
+                bAutoWidth: false,
+                searching: false
+            });
+            $('#crud-roomstyle-table').DataTable({
+                pageLength: 5,
+                bLengthChange: false,
+                bAutoWidth: false,
+                searching: false
+            });
+            $('#crud-roomsize-table').DataTable({
+                pageLength: 5,
+                bLengthChange: false,
+                bAutoWidth: false,
+                searching: false
+            });
+            $('#crud-roomtype-table').DataTable({
+                pageLength: 5,
+                bLengthChange: false,
+                bAutoWidth: false,
+                searching: false
+            });
+
+
+
+
+
+
+            $(".create-new-room").click(function () {
+                
+            });
+        });
+    </script>
+</body>
+
+
+</html>
+
+

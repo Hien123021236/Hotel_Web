@@ -1,0 +1,36 @@
+﻿@using Hotel_Web.Areas.Receptionists.Models
+@model Path
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="~/receptionists/lib/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="~/receptionists/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/receptionists/lib/bootstrap.min.css">
+</head>
+<body>
+    <div class="row justify-content-md-center">
+        
+        <div class="col-md-5">
+            <form class="mt-3" action="/Receptionists/Authentication/Check" method="post">
+                <input type="hidden" name="area" value="@Model.Area">
+                <input type="hidden" name="ctrl" value="@Model.Ctrl">
+                <input type="hidden" name="act" value="@Model.Act">
+                <input type="hidden" name="pmt" value="@Model.Pmt">
+                <div class="form-group">
+                    <input type="text" name="staffid" id="staffid" class="form-control" value="" placeholder="Staff ID" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="password" value="" class="form-control" placeholder="Password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1120 @@
+﻿/*css-accommodation*/
+.list-item-room {
+    margin-bottom: 40px;
+}
+.Suites {
+   background-color: #EDEDED;
+}
+.owl-carousel-other-room .owl-stage-outer{
+    width: 100%;
+    float: left;
+}
+
+.outdoor {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: inherit;
+    color: #737070;
+    margin-bottom: 5%;
+}
+.accommodation-iamge-left-all {
+    position: relative;
+    height: 300px;
+    margin-bottom: 5px; 
+    margin-right: -9px;
+}
+.accommodation-iamge-left {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: 90%;
+    height: 300px;
+    overflow: hidden;
+}
+.accommodation-iamge-right-all {
+    position: relative;
+    height: 300px; 
+    margin-bottom: 5px; 
+    margin-left: -10px;
+}
+.accommodation-iamge-right {
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: 90%;
+    height: 300px;
+    overflow: hidden;
+}
+.accommodation-iamge-all-one {
+    position: relative;
+    height: 400px;
+    margin-bottom: 4%;
+    margin-right: -9px;
+}
+.accommodation-image-center {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+.lappool-all {
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: #000;
+    font-family: 'Whitney-Light';
+}
+.item-img-room-last {
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.lappool-left {
+    width: 90%;
+    float: right;
+    text-align: center;
+    color: #000;
+    font-family: 'Whitney-Light';
+}
+
+.lappool-right {
+    width: 90%;
+    float: left;
+    text-align: center;
+    color: #000;
+    font-family: 'Whitney-Light';
+}
+h4.title-room-list {
+    margin: 0 auto 10px;
+    line-height: 2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 19px;
+    color: #828282;
+}
+h4.title-room-list a {
+     color: #828282;
+    font-weight: normal;
+}
+h4.title-room-list a:hover {
+    text-decoration: none;
+    color: #8f724c;
+}
+ h6.des-room-list {
+    font-size: 15px;
+    color: #737070;
+    font-weight: normal;
+     line-height: 20px;
+     min-height: 90px;
+}
+/*Overview*/
+.overview {
+    max-width: 987px;
+}
+ .img-overview {
+     display: block;
+     margin: 30px auto;
+ }
+ .window {
+     position: relative;
+ }
+ .window {
+     width: 100%;
+     position: relative;
+         height: 394px;
+ }
+ .split-screen-cta {
+     width: 50%;
+     height: 100%;
+     position: absolute;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+     top: 0px;
+     background-position: 50% 50%;
+     background-size: cover;
+ 
+ }
+  .split-screen-cta-acomotion {
+     width: 50%;
+     height: 100%;
+     position: absolute;
+     -webkit-transition: all 1s;
+     transition: all 0.5s;
+     top: 0px;
+     background-position: 50% 50%;
+     background-size: cover;
+  }
+
+ .left-half {
+     left: 0px;
+     background-image: url(/Content/images/acomomodaion1.jpg);
+ }
+
+ .right-half {
+     right: 0px;
+     background-color: red;
+     background-image: url(/Content/images/acomomodaion2.jpg);
+ }
+    .active-acomotion {
+        width: 75%;
+    }
+    .active-acomotion-detail {
+        width: 54%;
+    }
+    .small-acomotion-detail {
+        width: 46%;
+    }
+    .small-acomotion {
+        width: 25%;
+    }
+.cta-content {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    margin-top: -39px;
+    height: 80px;
+    line-height: 80px;
+    background: #413c3c;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    -moz-opacity: .9;
+    -khtml-opacity: .9;
+    opacity: .9;
+
+    font-family: 'Whitney-Light', "Jaldi", sans-serif;
+    width: 206px;
+    font-weight: normal;
+    color: #fff;
+    text-transform: uppercase;
+        -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.inline-icon {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 100px;
+    font-size: 14px;
+    height: 100%;
+    padding: 0 00px;
+    -webkit-transition: all .3s ease 0s;
+    -khtml-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+a.cta-content:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.cta-content small.inline-icon i {
+    padding: 0px 10px;
+}
+    .left-half .cta-content {
+        right: 0px;
+        text-align: right;
+        padding-right: 30px;
+    }
+    .right-half .cta-content {
+        left: 0px;
+        text-align: left;
+        padding-left: 30px;
+    }
+.active-cta-content {
+    width: 350px;
+    height: 120px;
+    line-height: 120px;
+    top: 45.5%;
+}
+.cta-content p.cta-text {
+    line-height: 20px;
+    margin: 0;
+    max-width: 180px;
+    vertical-align: middle;
+    float: left;
+    display: block;
+    text-transform: lowercase;
+    margin: 40px 0px 0px 10px;
+}
+.item-service {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 30px;
+}
+.images-well img {
+    width: 100%;
+}
+.item-service h3 {
+    text-transform: uppercase;
+}
+.item-service h3 a {
+    color: #333;
+}
+.item-service h3 a:hover {
+    color: #8f724c;
+    text-decoration: none;
+}
+.item-service .balance {
+    padding: 10px;
+}
+#accordion div.group {
+    border-top: 1px solid #bbb;
+    
+}
+#accordion h1 {
+    font-family: 'Whitney Condensed Book', "Jaldi", sans-serif;
+    color: #3c3c3c;
+    font-weight: normal;
+    font-size: 3.5em;
+    letter-spacing: 3px;
+    margin: 20px auto;
+}
+#accordion div.group p {
+        padding-bottom: 30px;
+    font-size: 14px;
+    color: #656565;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 27px;
+}
+#accordion h1.ui-accordion-header-active {
+    color: #8f724c;
+}
+#accordion div.group h1:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+.zoom-image {
+    overflow: hidden;
+}
+.zoom-image img {
+    width: 100%;
+    -webkit-transform: scale(1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 500ms;
+    overflow: hidden;
+}
+
+.zoom-image img:hover {
+    -webkit-transform: scale(1.1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 500ms;
+    overflow: hidden;
+}
+.mesapoolsuite {
+    width: 1060px;
+    margin:0 auto;
+    margin-bottom: 7%;
+}
+.mesapoolsuite-left{
+    margin-right: -10px;
+    height: 361px;
+    overflow: hidden;
+}
+
+.mesapoolsuite-center{
+    margin-right: -5px;
+    margin-left: -5px;
+    height: 361px;
+    overflow: hidden;
+}
+.wrap-item-room {
+    width: 100%;
+    height: 100%;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 7%;
+}
+.mesapoolsuite-right{
+    margin-left: -10px;
+    height: 361px;
+    overflow: hidden;
+}
+.zoom-room {
+        width: 100%;
+    -webkit-transform: scale(1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 500ms;
+    overflow: hidden;
+}
+.zoom-room:hover {
+        -webkit-transform: scale(1.1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 500ms;
+    overflow: hidden;
+}
+.mesapoolsuite-left-all {
+    width: 100%;
+    margin-bottom: 8%;
+}
+.mesapoolsuite-center-all {
+    width: 100%;
+    margin-bottom: 8%;
+}
+.mesapoolsuite-right-all {
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.mesapoolsuite-left-text {
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-family: 'Whitney-Light';
+}
+
+.mesapoolsuite-center-text {
+    width: 104%;
+    text-align: center;
+    color: #000;
+    font-family: 'Whitney-Light';
+}
+
+.mesapoolsuite-right-text {
+    width: 104%;
+    text-align: center;
+    color: #000;
+    font-family: 'Whitney-Light';
+}
+.desertviewsuite-image-left {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: 90%;
+    height: 21.714286rem;
+    background-image: url("../images/desert-pool-suite-interior.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.desertviewsuite-image-right {
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: 90%;
+    height: 21.714286rem;
+    background-image: url("../images/mesa-view-suite-1028.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+/*Detail room*/
+.wrap-gallery {
+    margin: 30px 0px;
+}
+.detail-room {
+    font-family: 'Whitney-Light', "Jaldi", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #737070;
+    line-height: 22px;
+}
+.des-detail-room {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0px 70px;
+}
+.tab-room {
+    margin-bottom: 50px;
+}
+.tabs-room {
+    display: inherit;
+    list-style: none;
+}
+.tabs-room li.tab-title {
+    display: inline-block;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.5;
+    position: relative;
+}
+.tabs-room li.tab-title.active {
+    opacity: 1;
+}
+li.tab-title.active:before {
+        content: "";
+    display: block;
+    height: 1px;
+    width: 20px;
+    margin-left: 0;
+    background: #000;
+    position: absolute;
+    bottom: -9px;
+    left: 40%;    
+}
+
+.tabs-room li.tab-title a {
+    color: #737070;
+}
+.tabs-room li.tab-title a:hover, .tabs-room li.tab-title a:active, .tabs-room li.tab-title a:visited {
+    text-decoration: none;
+}
+.content-intheroom, .content-amenitiy {
+    width: 100%;
+    min-height: 100%;
+    float: left;
+}
+.w-btn-booking {
+    text-align: center;
+    margin: 50px 0px;
+    width: 100%;
+    float: left;
+}
+.content-amenitiy {
+    line-height: 30px;
+}
+.content-amenitiy tr td {
+    border: none;
+    width: 50% !important;
+}
+.content-amenitiy tr td:first-child {
+    border-right: 1px solid #bbb;
+}
+.content-intheroom {
+    display: block;
+    height: 0px;
+    overflow: hidden;
+}
+.content-intheroom  .center .image {
+    opacity: .2;
+    margin: 10% 0;
+    z-index: 1;
+    /* -webkit-transition: all .6s ease 0s; */
+    -khtml-transition: all .6s ease 0s;
+    -moz-transition: all .6s ease 0s;
+    -ms-transition: all .6s ease 0s;
+    -o-transition: all .6s ease 0s;
+    /* transition: all .6s ease 0s; */
+    /* -webkit-transition-timing-function: ease-out; */
+    -khtml-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    /* transition-timing-function: ease-out; */
+    /* -webkit-transform: scale(1); */
+    -khtml-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    /* transform: scale(1); */
+}
+.content-intheroom  .center .slick-center .image {
+    z-index: 2;
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -khtml-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    position: relative;
+}
+@media only screen and (min-width: 768px) {
+    .content-intheroom  .slides .slick-next, .content-intheroom .slides .slick-prev {
+        bottom: 0px;
+        width: 11.7857142857rem;
+        height: 80%;
+        background-position: 50% 45%;
+        background-repeat: no-repeat;
+    }
+    .content-intheroom  .slides .slick-next {
+        right: 0px;
+    }
+}
+
+@media (max-width: 560px) {
+    .outdoor {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Whitney-Light';
+        font-weight: inherit;
+        color: #737070;
+        font-size: 14.7px;
+        margin-bottom: 5%;
+        line-height: 142%;
+    }
+
+
+    .accommodation-iamge-left-all {
+        height: 176px;
+        margin-bottom: 7%;
+        margin-right: 0px;
+    }
+    .accommodation-iamge-left-all-lappool-left, .accommodation-iamge-right-lappool-right {
+        width: 100%;
+        float: left;
+    }
+    .accommodation-iamge-left {
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 207px;
+        background-image: url("../images/amangiri-suite-exterior-1028.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .lappool-left {
+        width: 100%;
+        text-align: center;
+        color: #000;
+        font-family: 'Whitney-Light';
+        float: none;
+    }
+
+    .accommodation-iamge-right-all {
+        height: 21.714286rem;
+        margin-bottom: 7%;
+    }
+
+    .accommodation-iamge-right-all {
+        height: 176px;
+        margin-bottom: 7%;
+        margin-left: 0px;
+    }
+
+    .accommodation-iamge-right {
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 207px;
+        background-image: url("../images/girijala-courtyard.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .lappool-right {
+        width: 100%;
+        float: left;
+        text-align: center;
+        color: #000;
+        font-family: 'Whitney-Light';
+    }
+}
+
+@media (min-width: 565px) and (max-width: 769px) {
+    .outdoor {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Whitney-Light';
+        font-weight: inherit;
+        color: #737070;
+        font-size: 14.7px;
+        margin-bottom: 5%;
+        line-height: 142%;
+    }
+
+    .accommodation-iamge-left-all-lappool-left {
+        margin-bottom: 20px;
+        width: 100%;
+        float: left;
+    }
+
+    .accommodation-iamge-left-all {
+        position: relative;
+        height: 207px;
+        margin-bottom: 7%;
+        margin-right: 0px;
+    }
+
+    .accommodation-iamge-left {
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        position: absolute;
+        width: 99%;
+        height: 207px;
+        overflow: hidden;
+    }
+
+    .lappool-left {
+        width: 100%;
+        float: right;
+        text-align: center;
+        color: #000;
+        font-family: 'Whitney-Light';
+    }
+
+    .accommodation-iamge-right-lappool-right {
+        margin-bottom: 10%;
+        width: 100%;
+        float: right;
+    }
+
+    .accommodation-iamge-right-all {
+        position: relative;
+        height: 206px;
+        margin-bottom: 7%;
+    }
+
+    .accommodation-iamge-right {
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        position: absolute;
+        width: 98%;
+        height: 206px;
+        overflow: hidden;
+    }
+
+    .lappool-right {
+        width: 100%;
+        float: left;
+        text-align: center;
+        color: #000;
+        font-family: 'Whitney-Light';
+    }
+}
+
+@media (max-width: 560px) {
+    .mesapoolsuite {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-left-all {
+        width: 100%;
+    }
+
+    .mesapoolsuite-left {
+        margin-right: 0;
+        height: 207px;
+        background-image: url("../images/mesa-pool-suite-exterior.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-center-all {
+        width: 100%;
+    }
+
+    .mesapoolsuite-center {
+        margin-right: 0px;
+        height: 207px;
+        background-image: url("../images/terrace-suite.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-right-all {
+        width: 100%;
+    }
+
+    .mesapoolsuite-right {
+        height: 207px;
+        background-image: url("../images/desert-pool-suite-interior.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+    }
+}
+
+@media (min-width: 565px) and (max-width: 1024px) {
+    .mesapoolsuite {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-left {
+        margin-right: 0px;
+        height: 207px;
+        background-image: url("../images/mesa-pool-suite-exterior.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-center {
+        margin-right: 0px;
+        height: 207px;
+        background-image: url("../images/terrace-suite.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-right {
+        height: 207px;
+        background-image: url("../images/desert-pool-suite-interior.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+    }
+
+    .mesapoolsuite-left-all {
+        width: 99%;
+        margin-bottom: 8%;
+    }
+
+    .mesapoolsuite-center-all {
+        width: 99%;
+        margin-bottom: 8%;
+    }
+
+    .mesapoolsuite-right-all {
+        width: 99%;
+        margin-bottom: 8%;
+    }
+}
+
+@media (max-width: 560px) {
+    .desertviewsuite-image-left {
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 207px;
+        background-image: url("../images/desert-pool-suite-interior.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .desertviewsuite-image-right {
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 207px;
+        background-image: url("../images/mesa-view-suite-1028.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .content-amenitiy tr td {
+        width: 100% !important;
+        float: left;
+        background: none;
+        line-height: 28px;
+    }
+    .content-amenitiy tr td:first-child {
+        border-right: none !important;
+    } 
+}
+@media (min-width: 565px) and (max-width: 1024px) {
+    .desertviewsuite-image-left {
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        position: absolute;
+        width: 99%;
+        height: 207px;
+        background-image: url("../images/desert-pool-suite-interior.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .desertviewsuite-image-right {
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        position: absolute;
+        width: 98%;
+        height: 206px;
+        background-image: url("../images/mesa-view-suite-1028.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+}
+/*///*/
+
+.hover-all .owl-theme .owl-nav .owl-prev, .hover-all .owl-theme .owl-nav .owl-next {
+    opacity: 0;
+    background:transparent;
+    top: 41%;
+    font-size:20px;
+}
+    .hover-all .owl-theme .owl-nav .owl-prev, .hover-all .owl-theme .owl-nav .owl-next i.fas{
+        font-size: 25px;
+    }
+
+    .hover-all .owl-theme .owl-nav .owl-prev {
+        left: 5%;
+        right: auto;
+    }
+
+.hover-all .owl-theme .owl-nav .owl-next {
+    right: 5%;
+    left:auto;
+}
+
+.wrap-item-room:hover .owl-theme .owl-nav .owl-prev, .wrap-item-room:hover .owl-theme .owl-nav .owl-next {
+    opacity: 1;
+}
+
+.hover-all .owl-theme .owl-nav [class*='owl-']:hover {
+    color: #9e7026;
+}
+
+/*.hover-all .owl-theme .owl-nav .owl-next, .hover-all .owl-theme .owl-nav .owl-prev {
+    background: #86979180;
+}*/
+
+.btn-room {
+    display: table;
+    margin: 20px auto;
+    clear: both;
+}
+
+    .btn-room a {
+        background: #9e7026;
+        color: #fff;
+        padding: 8px 20px;
+        margin-right: 18px;
+        text-transform: uppercase;
+        border-radius: 0;
+    }
+
+.btn:hover, .btn:focus, .btn.focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.detail-room-bd {
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
+    margin:50px 0;
+}
+    .detail-room-bd::before {
+        border: 10px solid rgba(134, 112, 80, 0.1);
+        box-sizing: border-box;
+        content: "";
+        height: 100%;
+        position: absolute;
+        display: inline-block;
+        left: auto;
+        right: 0rem;
+        top: 0;
+        width: 96%;
+    }
+.des{
+    margin-right:25px;
+}
+.fr-room {
+    background: #fff;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    width: 75%;
+    display: table;
+    margin: 0 auto;
+}
+.fr-room form{
+    display:flex;
+}
+    .fr-room form h3 {
+        color: #171717;
+        font-family: "Minion Regular", Georgia, serif;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-left: 40px;
+        padding-right: 40px;
+        flex: 0;
+        line-height: 60px;
+        margin: 0;
+    }
+.frgroup {
+    margin-top: 0px;
+}
+    .frgroup input {
+        border: none;
+        font-family: "Minion Regular", Georgia, serif;
+        line-height:62px;
+        width:80%;
+    }
+input:focus {
+    border: none;
+    outline: none;
+}
+.frgroup svg {
+    position: relative;
+    float: left;
+    top:20px;
+    margin-right: 5px;
+    width: 13px;
+    height: 19px;
+    vertical-align: top;
+}
+.mrl-40{
+    margin-left:43px;
+}
+.mrr-40 {
+    margin-right: 35px;
+}
+.btnroom .btn {
+    background: linear-gradient(180deg, #8f724c 0%, #9e7026 100%) no-repeat;
+    color: #fff;
+    line-height: 58px;
+    float: right;
+    font-size: 17px;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+}
+.txtgroup {
+    width: 30%;
+}
+.btnroom {
+    width: 25%;
+}
+
+.accordion-room .btn-collapse {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #867050;
+    display: inline-block;
+    font-weight: 600;
+}
+.fr-room, .accordion-room {
+    margin-top: 50px;
+}
+.btn-collapse {
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+    .btn-collapse:hover, .btn-collapse:active, .btn-collapse:focus{
+        color:#9e7026;
+        text-decoration:none;
+        outline:none;
+    }
+.bgr-other .other-item:before {
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 4rem;
+    min-height: calc(90% - 4.6rem);
+    width: 90%;
+    max-height: 80%;
+}
+.bgr-other img {
+   
+    width: 100%;
+    
+}
+.bgr-other .title-room h2::after {
+    margin: 20px 0;
+}
+.bgr-other {
+    padding: 30px 0 50px;
+    background: #eee;
+    margin-top: 50px;
+}
+    .bgr-other .owl-theme .owl-nav .owl-prev {
+        position: absolute;
+        top: 45px;
+        right: 50px;
+        border-radius: 0px;
+        background: transparent;
+        color: #fff;
+        padding: 0 17px;
+        z-index: 999;
+        left: auto;
+      
+    }
+        .bgr-other .owl-theme .owl-nav .owl-prev:before{
+            content: "|";
+            position:absolute;
+            top:-1px;
+            right:0;
+            color:#9e7026;
+        }
+        .bgr-other .owl-theme .owl-nav .owl-next {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            border-radius: 0px;
+            background: transparent;
+            color: #fff;
+            padding: 0 17px;
+            z-index: 999;
+        }
+    .bgr-other .owl-theme .owl-nav [class*='owl-']:hover {
+        background: transparent;
+        color: #9e7026;
+        color: #FFF;
+        text-decoration: none;
+    }
+.btn-room a i{
+    margin-left:5px;
+}
+.detail-room .nav-pills > li {
+    padding: 0px 15px;
+    border-right: 1px solid #eee;
+    margin-bottom: 10px;
+}
+    .detail-room .nav-pills > li:last-child{
+        border:none;
+    }
+    .icon-room {
+        margin-top: 0px;
+    }
+.icon-room ul{
+    margin: 0 auto;
+    display: table;
+}
+.well-large{
+    margin-top:20px;
+}
+.detail-room-bd .galleryservice.owl-carousel .owl-item img {
+    max-height: 100%;
+}
+.btn-room .btn-write {
+    background: #fff;
+    color: #9e7026;
+    border-color: #9e7026
+}
+.btn-room .btn:hover, .btn-room .btn:active, .btn-room .btn:focus {
+    background: #fff;
+    color: #9e7026;
+    border-color: #9e7026
+}
+    .btn-room .btn-write:hover, .btn-room .btn-write:active, .btn-room .btn-write:focus {
+        background: #9e7026;
+        color: #fff;
+    }
+.room-tp{
+    top:-50px;
+}

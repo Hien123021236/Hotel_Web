@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewData["Title"] = "Checkin";
+    Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
+}
+@using Hotel_Web.Areas.Receptionists.Models;
+@using Hotel_Web.Areas.Receptionists.Data;
+
+@model BookingModel
+
+<link rel="stylesheet" href="~/receptionists/lib/DataTables/datatables.min.css" />
+<link rel="stylesheet" href="~/receptionists/css/checkin.css" />
+<script type="text/javascript" src="~/receptionists/lib/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+<div class="checkin-container">
+    <div class="row top-container">
+        <div class="col-10" style="font-weight: bold; font-size: 18px; margin-top: 7px;">CHECK - IN</div>
+        <div class="col-1"><button class="btn btn-secondary cancelCheckin">Cancel</button></div>
+        <div class="col-1"><button class="btn btn-primary confirmCheckin">Confirm</button></div>
+    </div>
+    <div class="row body-container">
+        <div class="col booking-container">
+            <div class="row title-group">Booking Informations</div>
+            <div class="row body-group">
+                <div class="col">
+                    <div class="row group-item">
+                        <div class="col text-left">Booking ID :</div>
+                        <div class="col text-right font-weight-bold"> @Model.BookingID</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Booking Time :</div>
+                        <div class="col text-right font-weight-bold"> @Model.BookingDate.ToString("MM/dd/yyyy") </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Arrival :</div>
+                        <div class="col text-right font-weight-bold"> @Model.CheckInDate.ToString("MM/dd/yyyy") </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Departure :</div>
+                        <div class="col text-right font-weight-bold"> @Model.CheckOutDate.ToString("MM/dd/yyyy") </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Deposit :</div>
+                        <div class="col text-right font-weight-bold">0</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Amount:</div>
+                        <div class="col text-right font-weight-bold">@Model.Room.RoomType.Price</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col room-container">
+            <div class="row title-group">Room Informations</div>
+            <div class="row body-group">
+                <div class="col">
+                    <div class="row group-item">
+                        <div class="col text-left">Room ID :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomID</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Room Style :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.RoomStyle.RoomStyleName</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Room Size :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.RoomSize.RoomSizeName</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Room Price :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.Price </div>
+                    </div>
+                    <div class="row group-item">
+                        Descriptions
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col guests-container">
+            <div class="row title-group">Guests Informations</div>
+            <div class="row body-group">
+                <div class="col" id="list-guest">
+                    <div class="row">Checked-in 1 of 3 </div>
+                    @{
+                        int i = 1;
+                        var stays = StayDAO.GetStaysOfBooking(Model.BookingID);
+                    }
+
+                    <div class="row guest-slot justify-content-center"> <span class="guest" data-stayid="@stays[0].StayID"> @Model.Guest.FullName </span>  </div>
+
+                    @for (; i < stays.Count; i++)
+                    {
+                        var guest = GuestDAO.GetGuest((int)stays[i].GuestID);
+                        <div class="row guest-slot justify-content-center"> <span class="guest" data-stayid="@stays[i].StayID"> @guest.FullName </span> <button type="button" class="removeGuest">X</button></div>
+                    }
+
+                    @for (; i < Model.Room.RoomType.RoomSize.GuestCount; i++)
+                    {
+                        <div class="row guest-slot justify-content-center"><span class="add-guest"> + </span> <button type="button" class="HideremoveGuest">X</button> </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Guest</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="full name" class="col-form-label">Full Name:</label>
+                    <input type="text" class="form-control" id="new-guest-name">
+                </div>
+                <div class="form-group">
+                    <label for="gender" class="col-form-label">Gender:</label>
+                    <select id="new-guest-gender" class="form-control" name="gender" required>
+                        <option disabled selected value="">-- Your gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="idcardnumber" class="col-form-label">IDCardNumber:</label>
+                    <input type="text" class="form-control" id="new-guest-card">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary new-guest-addbtn">Add to room</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".new-guest-addbtn").click(function (e) {
+            var btn = $(this);
+            var fullname = $("#new-guest-name").val();
+            var gender = $("#new-guest-gender").val();
+            var idcard = $("#new-guest-card").val();
+            if (fullname != null && fullname != "" && gender != null && gender != "" && idcard != null && idcard != "") {
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Activities/AddGuestOnCheckin",
+                    data: { FullName: fullname, Gender: gender, IdCard: idcard, bookingid: '@Model.BookingID' },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response != null && response != "") {
+                            location.reload();
+                        }
+                        else {
+                            alert("Không thể Check với khách hàng đang ở !");
+                        }
+                    }
+                });
+            }
+            else {
+                alert("Không được bỏ trống !");
+            }
+        });
+
+        $("#new-guest-card").focusout(function () {
+            var fullname = $("#new-guest-name");
+            var gender = $("#new-guest-gender");
+            var idcard = $("#new-guest-card").val();
+            debugger;
+            if (idcard != null && idcard != "") {
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Guests/GetByIdCardNumber",
+                    data: { idcardnumber: idcard },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response != null) {
+                            fullname.val(response.fullName);
+                            gender.val(response.gender);
+                        }
+                    }
+                });
+            }
+        });
+
+        $(".add-guest").click(function () {
+            $('#exampleModal').find("input[type=text], select").val("");
+            $('#exampleModal').modal('show');
+            $(this).addClass("add-guest-selected");
+        });
+
+        $(".removeGuest").click(function () {
+            var stayid = $(this).parent().find(".guest").attr("data-stayid");
+            $.ajax({
+                url: "https://localhost:44329/Receptionists/Activities/DeleteStayOnCheckin",
+                data: { stayId: stayid },
+                type: "POST",
+                dataType: "json",
+                success: function (response) {
+                    debugger;
+                    location.reload();
+                }
+            });
+        });
+
+        $(".confirmCheckin").click(function () {
+            debugger;
+            $.ajax({
+                url: "https://localhost:44329/Receptionists/Activities/ConfirmCheckin",
+                data: { bookingId: '@Model.BookingID' },
+                type: "POST",
+                dataType: "json",
+                success: function (response) {
+                    debugger;
+                    location.reload();
+                    alert("Confirmed !")
+                }
+            });
+        });
+
+        $(".cancelCheckin").click(function () {
+            debugger;
+            $.ajax({
+                url: "https://localhost:44329/Receptionists/Activities/CancelCheckin",
+                data: { bookingId: '@Model.BookingID' },
+                type: "POST",
+                dataType: "json",
+                success: function (response) {
+                    debugger;
+                    location.reload();
+                }
+            });
+
+        });
+    });
+</script>

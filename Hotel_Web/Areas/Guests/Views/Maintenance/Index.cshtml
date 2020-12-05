@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+    <title>Hotel Maintenance</title>
+</head>
+
+<body style="font-family: Raleway, sans-serif;">
+
+
+    <div class="flex-viewport" style="width: 100% ;">
+        <div>
+            <img class="mySlides2" src="~/img/home-3.jpg" width="100%">
+            <img class="mySlides2" src="~/img/home-1-1.jpg" width="100%">
+
+            <script>
+                var myIndex = 0;
+                carousel();
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides2");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) { myIndex = 1 }
+                    x[myIndex - 1].style.display = "block";
+                    setTimeout(carousel, 2000); // Change image every 2 seconds
+                }
+            </script>
+        </div>
+    </div>
+    <div class="csm_tabpanel csm_newsdetail_content" role="tabpanel">
+        <h1 class="newsdetail_title text-uppercase">
+            Notice to customers
+        </h1>
+        <div class="tab-content dynamic_content" style=" margin-left: 20%">
+            <div id="tabcontent_1" class="tab-pane active" role="tabpanel" style="display:block">
+                <p><span style="font-size: small;">Dear to customers ,<br><br> Website <a style="background-color:yellow" href="#">http://Hotel_orfila.com</a> Is in the process of finishing <strong><span style="color: #ff0000;"><span style="font-size: medium;">01/08/2020</span></span></strong> During this time, some sites could not access the website.<br><br> Website will be Complete one day soon <strong><span style="color: #0000ff;"><span style="font-size: medium;"> one day soon </span></span></strong>.<br><br> Please inform and sincerely apologize to you.<br><br>Best regards !<br></span></p>
+            </div>
+            <div id="tabcontent_2" class="tab-pane" role="tabpanel">
+
+            </div>
+        </div>
+    </div>
+    <div class="flex-viewport" style="width: 100% ; margin-top:100px">
+        <div>
+            <center>
+                <img src="~/img/maintance.jpg" width="80%">
+            </center>
+        </div>
+    </div>
+
+</body>
+</html>
+

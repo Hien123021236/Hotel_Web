@@ -1,0 +1,1255 @@
+﻿.main-header-detail {
+    width: 100%;
+}
+
+.banner-detail {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.center-content > .center-content-td {
+    display: table-cell;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.main-header-detail .ct-banner-detail {
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-align: center;
+}
+
+    .main-header-detail .ct-banner-detail h2 {
+        margin: 0.7em auto;
+        font-size: 3em;
+        text-transform: uppercase;
+        letter-spacing: 0.125em;
+        font-family: 'Whitney Condensed Book';
+    }
+
+    .main-header-detail .ct-banner-detail p {
+        font-size: 1em;
+        color: #f1f1f1;
+        line-height: 22px;
+    }
+
+.menu-c-detail {
+    /* background: rgba(0,0,0,.2); */
+    width: 100%;
+    height: 52px;
+}
+
+.menu-c-detail {
+    position: absolute;
+    left: 0px;
+    z-index: 999;
+}
+
+.logo-es-detail {
+    display: none;
+}
+
+.list-hotel {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+    .list-hotel .ladderrungs {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("/Content/images/banner-public.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .list-hotel .majestic {
+        color: #737070;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 1.4285714286rem;
+        font-size: 1.4285714286rem;
+        font-weight: normal;
+    }
+
+.wrap-content-pri {
+    padding-bottom: 100px;
+}
+
+.list-hotel .panel-content {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+    .list-hotel .panel-content .info-hotel {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+        width: 100%;
+        padding: 0px 80px;
+        letter-spacing: 0.045em;
+        color: #333;
+        font-size: 15px;
+    }
+
+        .list-hotel .panel-content .info-hotel a {
+            color: #333;
+            font-size: 14px;
+            font-weight:500;
+        }
+
+        .list-hotel .panel-content .info-hotel h3 {
+            color: #737070;
+            font-weight: normal;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+            .list-hotel .panel-content .info-hotel h3 a {
+                color: #333;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+.head-info-content {
+    padding: 10px 0px 20px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+    float: left;
+}
+
+    .head-info-content h1 {
+        margin: 1.9em auto 1em;
+        text-transform: uppercase;
+        color: #333;
+        font-weight: normal;
+        font-size: 2em;
+    }
+
+#wraploadding {
+    content: "";
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    background: #fff;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+    #wraploadding div#imgloadding {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        position: relative;
+        top: 45%;
+    }
+
+.content-partners {
+    font-size: 15px;
+    letter-spacing: 0.025em;
+    color: #616161;
+}
+
+    .content-partners img {
+        max-width: 100%;
+    }
+
+.alldestinations {
+    margin-top: 15px;
+    background-color: #fff;
+}
+
+    .alldestinations h1 {
+        color: #bbb;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 35px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+/*css destinations*/
+.destinations {
+    width: 1060px;
+    margin: 0 auto;
+    margin-bottom: 7%;
+}
+
+.destinations-left {
+    height: 270px;
+    background-image: url("../images/amankora-bhutan.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.w-des-cd {
+    padding: 25px 20px;
+    max-height: 420px;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.destinations-center {
+    margin-right: -15px;
+    height: 270px;
+    background-image: url("../images/aman-venice-hotel-italy.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 7%;
+    margin-top: 0px;
+}
+
+.destinations-right {
+    height: 270px;
+    background-image: url("../images/amanera-resort-dominican-republic.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.destinations-left-all {
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.destinations-center-all {
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.destinations-right-all {
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.destinations-left-text {
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+    .destinations-left-text h4 {
+        margin: 0 auto 1em;
+        line-height: 2;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+.destinations-left-text {
+    width: 100%;
+    float: left;
+    color: #000;
+    background-color: #fff;
+}
+
+    .destinations-left-text h4 {
+        text-transform: uppercase;
+        font-weight: 600;
+        float: left;
+        font-size: 14px;
+        margin: 0px 0px 6px;
+        color: #333;
+        line-height: 1.3em;
+        letter-spacing: 0px;
+    }
+
+    .destinations-left-text h6 {
+        font-size: 12px;
+        font-weight: 600;
+        float: right;
+        margin-top: 6px;
+        text-transform: uppercase;
+        width: 100px;
+        color: #737070;
+    }
+
+.destinations-left-text-plungepool {
+    background-color: #fff;
+    margin: -40px auto 0px;
+    width: 90%;
+    z-index: 2;
+    position: relative;
+}
+
+.w-center {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.destinations-left-text-plungepool h5 {
+    clear: both;
+    line-height: 20px;
+    font-weight: 400;
+    width: 100%;
+    color: #5D5D5D;
+    min-height: 45px;
+}
+
+.destinations-center-text-plungepool {
+    background-color: #fff;
+    margin: 0 auto;
+    width: 90%;
+    margin-left: 8%;
+}
+
+    .destinations-center-text-plungepool h5 {
+        margin-left: 5%;
+        font-size: 14px;
+        padding-top: 70px;
+        font-weight: 700;
+        width: 86%;
+        color: #737070;
+        opacity: 0.7;
+    }
+
+.destinations-right-text-plungepool {
+    background-color: #fff;
+    margin: 0 auto;
+    width: 90%;
+    margin-left: 5%;
+}
+
+    .destinations-right-text-plungepool h5 {
+        font-size: 14px;
+        padding-top: 70px;
+        font-weight: 700;
+        width: 86%;
+        color: #737070;
+        opacity: 0.7;
+        margin-left: 5%;
+    }
+
+.destinations-center-text {
+    width: 90%;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    margin-top: -80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .destinations-center-text h4 {
+        opacity: 0.4;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+        margin-top: 12%;
+    }
+
+    .destinations-center-text h6 {
+        font-size: 10.5px;
+        font-weight: 600;
+        padding-top: 35px;
+        float: right;
+        margin-right: 10px;
+        text-transform: uppercase;
+        width: 30%;
+        color: #737070;
+        opacity: 0.7;
+    }
+
+.pd-bt-0 {
+    padding-bottom: 0px;
+}
+
+.destinations-right-text {
+    width: 90%;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    margin-top: -80px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+    .destinations-right-text h4 {
+        opacity: 0.4;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+        margin-top: 12%;
+    }
+
+    .destinations-right-text h6 {
+        font-size: 10.5px;
+        font-weight: 600;
+        padding-top: 35px;
+        float: right;
+        margin-right: 10px;
+        text-transform: uppercase;
+        width: 30%;
+        color: #737070;
+        opacity: 0.7;
+    }
+
+.btn-check {
+    width: 100%;
+    margin-top: 15px;
+    background: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    border: 1px solid #e6e6e6;
+    background: #9e7026;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.full {
+    width: 100%;
+    margin: 10px 0;
+}
+
+a.btn-check:hover {
+    color: #9e7026;
+}
+
+.btn-check-right {
+    width: 85%;
+    margin-top: 13%;
+    margin-left: 5%;
+    background: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8C8C8C;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    border: 1px solid #BCBCBC;
+}
+
+    .btn-check-right a {
+        color: #8C8C8C;
+        text-decoration: none;
+    }
+
+        .btn-check-right a:hover {
+            color: #000;
+        }
+
+.other-new {
+    width: 100%;
+    float: left;
+}
+
+    .other-new h1 {
+        margin: 1.9em 0px 1em 18px;
+        text-transform: uppercase;
+        color: #737373;
+        font-weight: normal;
+        font-size: 2em;
+        text-align: left;
+    }
+
+    .other-new p {
+        margin: 0px 0px 8px 0px;
+    }
+
+        .other-new p a {
+            color: #737373;
+            font-size: 16px;
+        }
+
+.flexslider {
+    margin-bottom: 0px;
+}
+/* Css article */
+.private {
+    padding: 65px 50px 0 88px;
+}
+
+    .private h2 {
+        font-weight: 600;
+        color: #737070;
+        margin: 0 auto 30px;
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .private p.des-article {
+        color: #706E6E;
+        font-size: 15px;
+        line-height: 20px;
+        padding-bottom: 30px;
+        font-weight: normal;
+    }
+
+.item-article {
+    background-color: #ffffff;
+    margin: 20px 0px 20px 0px;
+    width: 100%;
+    float: left;
+}
+
+.img-article img {
+    max-width: 100%;
+    width: 100%;
+}
+
+a.btn-booking {
+    padding: 8px 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /*border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;*/
+}
+
+
+a.btn-booking:hover {
+    text-decoration: none;
+    color: #8f724c;
+}
+
+.logo-trip {
+    max-width: 760px;
+    margin: 0px auto;
+}
+
+@media (max-width: 768px) and (min-width: 561px) {
+    .private {
+        padding: 10px 10px 30px 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .private {
+        padding: 10px 10px 30px 10px;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+/*Css Gallery*/
+.galleryHotel {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.item-gallery {
+    margin-bottom: 13px;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+}
+
+.galleryHotel li img {
+    max-width: 100%;
+}
+
+/*Css Tour*/
+#wellness {
+    overflow: hidden;
+}
+
+    #wellness img {
+        width: 100%;
+        -webkit-transform: scale(1);
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-duration: 500ms;
+        overflow: hidden;
+    }
+
+        #wellness img:hover {
+            -webkit-transform: scale(1.1);
+            -webkit-transition-timing-function: ease-out;
+            -webkit-transition-duration: 500ms;
+            overflow: hidden;
+        }
+
+    #wellness .item-tour {
+        padding-left: 6px;
+        padding-right: 6px;
+        overflow: hidden;
+    }
+
+.w-info-ct-tour {
+    height: 140px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.z-content-inner ul {
+    margin-left: 20px;
+}
+
+    .z-content-inner ul li {
+        list-style: disc;
+    }
+
+@media (min-width:770px) {
+
+    #wellness {
+        width: 745px;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width:768px) {
+    #wellness {
+        width: 100%;
+    }
+
+    table {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #wellness .item-tour {
+        width: 100%;
+    }
+}
+
+#wellness .images-well {
+    width: 100%;
+    overflow: hidden;
+}
+
+#wellness .desert {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #737070;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+}
+
+#wellness .balance {
+    text-align: center !important;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 142%;
+    margin-bottom: 1.4285714286rem;
+    color: #737070;
+    margin-bottom: 30px;
+}
+
+.explore .item-tour {
+    padding-right: 5px;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+
+.explore img {
+    width: 100%;
+    max-height: 190px;
+}
+
+table {
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: #bbb;
+    max-width: 100% !important;
+}
+
+    table tr td {
+        padding: 6px !important;
+        border-color: #bbb;
+        width: auto;
+    }
+
+#tabbed-nav table tr td {
+    width: auto !important;
+    border-style: solid;
+}
+
+@media (min-width:900px) {
+
+    .explore {
+        padding-left: 6px;
+        padding-right: 6px;
+        width: 940px;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width:768px) {
+    .explore {
+        width: 100%;
+    }
+
+        .explore img {
+            width: 100%;
+        }
+}
+
+@media (max-width: 560px) {
+    .destinations {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 7%;
+    }
+
+    .destinations-left {
+        height: 270px;
+        background-image: url("../images/amankora-bhutan.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-right: 0px;
+    }
+
+    .destinations-left-text-plungepool {
+        background-color: #fff;
+        margin: 0 auto;
+        width: 90%;
+        margin-top: -30px;
+    }
+
+    .destinations-center {
+        height: 270px;
+        background-image: url("../images/aman-venice-hotel-italy.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-bottom: 7%;
+        margin-right: 0px;
+    }
+
+    .destinations-center-text-plungepool {
+        background-color: #fff;
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo-trip img {
+        width: 174px;
+        float: left;
+        margin: 0 1% 0 1%;
+        height: 125px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo-trip img {
+        width: 18%;
+        float: left;
+        margin: 0 1% 0 1%;
+        height: 100px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo-trip img {
+        width: 174px;
+        float: left;
+        margin: 0 1% 0 1%;
+        height: 125px;
+    }
+}
+
+@media (min-width: 460px) and (max-width: 768px) {
+    .logo-trip img {
+        width: 29%;
+        float: left;
+        margin: 0 2% 3% 2%;
+        height: 145px;
+    }
+}
+
+@media (max-width: 460px) {
+    .logo-trip img {
+        width: 94%;
+        margin: 0 3% 5% 3%;
+    }
+}
+
+@media (min-width: 565px) and (max-width: 1024px) {
+    .destinations {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 7%;
+    }
+
+    .destinations-left-text h4 {
+        opacity: 0.4;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+        margin-top: 4%;
+        text-align: center !important;
+    }
+
+    .destinations-left-text-plungepool h5 {
+        margin-left: 5%;
+        font-size: 14px;
+        padding-top: 40px;
+        font-weight: 700;
+        width: 85%;
+        text-align: center;
+        color: #737070;
+        opacity: 0.7;
+    }
+
+    .destinations-center-text h4 {
+        opacity: 0.4;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+        margin-top: 5%;
+    }
+
+    .destinations-center-text-plungepool h5 {
+        margin-left: 5%;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 70px;
+        font-weight: 700;
+        width: 86%;
+        color: #737070;
+        opacity: 0.7;
+    }
+
+    .destinations-right-text h4 {
+        opacity: 0.4;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+        margin-top: 6%;
+    }
+
+    .destinations-right-text-plungepool h5 {
+        font-size: 14px;
+        padding-top: 70px;
+        font-weight: 700;
+        width: 86%;
+        color: #737070;
+        opacity: 0.7;
+        margin-left: 5%;
+        text-align: center;
+    }
+
+    .destinations-left {
+        height: 270px;
+        background-image: url("../images/amankora-bhutan.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-right: 0px;
+    }
+
+    .destinations-center {
+        height: 270px;
+        background-image: url("../images/aman-venice-hotel-italy.jpg");
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin-right: 0px;
+    }
+
+    .destinations-left-text-plungepool {
+        background-color: #fff;
+        margin: 0 auto;
+        width: 90%;
+        margin-top: -40px;
+    }
+
+    .destinations-center-text-plungepool {
+        background-color: #fff;
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+
+@media(min-width: 1288px) {
+    .main-header-detail {
+        height: 570px;
+    }
+
+    .banner-home {
+        height: 100vh !important;
+    }
+
+    .main-header-detail .ct-banner-detail {
+        width: 570px;
+    }
+
+    .menu-c-detail-fixed-top {
+        position: fixed;
+        top: 130px;
+        z-index: 9999;
+    }
+
+    .list-hotel .ladderrungs, .list-hotel .info-contel-h {
+        height: 460px;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1281px) {
+    .banner-home {
+        height: 100vh !important;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1281px) {
+    .main-header-detail {
+        height: 460px;
+    }
+
+        .main-header-detail .ct-banner-detail {
+            width: 500px;
+        }
+
+    .menu-c-detail-fixed-top {
+        position: fixed;
+        top: 130px;
+        z-index: 9999;
+        background: #ededed;
+    }
+}
+
+
+@media(min-width: 768px) {
+
+    .list-hotel .info-hotel {
+        width: 525px;
+    }
+
+    .list-hotel .panel-content .info-hotel {
+        padding: 0px 20px;
+    }
+
+    .logo-es-detail {
+        display: block;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-image: url('../img/Logo1.png');
+        background-size: 350px;
+        background-position: center;
+    }
+
+        .logo-es-detail.logo-es-dark {
+            background-image: url('../img/Logo2.png');
+        }
+
+    .bg-menu-main-detail {
+        background-color: rgba(0, 0, 0, 0.25);
+         border-bottom: 1px solid #bbb; 
+        margin-bottom: 0px;
+        border-radius: 0px;
+    }
+
+        .bg-menu-main-detail .menu-destinations ul a {
+            height: 36px;
+            position: relative;
+        }
+
+        .bg-menu-main-detail.bg-fff {
+            padding-bottom: 0px;
+        }
+
+        .bg-menu-main-detail .menu-destinations ul li.active a:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 1px;
+            height: 11px;
+            left: 50%;
+            bottom: -1px;
+            background: #bbb;
+            -webkit-transition: all .6s ease 0s;
+            -khtml-transition: all .6s ease 0s;
+            -moz-transition: all .6s ease 0s;
+            -ms-transition: all .6s ease 0s;
+            -o-transition: all .6s ease 0s;
+            transition: all .6s ease 0s;
+            transition-delay: .3s;
+            transition-timing-function: ease-out;
+        }
+
+    .menu-c-detail #bs-example-munu-child {
+        display: table !important;
+        margin: 0px auto;
+    }
+
+    .menu-c-detail .navbar-default {
+        background: none !important;
+        border: none;
+    }
+
+    .menu-c-detail .navbar-default, .menu-c-detail .navbar-nav > li > a {
+        color: #ffffff;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: normal;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .bg-fff .navbar-nav > li > a {
+        color: #9e7026 !important;
+    }
+
+    .bg-fff .navbar-nav > li.active a:after {
+        background: #9e7026 !important;
+    }
+
+    .menu-c-detail-fixed-top {
+        height: 35px !important;
+        /* display: table!important; */
+    }
+
+        .menu-c-detail-fixed-top .navbar-default {
+            box-shadow: none;
+            /* display: table!important; */
+        }
+
+        .menu-c-detail-fixed-top #bs-example-munu-child .navbar-nav > li > a {
+            padding-bottom: 6px !important;
+            padding-top: 7px !important;
+        }
+
+    .menu-c-detail .navbar-nav > li > a:hover, .menu-c-detail .navbar-nav > li.active > a, .menu-c-detail .navbar-nav > li.active > a:hover {
+        color: #ffffff;
+        background: none;
+        box-shadow: none;
+    }
+
+    .menu-c-detail .navbar-header {
+        display: none;
+    }
+
+    .menu-c-detail .navbar-nav > li:before {
+        top: 50%;
+        left: 1px;
+        /* background: #737070; */
+        width: 1px;
+        height: 22px;
+        margin: -11px 0 0;
+        position: absolute;
+        content: "";
+    }
+
+    .menu-c-detail .navbar-nav > li:first-child:before {
+        background: none;
+    }
+
+    .menu-c-detail .navbar-nav > li.active a:after {
+        left: 40%;
+        bottom: -3px;
+        background: #fff;
+        width: 20%;
+        height: 1px;
+        position: absolute;
+        margin: 1px auto;
+        content: "";
+    }
+
+    .list-hotel .ladderrungs, .list-hotel .info-contel-h {
+        height: 380px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 900px) {
+    .bg-menu-main-detail {
+        background-color: rgba(0, 0, 0, 0.37);
+        padding-bottom: 20px !important;
+        border-bottom: none;
+    }
+
+    .menu-c-detail-fixed-top {
+        position: fixed;
+        top: 60px !important;
+        z-index: 9999;
+        background: #ddd;
+    }
+}
+
+@media(max-width: 767px) {
+    .main-header-detail {
+        height: 460px;
+    }
+
+    .bg-menu-main-detail {
+        background: rgba(0,0,0,.4);
+        padding-bottom: 20px;
+    }
+
+    .main-header-detail .ct-banner-detail {
+        width: 100%;
+    }
+
+        .main-header-detail .ct-banner-detail h2 {
+            font-size: 22px;
+        }
+
+    .list-hotel .panel-content .info-hotel {
+        padding: 0px;
+        display: block;
+        overflow: hidden;
+    }
+}
+
+@media(min-width: 541px) and (max-width: 767px) {
+    .list-hotel .ladderrungs, .list-hotel .info-contel-h {
+        height: 300px;
+    }
+
+    .list-hotel .col-sm-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .list-hotel .panel-content .info-hotel {
+        height: 300px;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+        display: block;
+    }
+}
+
+@media(max-width: 540px) {
+    .main-header-detail .ct-banner-detail p {
+        display: none;
+    }
+
+    .list-hotel .ladderrungs, .list-hotel .height-bg-img {
+        height: 207px;
+    }
+
+    .list-hotel .height-bg-img {
+        float: left;
+    }
+
+    .list-hotel .panel-content {
+        display: block;
+        height: auto;
+        float: left;
+    }
+
+    .list-hotel {
+        margin-bottom: 40px;
+        height: auto;
+    }
+
+    table {
+        width: auto !important;
+    }
+
+        table.twoColumns tr td {
+            border: none;
+            width: 100% !important;
+            float: left;
+            margin-bottom: 20px;
+        }
+}
+
+@media(max-width: 768px) {
+    .bg-menu-main-detail {
+        background-color: rgba(0, 0, 0, 0.37);
+        padding-bottom: 20px;
+    }
+
+    .menu-c-detail .navbar-default {
+        /* background: #fff; */
+        border: none;
+        box-shadow: none;
+        z-index: 999;
+        padding-bottom: 0px;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+    }
+
+    .menu-c-detail .navbar-default, .menu-c-detail .navbar-nav > li > a {
+        color: #ffffff !important;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: normal;
+        letter-spacing: 1px;
+        text-align: center;
+        /* margin-top: 0px!important; */
+        background-color: rgba(0,0,0,.2) !important;
+        background-image: none !important;
+        min-height: 35px;
+    }
+    ul.navbar-nav {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .menu-c-detail .navbar-default .navbar-brand {
+        display: none;
+    }
+
+    .menu-c-detail .navbar-default .navbar-toggle {
+        border-color: #ddd;
+        width: 100%;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.125em;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        line-height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0px;
+        color: #fff !important;
+    }
+    .bg-fff .navbar-default .navbar-toggle {
+        background-color: rgba(221, 221, 221, 0.39);
+        color: #9e7026!important;
+    }
+    .bg-fff .navbar-default, .bg-fff .navbar-nav > li > a {
+        border-bottom: 1px solid #9e70264f;
+        background-color: rgba(255, 255, 255, 0.83) !important;
+        color: #9e7026 !important;
+    }
+    .menu-c-detail-fixed-top {
+        position: fixed;
+        top: 61px;
+        z-index: 200;
+    }
+
+    .list-hotel .panel-content {
+        display: block;
+    }
+}

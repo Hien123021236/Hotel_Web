@@ -1,0 +1,54 @@
+﻿
+.booking-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+    .booking-container .top-container {
+        z-index: 1;
+        position: fixed;
+        left:0;
+        top:70px;
+        padding: 15px;
+        margin:0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.2), 0 1px 8px rgba(0,0,0,0.15);
+    }
+        .booking-container .top-container > div {
+            margin-left: 20px;
+        }
+        .booking-container .top-container input{
+            width: 170px;
+            height: 30px;
+        }
+        .booking-container .top-container .check-group {
+            font-size: 14px;
+            margin-left: 20px;
+            height: 30px;
+            width: 160px;
+            border-radius: 2px;
+            padding: 4px 10px;
+            border: solid 1px rgba(0,0,0,0.2);
+        }
+            .booking-container .top-container .check-group .check-item {
+                float: left;
+                height: 16px;
+                width: 16px;
+                margin: 3px 10px 3px 0;
+            }
+            .booking-container .top-container .check-group .item-left{
+                float: left;
+            }
+            .booking-container .top-container .check-group .item-right {
+                float: right;
+            }
+
+    .booking-container .body-container {
+        margin-top: 60px;
+        padding: 50px;
+        padding-top: 20px;
+        width: 100%;
+    }   
+    
+    

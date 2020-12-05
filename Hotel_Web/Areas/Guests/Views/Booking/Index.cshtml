@@ -1,0 +1,140 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
+}
+@namespace Hotel_Web.Areas.Guests.Models
+@model List<RoomTypeModel>
+    <script src="~/guests/js/jsplus/jquery.min.js"></script>
+    <style>
+        .loader {
+            margin-top: 10px;
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #9E7026;
+            width: 18px;
+            height: 18px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @@-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <div id="resevation">
+        <div style="width:70%; margin: 5% 16% 5% 15%;">
+            <img src="~/guests/img/Logo1.png" style="width: 50%;margin-left:25%;margin-right:25%;background-position:center;" />
+            <div class="content-mode-check-desktop">
+                <div class="row">
+                    <div id="reservationform">
+                        <div class="col-md-3">
+                            <select id="room-type" class="title-check" style="height:34px; border:0px; padding-right:20px; margin-top:3px;margin-left:20px;">
+                                @{
+                                    foreach (RoomTypeModel rtm in Model)
+                                    {
+                                        <option value="@rtm.RoomTypeID" @((ViewBag.RoomTypeID == rtm.RoomTypeID)?("selected"):(""))>@rtm.RoomStyle.RoomStyleName @rtm.RoomSize.RoomSizeName</option>
+                                    }
+                                }
+                            </select>
+                           @* <h4 id="roomtypename" class="title-check"> @Model.RoomStyle.RoomStyleName @Model.RoomSize.RoomSizeName</h4>*@
+                        </div>
+                        <div class="col-md-3 border-left-mode">
+                            <center><input type="date" id="check-in-date" style="border:0; width:150px"/></center>
+                        </div>
+                        <div class="col-md-3 border-left-mode">
+                            <center><input type="date" id="check-out-date" style="border:0; width:150px;"/></center> 
+                        </div>
+                        <div id="checkroom" class="col-md-3"> 
+                            <h5>Please choose dates</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div> <center> <h1 id="reservation-notif" style="color:white; "> </h1></center> </div>
+        </div>
+        <script>
+            var today = new Date();
+            var today_formated = today.toISOString().slice(0, 10);
+            var checkindate = document.getElementById("check-in-date").setAttribute("min", today_formated);
+
+            function confirm() {
+                var roomid = $("#book-btn").data("roomid");
+                var checkindate = $("#check-in-date").val();
+                var checkoutdate = $("#check-out-date").val();
+                location.href = "/Guests/Booking/Confirmation?RoomID=" + roomid + "&CheckInDate=" + checkindate + "&CheckOutDate=" + checkoutdate;
+            }
+
+            function check() {
+                var roomtypeid = $("#room-type").val();
+                var checkindate = $("#check-in-date").val();
+                var checkoutdate = $("#check-out-date").val();
+
+                if (checkindate != "" && checkoutdate != "")
+                {
+                    $("#checkroom").html("<center><div class='loader'></div></center>");
+                    $.ajax({
+                        url: "/Guests/Booking/Check",
+                        data: { RoomTypeID: roomtypeid, CheckInDate: checkindate, CheckOutDate: checkoutdate },
+                        type: "POST",
+                        success: function (data) {
+
+                            if (data.roomid == 0) {
+                                $("#checkroom").html("<h5>No available room</h5>");
+                            }
+                            else {
+                                $("#checkroom").html("<button id='book-btn' data-roomid='" + data.roomid + "' onclick='confirm()' class='btn-mode-check text-uppercase btn-hover'> BOOK </button>");
+                            }
+                        }
+                    });
+                }    
+            }
+
+            $(document).ready(function () {
+                $("#room-type").change(function () {
+                    check();
+                });
+
+                $("#check-in-date").change(function () {
+                    var checkindate = $("#check-in-date").val();
+                    var checkoutdate = $("#check-out-date").val();
+
+                    var afterdate = new Date(checkindate);
+                    afterdate.setDate(afterdate.getDate() + 1);
+                    var afterdate_formated = afterdate.toISOString().slice(0, 10);
+                    $("#check-out-date").attr("min", afterdate_formated);
+
+                    if (checkindate >= checkoutdate) {
+                        $("#check-out-date").val("");
+                        $("#checkroom").html("<h5>Please choose dates</h5>");
+                    }
+                    else {
+                        check();
+                    }
+                });
+
+                $("#check-out-date").change(function () {
+                    check();
+                });
+            });
+        </script>
+    </div>

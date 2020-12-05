@@ -1,0 +1,151 @@
+﻿
+@{
+    Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
+}
+@namespace Hotel_Web.Areas.Guests.Models
+@model List<RoomTypeModel>
+
+<!DOCTYPE html>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+    <title>Rooms Hotel</title>
+    <link href="~/guests/css/jquery-ui.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/guests/css/flexslider.css" rel="stylesheet">
+    <link href="~/guests/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/guests/css/owl.theme.default.css" rel="stylesheet">
+    <link href="~/guests/css/slick.css" rel="stylesheet">
+    <link href="~/guests/css/slick-theme.css" rel="stylesheet">
+    <link href="~/guests/css/style-m.css" rel="stylesheet">
+    <link href="~/guests/css/styles.css" rel="stylesheet">
+    <link href="~/guests/css/responsive.css" rel="stylesheet">
+    <link href="~/guests/css/Css-page-detail.css" rel="stylesheet">
+    <link href="~/guests/css/Slider-mobile.css" rel="stylesheet">
+    <link href="~/guests/css/styleHome.css" rel="stylesheet">
+    <link href="~/guests/css/css" rel="stylesheet">
+    <link href="~/guests/css/style-room.css" rel="stylesheet">
+    <link href="~/guests/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="~/guests/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/guests/css/jquery-validation.css" rel="stylesheet">
+    <link href="~/guests/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body style="font-family: Raleway, sans-serif;">
+    <div id="resevation" data-roomtypeid="" data-othertypeid="" style="display: none;position: fixed;top: 0;bottom: 0;left: 0;right: 0;width: 100%;height: 100%;margin: auto; z-index:1040 ;">
+        <div onmousedown="closereservation()" style="display: inline-block;position: fixed;top: 0;bottom: 0;left: 0;right: 0;width: 100%;height: 100%;margin: auto;background-image: url(https://www.wallpaperflare.com/static/598/948/955/city-lights-tokyo-night-city-wallpaper.jpg);"></div>
+        <div class="wrap-mode-check-desktop">
+            <img src="~/guests/img/Logo1.png" style="width: 50%;margin-left:25%;margin-right:25%;background-position:center;" />
+            <div class="content-mode-check-desktop">
+                <div class="row">
+                    <div id="reservationform">
+                        <div class="col-md-3">
+                            <h4 id="roomtypename" class="title-check"></h4>
+                        </div>
+                        <div class="col-md-3 border-left-mode">
+                            <svg class="mode-icon-date" focusable="false" width="20px" height="19px" viewBox="0 0 20 19" tabindex="-1"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icons/Calendar" fill="#867050"><path d="M0,4.6604 L0,0.3744 L20,0.3744 L20,4.6604 L0,4.6604 Z M0,11.8034 L0,6.0894 L5.714,6.0894 L5.714,11.8034 L0,11.8034 Z M7.143,11.8034 L7.143,6.0894 L12.857,6.0894 L12.857,11.8034 L7.143,11.8034 Z M14.286,11.8034 L14.286,6.0894 L20,6.0894 L20,11.8034 L14.286,11.8034 Z M0,18.9464 L0,13.2324 L5.714,13.2324 L5.714,18.9464 L0,18.9464 Z M7.143,18.9464 L7.143,13.2324 L12.857,13.2324 L12.857,18.9464 L7.143,18.9464 Z M14.286,18.9464 L14.286,13.2324 L20,13.2324 L20,18.9464 L14.286,18.9464 Z" id="Combined-Shape"></path></g></g></svg>
+                            <input class="input-text-date" type="date" id="check-in-date" placeholder="Check in">
+                        </div>
+                        <div class="col-md-3 border-left-mode">
+                            <svg class="mode-icon-date" focusable="false" width="20px" height="19px" viewBox="0 0 20 19" tabindex="-1"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icons/Calendar" fill="#867050"><path d="M0,4.6604 L0,0.3744 L20,0.3744 L20,4.6604 L0,4.6604 Z M0,11.8034 L0,6.0894 L5.714,6.0894 L5.714,11.8034 L0,11.8034 Z M7.143,11.8034 L7.143,6.0894 L12.857,6.0894 L12.857,11.8034 L7.143,11.8034 Z M14.286,11.8034 L14.286,6.0894 L20,6.0894 L20,11.8034 L14.286,11.8034 Z M0,18.9464 L0,13.2324 L5.714,13.2324 L5.714,18.9464 L0,18.9464 Z M7.143,18.9464 L7.143,13.2324 L12.857,13.2324 L12.857,18.9464 L7.143,18.9464 Z M14.286,18.9464 L14.286,13.2324 L20,13.2324 L20,18.9464 L14.286,18.9464 Z" id="Combined-Shape"></path></g></g></svg>
+                            <input class="input-text-date" type="date" id="check-out-date" placeholder="Check out">
+                        </div>
+                        <div class="col-md-3">
+                            <button id="checkroom-btn" class="btn-mode-check text-uppercase btn-hover">Check Availability</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div> <center> <h1 id="reservation-notif" style="color:white; "> </h1></center> </div>
+        </div>
+
+    </div>
+    <div class="flex-viewport" style="width: 100% ;">
+        <div>
+            <img class="mySlides1" src="~/guests/img/home-1-1.jpg">
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container ">
+            <div class="row outdoor">
+                <div class="col-md-12">
+                    <div class="head-info-content">
+                        <div class="mg-top-50">
+                            <p>Each of our Rooms is designed with your total comfort in mind, and fresh contemporary style to escape from hustle and bustle outside.&nbsp; Enjoy a great night’s sleep with the choice of a king bed or twin singles. &nbsp;If you fancy a quick refreshment or treat, make your morning tea or coffee, and later grab your favourite beverage and snack from the mini bar. Then relax on your private balcony to watch the busy street, or cosy up inside on a sofa chair for TV time or an online catch up.</p>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <div class="container list-item-room">
+            <div class="row">
+                @{
+                    var list = Model;
+                    for (int i = 0; i < list.Count(); i++)
+                    {
+                        <div class="col-md-6 col-sm-6 mg-bot-30" style="margin-left: -20px;">
+                            <div class="accommodation-iamge-left-all-lappool-left">
+                                <div class="accommodation-iamge-left-all hover-all">
+                                    <div class="accommodation-iamge-left">
+                                        <div class="wrap-item-room">
+                                            <div class="over-hide">
+                                                <div class="owl-carousel owl-theme gallery zoom-room owl-loaded owl-drag">
+                                                    <div class="owl-stage-outer">
+                                                        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 3346px;">
+                                                            <div class="owl-item active" style="width: 507.594px; margin-right: 20px;">
+                                                                <div class="item">
+                                                                    <img class="myClass1" src="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lappool-left">
+                                <h4 class="title-room-list"><a href="#"> @list[i].RoomStyle.RoomStyleName @list[i].RoomSize.RoomSizeName </a></h4>
+                                <h6 class="des-room-list"> @list[i].Description <br><br>&nbsp;</h6>
+                                <div class="btn-room">
+                                    <a data-roomtypeid="@list[i].RoomTypeID" onclick="bookroom(event)" class="btn book-room-btn">Book a room </a>
+                                    <a class="btn btn-write" href="/Guests/Detail/RoomsDetail">View detail </a>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $('.myClass1').each(function () {
+                                var num = Math.floor(Math.random() * 10 + 1),   
+                                    img = $(this);
+                                img.attr('src', '/guests/img/Room' + num + '.gif');
+                            });
+                        </script>
+                        <script>
+                            function bookroom(event) {
+                                var roomtypeid = event.target.dataset.roomtypeid;
+                                window.location.href = "/Guests/Booking/Index?RoomTypeID=" + roomtypeid;
+                            }
+
+
+                            function showreservation(event) {
+                                var res = document.getElementById("resevation");
+                                var obj = event.target;
+                                res.dataset.roomtypeid = obj.dataset.roomtypeid;
+                                document.getElementById("roomtypename").innerHTML = obj.dataset.typename;
+                                res.style.display = "block";
+                                
+                            }
+                        </script>
+
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

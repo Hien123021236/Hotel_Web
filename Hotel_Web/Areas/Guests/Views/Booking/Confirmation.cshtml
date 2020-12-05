@@ -1,0 +1,198 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
+}
+@namespace Hotel_Web.Areas.Guests.Models
+@model RoomModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/guests/css/jquery-ui.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/guests/css/flexslider.css" rel="stylesheet">
+    <link href="~/guests/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/guests/css/owl.theme.default.css" rel="stylesheet">
+    <link href="~/guests/css/slick.css" rel="stylesheet">
+    <link href="~/guests/css/slick-theme.css" rel="stylesheet">
+    <link href="~/guests/css/style-m.css" rel="stylesheet">
+    <link href="~/guests/css/styles.css" rel="stylesheet">
+    <link href="~/guests/css/responsive.css" rel="stylesheet">
+    <link href="~/guests/css/Css-page-detail.css" rel="stylesheet">
+    <link href="~/guests/css/Slider-mobile.css" rel="stylesheet">
+    <link href="~/guests/css/styleHome.css" rel="stylesheet">
+    <link href="~/guests/css/bootstrap.min(1).css" rel="stylesheet">
+    <link href="~/guests/css/stylesheet.min.css" rel="stylesheet">
+    <link href="~/guests/css/bs-checkbox.css" rel="stylesheet">
+    <link href="~/guests/css/jquery.nstSlider.min.css" rel="stylesheet">
+    <link href="~/guests/css/fb-fonts.min.css" rel="stylesheet">
+    <link href="~/guests/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body marginheight="0" marginwidth="0">
+    <div class="flex-viewport" style="width: 100% ;">
+        <div>
+            <img class="mySlides1" src="~/guests/img/Paymentbg.png">
+        </div>
+    </div>
+    <div id="fb-results"></div>
+    <div id="fb-extras"></div>
+    <div id="fb-recap">
+        <form action="/Guests/Booking/Create" method="post">
+            <div id="fb-recap-header" class="col-xs-12 fb-recap-header" style=" margin-bottom: 50px;">
+                <center>
+                    <span class="title1 fb-font-light">
+                        <span class="fb-translate" data-key="validate-header" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]" placeholder="Finalize your stay">Finalize your stay</span>
+                    </span>
+                </center>
+            </div>
+            <div class="container">
+                <div class="container fb-container">
+                    <div class="col-xs-12 fb-container fb-block-header fb-dark-bg" style="height: 50px;margin-top: -0px;background-color: #242424;">
+                        <div class="col-xs-10 col-sm-12 fb-dark-bg fb-results-acc-title"> From @ViewBag.CheckInDate to @ViewBag.CheckOutDate </div>
+                        <input type="hidden" value="@ViewBag.CheckInDate" name="checkindate" />
+                        <input type="hidden" value="@ViewBag.CheckOutDate" name="checkoutdate" />
+                    </div>
+                    <div id="fb-recap-hotel" class="col-xs-12 fb-gray-bg">
+                        <div class="fb-title"></div>
+                        <div id="fb-recap-hotel-details">
+                            <dl class="col-xs-12 dl-horizontal">
+                                <dt class="fb-dark-gray"><span class="fb-translate" data-key="property-address" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]" placeholder="Address">Address</span></dt>
+                                <dd><span class="fb-translate" data-key="vnhan31639:hoteladdress" data-mode="-1" data-fallback="22 Ta Hien St., Old Quarter, Hoan Kiem Dist." data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]">Khu Pho 6 ,Phuong Linh Trung ,Quan Thu Duc , TP.HCM</span></dd>
+                                <dt class="fb-dark-gray"><span class="fb-translate" data-key="property-reception-hours" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]" placeholder="Reception is open">Reception is open</span></dt>
+                                <dd><span class="fb-translate" data-key="property-reception-24" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]" placeholder="24/7">24/7</span></dd>
+                                <dt class="fb-dark-gray"><span class="fb-translate" data-key="property-checking-time" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]" placeholder="Check-in from">Check-in from</span></dt>
+                                <dd>
+                                    <div>14:00</div>
+                                </dd>
+                                <dt class="fb-dark-gray"><span class="fb-translate" data-key="property-checkout-time" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]" placeholder="Check-out before">Check-out before</span></dt>
+                                <dd>
+                                    <div>12:00</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fb-recap-container" class="container">
+                <div id="fb-recap-sub-container" class="container fb-container fb-light-bg">
+                    <div id="fb-recap-booking" class="col-xs-12">
+                        <div class="container fb-container fb-recap-accommodation fb-light-bg">
+                            <div class="col-xs-6 col-sm-3 fb-container">
+                                <div class="col-xs-12 fb-font-bold fb-room-title"><span class="fb-translate" data-key="room-number" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[1]"> Room @Model.RoomID </span></div>
+                                <input type="hidden" value="@Model.RoomID" name="roomid" />
+                                <div class="col-xs-12 fb-dark-gray"><span class="fb-translate" data-key="adult" data-mode="2" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[2]"> @Model.RoomType.RoomSize.GuestCount person</span></div>
+                            </div>
+                            <div class="hidden-xs col-sm-6" style="white-space: normal; padding-right: 0px;">
+                                <p> @Model.RoomType.RoomStyle.RoomStyleName @Model.RoomType.RoomSize.RoomSizeName</p>
+                                <p> @Model.RoomType.Description </p>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <p class="fb-price-amount"><span class="fb-price" data-price="35.534364879454" data-symbol="true" data-pricepoint="0"><span><span class="fb-price-currency">$</span> @Model.RoomType.Price </span></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6" style="border-left: 1px solid #C4C4C4; padding-top:20px; padding-bottom:20px;">
+                            <div class="col-xs-12 fb-welcome fb-font-light"><span class="fb-translate">Guests information</span></div>
+                            <div class="form-group container"><label for="idcardnumber"><span class="fb-translate">Identity card number</span><span class="mandatory-field-asterisk">*</span></label><input type="tel" class="form-control" id="idcardnumber" name="idcardnumber" required="required"></div>
+                            <div class="form-group container"><label for="fullname"><span class="fb-translate">Full name</span></label><span class="mandatory-field-asterisk">*</span><input type="text" class="form-control fb-translate" id="fullname" name="fullname" required="required" autocomplete="buyer-given-name" value="" placeholder=""></div>
+                            <div class="form-group container">
+                                <label for="gender" class="col-xs-12 fb-container"><span class="fb-translate">Gender</span><span class="mandatory-field-asterisk">*</span></label>
+                                <div class="col-xs-12 fb-container">
+                                    <select id="buyer-gender" class="form-control" name="gender" required>
+                                        <option disabled selected value="">-- Your gender --</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group container">
+                                <label for="country" class="col-xs-12 fb-container"><span class="fb-translate" data-key="quicksearch-country" data-mode="-1" data-fallback="" data-disablehtmlclean="false" data-nodefaultlanguagefallback="false" data-placeholders="[]">Country</span><span class="mandatory-field-asterisk">*</span></label>
+                                <div class="col-xs-12 fb-container">
+                                    <select id="country" class="form-control" name="country" required>
+                                        <option value="VE" data-country="VE">Venezuela</option>
+                                        <option value="VN" data-country="VN" selected>Vietnam</option>
+                                        <option value="WF" data-country="WF">Wallis and Futuna</option>
+                                        <option value="YE" data-country="YE">Yemen</option>
+                                        <option value="ZM" data-country="ZM">Zambia</option>
+                                        <option value="ZW" data-country="ZW">Zimbabwe</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group container"><label for="phone"><span class="fb-translate">Phone number</span><span class="mandatory-field-asterisk">*</span></label><input type="tel" class="form-control" id="phone" name="phone" required="required" placeholder="0332990945"></div>
+                            <div class="form-group container"><label for="email"><span class="fb-translate">E-mail address</span><span class="mandatory-field-asterisk">*</span></label><input type="email" class="form-control" id="email" name="email" required="required" placeholder="abc@xyz.com"></div>
+                        </div>
+                        <div class="col-xs-6" style="border-left: 1px solid #C4C4C4; border-right: 1px solid #C4C4C4; padding-top:20px; padding-bottom:20px;">
+                            <div class="col-xs-12 fb-welcome fb-font-light"><span class="fb-translate">Reservation guarantee</span></div>
+                            <div class="form-group container"><label for="cardnumber"><span class="fb-translate">Credit card number</span><span class="mandatory-field-asterisk">*</span></label><input type="tel" class="form-control" id="cardnumber" name="cardnumber" required="required" placeholder="XXXX XXXX XXXX XXXX"></div>
+                            <div class="form-group container"><label for="cardname"><span class="fb-translate">Name on card</span><span class="mandatory-field-asterisk">*</span></label><input type="tel" class="form-control" id="cardname" name="cardname" required="required" placeholder="John Smith"></div>
+                            <div class="form-group container expirationDate" id="expiration-date" style="padding:0px">
+                                <div class="col-xs-12">
+                                    <label data-key="guarantee-expire-date" style="font-weight: bold">Expiration date</label>
+                                </div>
+                                <em id="expiration-date" class="error help-block" style="display: none;">Please, select a valid expiration date</em>
+                                <div class="col-12">
+                                    <div class="col-xs-7 expirationMonth">
+                                        <select id="month" class="form-control" name="month" required>
+                                            <option disabled selected value="">-- Month --</option>
+                                            <option value="1">January</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                        <em id="cc-exp-month-error" class="error help-block" style="display: none;">Please, select a valid month number</em>
+                                    </div>
+                                    <div class="col-xs-5 padding-left-0 expirationYear">
+                                        <select id="year" class="form-control" name="year" required>
+                                            <option disabled selected value="">-- Year --</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                        </select>
+                                        <em id="cc-exp-year-error" class="error help-block" style="display: none;">Please, select a valid year number</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group container"><label for="cvc"><span class="fb-translate">Security code</span><span class="mandatory-field-asterisk">*</span></label><input type="tel" class="form-control" id="cvc" name="cvc" required="required" placeholder="123"></div>
+                            <div class="form-group" id="credit_cards" style="text-align: center;opacity: 0.2;">
+                                <img class="visa transparent" width="50" src="~/guests/img/visa.jpg">
+                                <img class="mastercard transparent" width="50" src="~/guests/img/mastercard.jpg">
+                                <img class="amex transparent" width="50" src="~/guests/img/amex.jpg">
+                                <img class="visaelectron transparent" width="50" src="~/guests/img/visaelectron.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="border: 1px solid #C4C4C4;">
+                            <div class="col-xs-12 fb-light-bg" style="padding-top:20px; padding-bottom: 20px;"><button id="confirm-button" class="theme-btn btn fb-action fb-font-bold col-xs-12 col-sm-offset-4 col-sm-4" style="padding:10px;">BOOK</button></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

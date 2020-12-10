@@ -37,6 +37,29 @@
             line-height: 34px;
         }
 
+        #crud-roomstyle-table th{
+            font-size:12px;
+        }
+        #crud-roomstyle-table td {
+            font-size: 11px;
+        }
+
+        #crud-roomsize-table th {
+            font-size: 12px;
+        }
+
+        #crud-roomsize-table td {
+            font-size: 11px;
+        }
+
+        #crud-roomtype-table th {
+            font-size: 12px;
+        }
+
+        #crud-roomtype-table td {
+            font-size: 11px;
+        }
+
         .page-btn a {
             padding: 0.25rem 0.75rem;
         }
@@ -46,58 +69,67 @@
 
             .rooms-manager-container .crud-room-container .table-title {
                 height: 40px;
+                width: 400px;
+                line-height: 40px;
+                background-color: #1879B9;
+                color: white;
+                font-weight: bold;
+                top: 15px;
+                left: 20px;
+                padding-left: 10px;
+                border-radius: 3px 40px 40px 3px;
+                text-transform: uppercase;
+                transform:translate(0, 0px);
+                z-index: 10;
+                position: absolute;
+            }
+
+            .rooms-manager-container .crud-roomtype-container .table-title {
+                height: 40px;
                 width: 250px;
                 line-height: 40px;
                 background-color: #1879B9;
                 color: white;
                 font-weight: bold;
-                top: 15px;
+                top: 5px;
                 left: 20px;
                 padding-left: 10px;
                 border-radius: 3px 40px 40px 3px;
                 text-transform: uppercase;
-            }
-
-            .rooms-manager-container .crud-roomtype-container .table-title {
-                height: 40px;
-                width: 390px;
-                line-height: 40px;
-                background-color: #1879B9;
-                color: white;
-                font-weight: bold;
-                top: 15px;
-                left: 20px;
-                padding-left: 10px;
-                border-radius: 3px 40px 40px 3px;
-                text-transform: uppercase;
+                transform: translate(0, 40px);
+                z-index: 11;
             }
 
             .rooms-manager-container .crud-roomstyle-container .table-title {
                 height: 40px;
-                width: 390px;
+                width: 250px;
                 line-height: 40px;
                 background-color: #1879B9;
                 color: white;
                 font-weight: bold;
-                top: 15px;
+                top: 5px;
                 left: 20px;
                 padding-left: 10px;
                 border-radius: 3px 40px 40px 3px;
                 text-transform: uppercase;
+                transform: translate(0, 40px);
+                z-index:11;
             }
 
             .rooms-manager-container .crud-roomsize-container .table-title {
                 height: 40px;
-                width: 390px;
+                width: 250px;
                 line-height: 40px;
                 background-color: #1879B9;
                 color: white;
                 font-weight: bold;
-                top: 15px;
+                top: 5px;
                 left: 20px;
                 padding-left: 10px;
                 border-radius: 3px 40px 40px 3px;
                 text-transform: uppercase;
+                transform: translate(0, 40px);
+                z-index: 11;
             }
 
             .rooms-manager-container .crud-room-container {
@@ -105,11 +137,18 @@
             }
 
             .rooms-manager-container .crud-roomstyle-container {
-                padding: 20px;
+                padding-left: 20px;
+                margin-top:-20px;
             }
 
             .rooms-manager-container .crud-roomsize-container {
-                padding: 20px;
+                padding-left: 20px;
+                margin-top: -20px;
+            }
+
+            .rooms-manager-container .crud-roomtype-container {
+                padding-left: 20px;
+                margin-top: -20px;
             }
 
         /* Modal styles */
@@ -159,7 +198,7 @@
 <body>
     <div class="rooms-manager-container">
         <div class="row">
-            <div class="col-lg-5 crud-room-container">
+            <div class="col-lg-6 crud-room-container">
                 <div class="row table-title crud-room-title">
                     <div class="col-sm-8">
                         <span>Room Manager</span>
@@ -187,8 +226,8 @@
                                     <td>@room.RoomType.RoomStyle.RoomStyleName</td>
                                     <td>@room.RoomType.RoomSize.RoomSizeName</td>
                                     <td>
-                                        <a href="#editRoomModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <a href="#deleteRoomModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        <a  class="edit-room" onclick="OpenEdit(event)" data-roomid="@room.RoomID" data-styleid="@room.RoomType.RoomStyle.RoomStyleID" data-sizeid="@room.RoomType.RoomSize.RoomSizeID" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a  class="delete-room" onclick="OpenDelete(event)" data-roomid="@room.RoomID"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                     </td>
                                 </tr>
                             }
@@ -196,14 +235,14 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-6">
                 <div class="row crud-roomstyle-container">
                     <div class="row table-title crud-roomstyle-title">
                         <div class="col-sm-8">
-                            <span>Room Style Manager</span>
+                            <span>Room Style</span>
                         </div>
                         <div class="col-sm-4">
-                            <a href="#addRoomStyleModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                            <a href="#addRoomStyleModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success create-new-roomstyle" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
                         </div>
                     </div>
                     <table id="crud-roomstyle-table" class="table table-sm dataTable">
@@ -226,8 +265,8 @@
                                         <td>@roomstyle.RoomStyleShortName</td>
                                         <td>@roomstyle.Description</td>
                                         <td>
-                                            <a href="#editRoomStyleModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a href="#deleteRoomStyleModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            <a class="edit-roomstyle"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a class="delete-roomstyle" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -238,21 +277,21 @@
                 <div class="row crud-roomsize-container">
                     <div class="row table-title crud-roomsize-title">
                         <div class="col-sm-8">
-                            <span>RoomSizeManager</span>
+                            <span>Room Size</span>
                         </div>
                         <div class="col-sm-4">
-                            <a href="#addRoomSizeModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                            <a href="#addRoomSizeModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success create-new-roomsize" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
                         </div>
                     </div>
                     <table id="crud-roomsize-table" class="table table-sm dataTable">
                         <thead class="thead-light">
                             <tr role="row">
-                                <th class="sorting_asc" tabindex="0" aria-controls="crud-roomsize-table" aria-sort="ascending" style="width: 40px; ">RoomSizeID</th>
-                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">RoomSizeName</th>
-                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">RoomSizeShortName</th>
-                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">GuestCount</th>
-                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 40px;">Description</th>
-                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 60px;">Action</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="crud-roomsize-table" aria-sort="ascending" style="width: 30px; ">RoomSizeID</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 30px;">RoomSizeName</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 30px;">RoomSizeShortName</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 30px;">GuestCount</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 30px;">Description</th>
+                                <th class="sorting" aria-controls="crud-roomsize-table" style="width: 50px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -266,8 +305,8 @@
                                         <td>@roomsize.GuestCount</td>
                                         <td>@roomsize.Description</td>
                                         <td>
-                                            <a href="#editRoomSizeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a href="#deleteRoomSizeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            <a class="edit-roomsize"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a class="delete-roomsize"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -278,10 +317,10 @@
                 <div class="row crud-roomtype-container">
                     <div class="row table-title crud-roomtype-title">
                         <div class="col-sm-8">
-                            <span>Room Type Manager</span>
+                            <span>Room Type</span>
                         </div>
                         <div class="col-sm-4">
-                            <a href="#addRoomTypeModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
+                            <a href="#addRoomTypeModal" style="width:100%;height:40px;background:none;border:none;" class="btn btn-success create-new-roomtype" data-toggle="modal"><i class="material-icons">&#xE147;</i></a>
                         </div>
                     </div>
 
@@ -305,8 +344,8 @@
                                         <td>@roomtype.RoomSize.RoomSizeName</td>
                                         <td>@roomtype.Price</td>
                                         <td>
-                                            <a href="#editRoomTypeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a href="#deleteRoomTypeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            <a  class="edit-roomtype"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a  class="delete-roomtype" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -318,12 +357,11 @@
         </div>
     </div>
 
-
     @{
         var roomstyles = RoomStyleDAO.GetAllRoomStyle();
         var roomsizes = RoomSizeDAO.GetAllRoomSize();
      }
-    <!-- Create Modal HTML -->
+    <!-- Create Room Modal HTML -->
     <div id="addRoomModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -334,27 +372,29 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>RoomNumber</label>
-                            <input type="text" class="form-control" required>
+                            <label for="room-id">RoomNumber</label>
+                            <input type="text" class="form-control" id="room-id" required>
                         </div>
                         <div class="form-group">
-                            <label for="select-roomstylename">RoomStyleName</label>
-                            <select class="form-control" id="select-roomstylename">
+                            <label for="add-roomstylename">RoomStyleName</label>
+                            <select class="form-control" id="add-roomstylename">
+                                <option disabled selected value="">--Select Style--</option>
                                 @{
                                     for (int i = 0; i < roomstyles.Count; i++)
                                     {
-                                        <option>@roomstyles[i].RoomStyleName</option>
+                                        <option value="@roomstyles[i].RoomStyleID">@roomstyles[i].RoomStyleName</option>
                                     }
                                 }
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="select-roomsizename">RoomSizeName</label>
-                            <select class="form-control" id="select-roomsizename">
+                            <label for="add-roomsizename">RoomSizeName</label>
+                            <select class="form-control" id="add-roomsizename">
+                                <option disabled selected value="">--Select Size--</option>
                                 @{
                                     for (int i = 0; i < roomsizes.Count; i++)
                                     {
-                                        <option>@roomsizes[i].RoomSizeName</option>
+                                        <option value="@roomsizes[i].RoomSizeID">@roomsizes[i].RoomSizeName</option>
                                     }
                                 }
                             </select>
@@ -379,27 +419,28 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>RoomNumber</label>
-                            <input type="text" class="form-control" required>
+                            <label for="edit-roomid">RoomNumber</label>
+                            <input type="text" class="form-control" id="edit-roomid" required>
                         </div>
                         <div class="form-group">
-                            <label for="select-roomstylename">RoomStyleName</label>
-                            <select class="form-control" id="select-roomstylename">
+                            <label for="edit-roomstylename">RoomStyleName</label>
+                            <select class="form-control" id="edit-roomstylename">
+                                <option disabled selected value="">--  --</option>
                                 @{
                                     for (int i = 0; i < roomstyles.Count; i++)
                                     {
-                                        <option>@roomstyles[i].RoomStyleName</option>
+                                        <option value="@roomstyles[i].RoomStyleID">@roomstyles[i].RoomStyleName</option>
                                     }
                                 }
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="select-roomsizename">RoomSizeName</label>
-                            <select class="form-control" id="select-roomsizename">
+                            <label for="edit-roomsizename">RoomSizeName</label>
+                            <select class="form-control" id="edit-roomsizename">
                                 @{
                                     for (int i = 0; i < roomsizes.Count; i++)
                                     {
-                                        <option>@roomsizes[i].RoomSizeName</option>
+                                        <option value="@roomsizes[i].RoomSizeID">@roomsizes[i].RoomSizeName</option>
                                     }
                                 }
                             </select>
@@ -428,15 +469,37 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger submit-delete-room" >Delete</button>
+                        <button id="delete-room-btn" type="button" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <script>
+        function OpenEdit(event) {
+          
+            debugger;
+            var roomid = event.currentTarget.getAttribute("data-roomid");
+            var styleid = event.currentTarget.getAttribute("data-styleid");
+            var sizeid = event.currentTarget.getAttribute("data-sizeid");
 
+            $("#editRoomModal").modal('show');
 
+            $("#edit-roomid").val(roomid);
+            $("#edit-roomstylename").val(styleid);
+            $("#edit-roomsizename").val(sizeid);
+
+        }
+
+        function OpenDelete(event) {
+            debugger;
+            var roomid = event.currentTarget.getAttribute("data-roomid");
+            $("#delete-room-btn").attr("data-roomid", roomid);
+            $('#deleteRoomModal').modal('show');
+        }
+
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -446,36 +509,108 @@
             $('#crud-room-table').DataTable({
                 pageLength: 10,
                 bLengthChange: false,
-                bAutoWidth: false,
-                searching: false
+                bAutoWidth: false
             });
             $('#crud-roomstyle-table').DataTable({
-                pageLength: 5,
+                pageLength: 3,
                 bLengthChange: false,
-                bAutoWidth: false,
-                searching: false
+                bAutoWidth: false
             });
             $('#crud-roomsize-table').DataTable({
-                pageLength: 5,
+                pageLength: 3,
                 bLengthChange: false,
-                bAutoWidth: false,
-                searching: false
+                bAutoWidth: false
             });
             $('#crud-roomtype-table').DataTable({
-                pageLength: 5,
+                pageLength: 3,
                 bLengthChange: false,
-                bAutoWidth: false,
-                searching: false
+                bAutoWidth: false
             });
-
-
-
-
-
 
             $(".create-new-room").click(function () {
-                
+                $('#addRoomModal').find("input[type=text], select").val("");
+                $('#addRoomModal').modal('show');
             });
+
+
+            $("#room-id").focusout(function () {
+                var roomid = $("#room-id").val();
+                debugger;
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/CheckRoomNumberExists",
+                    data: { roomId: roomid },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            alert("Room number is exists!");
+                        }
+                    }
+                });
+            });
+
+            $(".submit-add-new-room").click(function () {
+                debugger;
+                var roomid = $("#room-id").val();
+                var roomstyleid = $("#add-roomstylename").val();
+                var roomsizeid = $("#add-roomsizename").val();
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/CreateRoom",
+                    data: {roomId:roomid , roomStyleId:roomstyleid ,roomSizeId:roomsizeid},
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response != null && response != "") {
+                            location.reload();
+                            $('#addRoomModal').modal('hide');
+                        }
+                        else {
+                            alert("Room number is exists!");
+                        }
+                    }
+                });
+            });
+
+            $(".submit-update-room").click(function () {
+                debugger;
+                var roomid = $("#edit-roomid").val();
+                var roomstyleid = $("#edit-roomstylename").val();
+                var roomsizeid = $("#edit-roomsizename").val();
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/UpdateRoom",
+                    data: { roomId: roomid, roomStyleId: roomstyleid, roomSizeId: roomsizeid },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response != null && response != "") {
+                            location.reload();
+                            $('#editRoomModal').modal('hide');
+                        }
+                    }
+                });
+            });
+
+            $("#delete-room-btn").click(function () {
+                debugger;
+                var roomid = $(this).attr("data-roomid");
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/DeleteRoom",
+                    data: { roomId: roomid},
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response != null && response != "") {
+                            location.reload();
+                            $('#deleteRoomModal').modal('hide');
+                        }
+                    }
+                });
+            });
+            
         });
     </script>
 </body>

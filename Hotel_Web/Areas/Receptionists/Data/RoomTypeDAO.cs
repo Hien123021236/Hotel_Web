@@ -32,7 +32,6 @@ namespace Hotel_Web.Areas.Receptionists.Data
             return rt;
         }
 
-
         public static RoomTypeModel GetRoomTypeModel(int id)
         {
             RoomTypeModel rt = null;
@@ -114,6 +113,33 @@ namespace Hotel_Web.Areas.Receptionists.Data
                 conn.Close();
             };
             return list;
+        }
+
+        public static RoomType GetRoomTypeBySizeAndStyle(int styleid, int sizeid)
+        {
+            RoomType rt = null;
+            SqlConnection conn = Connection.GetConnection();
+            if (conn != null)
+            {
+                string sql = "select * from RoomType where RoomSizeID = @sizeid and RoomStyleID = @styleid";
+                SqlCommand cm = new SqlCommand(sql, conn);
+                cm.Parameters.AddWithValue("@styleid", styleid);
+                cm.Parameters.AddWithValue("@sizeid", sizeid);
+                var rs = cm.ExecuteReader();
+                if (rs.HasRows)
+                {
+                    if (rs.Read())
+                    {
+                        rt = new RoomType();
+                        rt.RoomTypeID = rs.GetInt32(0);
+                        rt.RoomStyleID = rs.GetInt32(1);
+                        rt.RoomSizeID = rs.GetInt32(2);
+                        rt.Price = rs.GetInt32(3);
+                    }
+                }
+                conn.Close();
+            };
+            return rt;
         }
     }
 }

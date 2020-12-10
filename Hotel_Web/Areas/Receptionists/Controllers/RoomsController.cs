@@ -6,6 +6,7 @@ using Hotel_Web.Areas.Receptionists.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Hotel_Web.Areas.Receptionists.Models.Rooms;
+using Hotel_Web.Areas.Receptionists.Models;
 
 namespace Hotel_Web.Areas.Receptionists.Controllers
 {
@@ -69,12 +70,70 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
         [Area("Receptionists")]
         public IActionResult RoomsManagement()
         {
+            if (!Authentication.AuthenticateByCookie(HttpContext))
+                return Redirect("/Receptionists/Authentication/Login?Area=Receptionists&Ctrl=Rooms&Act=RoomsManagement");
+
             RoomsManagerViewModel model = new RoomsManagerViewModel();
             model.RoomModels = RoomsDAO.GetAllRoomsModel();
             model.RoomSizes = RoomSizeDAO.GetAllRoomSize();
             model.RoomStyles = RoomStyleDAO.GetAllRoomStyle();
             model.RoomTypeModels = RoomTypeDAO.GetAllRoomTypeModel();
             return View(model);
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CreateRoom(int roomId , int roomStyleId ,int roomSizeId)
+        {
+            if (!RoomsDAO.CheckIsExistRoomById(roomId))
+            {
+                var room = RoomsDAO.InsertRoom(new Room()
+                {
+                    RoomID = roomId,
+                    Status = RoomStatuses.Empty,
+                    RoomTypeID = RoomTypeDAO.GetRoomTypeBySizeAndStyle(roomStyleId, roomSizeId).RoomTypeID
+                });
+                return Json(roomId);
+            }
+            else
+            {
+                return Json(null);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult UpdateRoom(int roomId, int roomStyleId, int roomSizeId)
+        {
+            var room = RoomsDAO.UpdateRoom(new Room()
+            {
+                RoomID = roomId,
+                Status = RoomsDAO.GetRoom(roomId).Status,
+                RoomTypeID = RoomTypeDAO.GetRoomTypeBySizeAndStyle(roomStyleId, roomSizeId).RoomTypeID
+            }) ;
+            return Json(roomId);  
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult DeleteRoom(int roomId)
+        {
+            return Json(RoomsDAO.DeleteRoomModel(roomId));
+        }
+
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CheckRoomNumberExists(int roomId)
+        {
+            if (RoomsDAO.CheckIsExistRoomById(roomId))
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
         }
     }
 }

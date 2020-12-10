@@ -63,11 +63,23 @@ namespace Hotel_Web.Areas.Receptionists.Data
             {
                 if (conn != null)
                 {
-                    string sql = "Delete from Room Where RoomID = @roomid";
+                    string sql = "Select * from Booking Where RoomID=@roomid";
                     SqlCommand cm = new SqlCommand(sql, conn);
                     cm.Parameters.AddWithValue("@roomid", roomid);
-                    cm.ExecuteNonQuery();
-                    return true;
+                    var rs = cm.ExecuteReader();
+                    if (rs.HasRows)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        rs.Close();
+                        string sql1 = "Delete Room Where RoomID=@roomid";
+                        SqlCommand cm1 = new SqlCommand(sql1, conn);
+                        cm1.Parameters.AddWithValue("@roomid", roomid);
+                        cm1.ExecuteNonQuery();
+                        return true;
+                    }
                 }
             }
             return false;

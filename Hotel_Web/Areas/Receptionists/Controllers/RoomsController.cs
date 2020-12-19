@@ -19,6 +19,8 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
             if (!Authentication.AuthenticateByCookie(HttpContext))
                 return Redirect("/Receptionists/Authentication/Login?Area=Receptionists&Ctrl=Rooms&Act=Index");
 
+            BookingDAO.Update();
+
             List<string> StylesSelected = new List<string>();
             List<string> SizesSelected = new List<string>();
 
@@ -46,6 +48,8 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
 
             if (!Authentication.AuthenticateByCookie(HttpContext))
                 return Redirect("/Receptionists/Authentication/Login?Area=Receptionists&Ctrl=Rooms&Act=Index");
+
+            BookingDAO.Update();
 
             List<string> StylesSelected = new List<string>();
             List<string> SizesSelected = new List<string>();
@@ -134,6 +138,131 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
             {
                 return Json(false);
             }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CreateRoomType(int roomStyleId, int roomSizeId , int price , string description)
+        {
+            if (!RoomTypeDAO.CheckIsExistRoomTypeByStyleIdAndSizeId(roomStyleId,roomSizeId))
+            {
+               RoomTypeDAO.InsertRoomType(roomStyleId,roomSizeId,price,description);
+               return Json(price);
+            }
+            else
+            {
+                RoomTypeDAO.UpdateRoomType(roomStyleId, roomSizeId, price, description);
+                return Json(price);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult DeleteRoomType(int roomTypeId)
+        {
+            return Json(RoomTypeDAO.DeleteRoomTypeModel(roomTypeId));
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CheckRoomTypeExists(int roomStyleId , int roomSizeId)
+        {
+            if (RoomTypeDAO.CheckIsExistRoomTypeByStyleIdAndSizeId(roomStyleId,roomSizeId))
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CreateRoomStyle(string name, string shortname, string description)
+        {
+            if (!RoomStyleDAO.CheckIsExistRoomStyleByName(name))
+            {
+                RoomStyleDAO.InsertRoomStyle(name, shortname, description);
+                return Json(name);
+            }
+            else
+            {
+                return Json(null);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CheckStyleNameExists(string name)
+        {
+            if (RoomStyleDAO.CheckIsExistRoomStyleByName(name))
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult UpdateRoomStyle(RoomStyle style)
+        {
+            RoomStyleDAO.UpdateRoomStyle(style);
+            return Json(style.RoomStyleID);
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult DeleteRoomStyle(int roomStyleId)
+        {
+            return Json(RoomStyleDAO.DeleteRoomStyle(roomStyleId));
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CreateRoomSize(string sizeName, string sizeShortName , int guestCount, string description)
+        {
+            if (!RoomSizeDAO.CheckIsExistRoomSizeByName(sizeName))
+            {
+                RoomSizeDAO.InsertRoomSize(sizeName, sizeShortName, guestCount, description);
+                return Json(sizeName);
+            }
+            else
+            {
+                return Json(null);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult CheckSizeNameExists(string name)
+        {
+            if (RoomSizeDAO.CheckIsExistRoomSizeByName(name))
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult UpdateRoomSize(RoomSize size)
+        {
+            RoomSizeDAO.UpdateRoomSize(size);
+            return Json(size.RoomSizeID);
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult DeleteRoomSize(int roomSizeId)
+        {
+            return Json(RoomSizeDAO.DeleteRoomSize(roomSizeId));
         }
     }
 }

@@ -13,5 +13,8 @@ namespace Hotel_Web.Areas.Receptionists.Models.Activities
         public List<BookingModel> ListCheckIn { get; set; }
         public List<BookingModel> ListCheckOut { get; set; }
 
+        public List<BookingModel> ListConfirmCheckIn { get; set; }
+        public List<BookingModel> ListConfirmCheckOut { get; set; }
+
     }
 }

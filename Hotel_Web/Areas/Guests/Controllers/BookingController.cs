@@ -34,17 +34,18 @@ namespace Hotel_Web.Areas.Guests.Controllers
 
 
         [Area("Guests")]
-        public IActionResult Create(int RoomID, DateTime CheckInDate, DateTime CheckOutDate, Guest guest, Payment payment)
+        public IActionResult Create(int RoomID, DateTime CheckInDate, DateTime CheckOutDate, Guest guest, Payment payment, int Amount)
         {
             int guestid = GuestDAO.InsertGuest(guest);
             int paymentid = PaymentDAO.InsertPayment(payment);
             int bookingid = BookingDAO.InsertBooking(new Booking()
             {
                 RoomID = RoomID,
-                CheckInDate = CheckInDate,
-                CheckOutDate = CheckOutDate,
+                CheckInDate = CheckInDate.AddHours(14),
+                CheckOutDate = CheckOutDate.AddHours(12).AddMinutes(5),
                 GuestID = guestid,
-                PaymentID = paymentid,
+                Amount = (int)(CheckOutDate - CheckInDate).TotalDays * RoomsDAO.GetRoomModel(RoomID).RoomType.Price,
+                PaymentID = paymentid,             
             });
 
             return View();

@@ -122,7 +122,7 @@ namespace Hotel_Web.Areas.Receptionists.Data
             Booking bk = null;
             using (SqlConnection conn = Connection.GetConnection()) {
                 if (conn != null) {
-                    string sql = "SELECT * FROM dbo.Booking WHERE RoomID = @roomid AND Status IN('Checked-In', 'No-Show', 'Stayover')";
+                    string sql = "SELECT * FROM dbo.Booking WHERE RoomID = @roomid AND (Status IN('Checked-In', 'Stayover')OR(CheckInDate <= GETDATE() AND GETDATE() <= CheckOutDate))";
                     SqlCommand cm = new SqlCommand(sql, conn);
                     cm.Parameters.AddWithValue("@roomid", roomid);
                     var rs = cm.ExecuteReader();
@@ -207,18 +207,18 @@ namespace Hotel_Web.Areas.Receptionists.Data
             return 0;
         }
 
-        public static bool ConfirmBooking(int bookingId)
+        public static bool ConfirmBooking(int bookingId , int extraChange)
         {
             using (SqlConnection conn = Connection.GetConnection())
             {
                 if (conn != null)
                 {
                     SqlCommand cm1 = conn.CreateCommand();
-                    string sql1 = "UPDATE Booking SET Status = 'Checked-in' where BookingID = @bookingId ";
+                    string sql1 = "UPDATE Booking SET Status = 'Checked-In',Amount = Amount + @extraChange where BookingID = @bookingId ";
                     cm1 = new SqlCommand(sql1, conn);
                     cm1.Parameters.AddWithValue("@bookingId", bookingId);
+                    cm1.Parameters.AddWithValue("@extraChange", extraChange);
                     cm1.ExecuteNonQuery();
-
 
                     SqlCommand cm2 = conn.CreateCommand();
                     string sql2 = "UPDATE Stay SET Status = 'Confirmed' where BookingID =  @bookingId  ";
@@ -226,10 +226,70 @@ namespace Hotel_Web.Areas.Receptionists.Data
                     cm2.Parameters.AddWithValue("@bookingId", bookingId);
                     cm2.ExecuteNonQuery();
 
+                    SqlCommand cm3 = conn.CreateCommand();
+                    string sql3 = "UPDATE Room SET Status = 'Occupied' where RoomID = @roomID ";
+                    cm3 = new SqlCommand(sql3, conn);
+                    cm3.Parameters.AddWithValue("@roomID", GetBooking(bookingId).RoomID);
+                    cm3.ExecuteNonQuery();
                     return true;
                 }
             }
             return false;
+        }
+
+        public static bool ConfirmCheckOut(int bookingId, int extraChange)
+        {
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                if (conn != null)
+                {
+                    SqlCommand cm1 = conn.CreateCommand();
+                    string sql1 = "UPDATE Booking SET Status = 'Checked-Out',Amount = Amount + @extraChange , CheckOutDate = GETDATE() where BookingID = @bookingId ";
+                    cm1 = new SqlCommand(sql1, conn);
+                    cm1.Parameters.AddWithValue("@bookingId", bookingId);
+                    cm1.Parameters.AddWithValue("@extraChange", extraChange);
+                    cm1.ExecuteNonQuery();
+
+                    SqlCommand cm2 = conn.CreateCommand();
+                    string sql2 = "UPDATE Stay SET ToDate = GETDATE() where BookingID =  @bookingId  ";
+                    cm2 = new SqlCommand(sql2, conn);
+                    cm2.Parameters.AddWithValue("@bookingId", bookingId);
+                    cm2.ExecuteNonQuery();
+
+                    SqlCommand cm3 = conn.CreateCommand();
+                    string sql3 = "UPDATE Room SET Status = 'Empty' where RoomID = @roomID ";
+                    cm3 = new SqlCommand(sql3, conn);
+                    cm3.Parameters.AddWithValue("@roomID", GetBooking(bookingId).RoomID);
+                    cm3.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static void Update()
+        {
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                if (conn != null)
+                {
+                    SqlCommand cm = conn.CreateCommand();
+                    cm.CommandText = "pro_AutoUpdateStatus12h";
+                    cm.CommandType = System.Data.CommandType.StoredProcedure;
+                    cm.ExecuteNonQuery();
+                }
+            }
+
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                if (conn != null)
+                {
+                    SqlCommand cm = conn.CreateCommand();
+                    cm.CommandText = "pro_AutoUpdateStatus14h";
+                    cm.CommandType = System.Data.CommandType.StoredProcedure;
+                    cm.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

@@ -88,9 +88,9 @@
                             <div class="hidden-xs col-sm-6" style="white-space: normal; padding-right: 0px;">
                                 <p> @Model.RoomType.RoomStyle.RoomStyleName @Model.RoomType.RoomSize.RoomSizeName</p>
                                 <p> @Model.RoomType.Description </p>
-                            </div>
+                            </div>                           
                             <div class="col-xs-6 col-sm-3">
-                                <p class="fb-price-amount"><span class="fb-price" data-price="35.534364879454" data-symbol="true" data-pricepoint="0"><span><span class="fb-price-currency">$</span> @Model.RoomType.Price </span></span></p>
+                                <p class="fb-price-amount"><span class="fb-price" data-price="35.534364879454" data-symbol="true" data-pricepoint="0"><span><span class="fb-price-currency">$</span> @((Model.RoomType.Price)*((TimeSpan)(DateTime.Parse(ViewBag.CheckOutDate) - DateTime.Parse(ViewBag.CheckInDate))).TotalDays) </span></span></p>
                             </div>
                         </div>
                     </div>

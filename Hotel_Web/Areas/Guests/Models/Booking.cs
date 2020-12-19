@@ -15,6 +15,7 @@ namespace Hotel_Web.Areas.Guests.Models
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
         public int PaymentID { get; set; }
+        public int Amount { get; set; }
         public string Status { get; set; }
     }
 }

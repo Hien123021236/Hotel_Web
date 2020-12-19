@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7rLx9ULZqpG86R2Tqs/q+NVGQMPLEkx9eraij9HHEvN2EsNbVyG34bp2/z21gAZsjAye3q2tFzkCCn7pZ9+6fw==",
+  "dgSpecHash": "4RFnXIXn7YYvuNA9aaOboXB3eSaVThdbqqbR+TrP22z92OXL9/JowcPv/zFI1h9+U5WySuagpNCxOJ2sU4Ac8g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ngoc Hien\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj",
   "expectedPackageFiles": [
@@ -142,7 +142,9 @@
     "C:\\Users\\Ngoc Hien\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Ngoc Hien\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Ngoc Hien\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

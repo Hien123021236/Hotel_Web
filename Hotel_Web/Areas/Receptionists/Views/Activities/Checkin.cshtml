@@ -5,7 +5,7 @@
 }
 @using Hotel_Web.Areas.Receptionists.Models;
 @using Hotel_Web.Areas.Receptionists.Data;
-
+@using Hotel_Web;
 @model BookingModel
 
 <link rel="stylesheet" href="~/receptionists/lib/DataTables/datatables.min.css" />
@@ -18,8 +18,11 @@
 <div class="checkin-container">
     <div class="row top-container">
         <div class="col-10" style="font-weight: bold; font-size: 18px; margin-top: 7px;">CHECK - IN</div>
-        <div class="col-1"><button class="btn btn-secondary cancelCheckin">Cancel</button></div>
-        <div class="col-1"><button class="btn btn-primary confirmCheckin">Confirm</button></div>
+        @if ((bool)ViewBag.isEdit == true)
+        {
+            <div class="col-1"><button class="btn btn-secondary cancelCheckin">Cancel</button></div>
+            <div class="col-1"><button class="btn btn-primary confirmCheckin">Confirm</button></div>
+        }
     </div>
     <div class="row body-container">
         <div class="col booking-container">
@@ -43,13 +46,24 @@
                         <div class="col text-right font-weight-bold"> @Model.CheckOutDate.ToString("MM/dd/yyyy") </div>
                     </div>
                     <div class="row group-item">
-                        <div class="col text-left">Deposit :</div>
-                        <div class="col text-right font-weight-bold">0</div>
-                    </div>
-                    <div class="row group-item">
                         <div class="col text-left">Amount:</div>
-                        <div class="col text-right font-weight-bold">@Model.Room.RoomType.Price</div>
+                        <div class="col text-right font-weight-bold">@(Utlities.IntToCurrencyString(Model.Amount,","))</div>
                     </div>
+                    @if ((bool)ViewBag.isEdit == true)
+                    {
+                        <div class="row group-item">
+                            <div class="col text-left">ExtraChange:</div>
+                            @if ((int)((((Model.Room.RoomType.Price) / 22)) * (Model.CheckInDate - DateTime.Now).TotalHours) < 0)
+                            {
+                                <div class="col text-right font-weight-bold"><input id="extraChange" class="form-control" type="text" name="extraChange" value="0" /></div>
+                            }
+                            else
+                            {
+                                <div class="col text-right font-weight-bold"><input id="extraChange" class="form-control" type="text" name="extraChange" value="@(Utlities.IntToCurrencyString((int)((((Model.Room.RoomType.Price)/22))*(Model.CheckInDate - DateTime.Now).TotalHours), ","))" /></div>
+                            }
+
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -74,7 +88,8 @@
                         <div class="col text-right font-weight-bold"> @Model.Room.RoomType.Price </div>
                     </div>
                     <div class="row group-item">
-                        Descriptions
+                        <div class="col text-left">Descriptions :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.Description </div>
                     </div>
                 </div>
             </div>
@@ -94,12 +109,15 @@
                     @for (; i < stays.Count; i++)
                     {
                         var guest = GuestDAO.GetGuest((int)stays[i].GuestID);
-                        <div class="row guest-slot justify-content-center"> <span class="guest" data-stayid="@stays[i].StayID"> @guest.FullName </span> <button type="button" class="removeGuest">X</button></div>
+                        <div class="row guest-slot justify-content-center"> <span class="guest" data-stayid="@stays[i].StayID"> @guest.FullName </span> @if ((bool)ViewBag.isEdit == true) { <button type="button" class="removeGuest">X</button>}</div>
                     }
 
                     @for (; i < Model.Room.RoomType.RoomSize.GuestCount; i++)
                     {
-                        <div class="row guest-slot justify-content-center"><span class="add-guest"> + </span> <button type="button" class="HideremoveGuest">X</button> </div>
+                        if((bool)ViewBag.isEdit == true)
+                        {
+                            <div class="row guest-slot justify-content-center"><span class="add-guest"> + </span> <button type="button" class="HideremoveGuest">X</button> </div>
+                        }                       
                     }
 
                 </div>
@@ -218,9 +236,11 @@
 
         $(".confirmCheckin").click(function () {
             debugger;
+            var str = $("#extraChange").val().replace(',', '');
+            var extraChange = parseInt(str);
             $.ajax({
                 url: "https://localhost:44329/Receptionists/Activities/ConfirmCheckin",
-                data: { bookingId: '@Model.BookingID' },
+                data: { bookingId: '@Model.BookingID', extraChange: extraChange },
                 type: "POST",
                 dataType: "json",
                 success: function (response) {

@@ -24,8 +24,10 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
         {
             if (!Authentication.AuthenticateByCookie(HttpContext))
                 return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Bookings&act=Index");
-            
-            if(fromdate==DateTime.MinValue || todate == DateTime.MinValue)
+           
+            BookingDAO.Update();
+
+            if (fromdate==DateTime.MinValue || todate == DateTime.MinValue)
             {
                 fromdate = DateTime.Now.AddDays(-30);
                 todate = DateTime.Now.AddDays(30);

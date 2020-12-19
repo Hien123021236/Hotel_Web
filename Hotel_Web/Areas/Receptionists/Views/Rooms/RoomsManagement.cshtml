@@ -226,8 +226,8 @@
                                     <td>@room.RoomType.RoomStyle.RoomStyleName</td>
                                     <td>@room.RoomType.RoomSize.RoomSizeName</td>
                                     <td>
-                                        <a  class="edit-room" onclick="OpenEdit(event)" data-roomid="@room.RoomID" data-styleid="@room.RoomType.RoomStyle.RoomStyleID" data-sizeid="@room.RoomType.RoomSize.RoomSizeID" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <a  class="delete-room" onclick="OpenDelete(event)" data-roomid="@room.RoomID"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        <a class="edit-room" onclick="OpenEdit(event)" data-roomid="@room.RoomID" data-styleid="@room.RoomType.RoomStyle.RoomStyleID" data-sizeid="@room.RoomType.RoomSize.RoomSizeID"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a class="delete-room" onclick="OpenDelete(event)" data-roomid="@room.RoomID"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                     </td>
                                 </tr>
                             }
@@ -265,8 +265,8 @@
                                         <td>@roomstyle.RoomStyleShortName</td>
                                         <td>@roomstyle.Description</td>
                                         <td>
-                                            <a class="edit-roomstyle"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a class="delete-roomstyle" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            <a class="edit-roomstyle" onclick="OpenEditStyle(event)" data-styleid="@roomstyle.RoomStyleID" data-stylename="@roomstyle.RoomStyleName" data-styleshortname="@roomstyle.RoomStyleShortName" data-styledescription="@roomstyle.Description"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a class="delete-roomstyle" onclick="OpenDeleteRoomStyle(event)" data-roomstyleid="@roomstyle.RoomStyleID"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -305,8 +305,8 @@
                                         <td>@roomsize.GuestCount</td>
                                         <td>@roomsize.Description</td>
                                         <td>
-                                            <a class="edit-roomsize"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a class="delete-roomsize"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            <a class="edit-roomsize" onclick="OpenEditSize(event)"data-sizeid="@roomsize.RoomSizeID" data-sizename="@roomsize.RoomSizeName" data-sizeshortname="@roomsize.RoomSizeShortName" data-sizeguestcount="@roomsize.GuestCount" data-sizedescription="@roomsize.Description"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a class="delete-roomsize" onclick="OpenDeleteRoomSize(event)" data-roomsizeid="@roomsize.RoomSizeID"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -331,6 +331,7 @@
                                 <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">RoomStyleName</th>
                                 <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">RoomSizeName</th>
                                 <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">Price</th>
+                                <th class="sorting" aria-controls="crud-roomtype-table" style="width: 40px;">Description</th>
                                 <th class="sorting" aria-controls="crud-roomtype-table" style="width: 60px;">Action</th>
                             </tr>
                         </thead>
@@ -343,9 +344,10 @@
                                         <td>@roomtype.RoomStyle.RoomStyleName</td>
                                         <td>@roomtype.RoomSize.RoomSizeName</td>
                                         <td>@roomtype.Price</td>
+                                        <td>@roomtype.Description</td>
                                         <td>
-                                            <a  class="edit-roomtype"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a  class="delete-roomtype" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            <a class="edit-roomtype"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a class="delete-roomtype" onclick="OpenDeleteRoomType(event);" data-roomtypeid="@roomtype.RoomTypeID" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -360,7 +362,7 @@
     @{
         var roomstyles = RoomStyleDAO.GetAllRoomStyle();
         var roomsizes = RoomSizeDAO.GetAllRoomSize();
-     }
+    }
     <!-- Create Room Modal HTML -->
     <div id="addRoomModal" class="modal fade">
         <div class="modal-dialog">
@@ -372,11 +374,11 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="room-id">RoomNumber</label>
+                            <label for="room-id">Room Number</label>
                             <input type="text" class="form-control" id="room-id" required>
                         </div>
                         <div class="form-group">
-                            <label for="add-roomstylename">RoomStyleName</label>
+                            <label for="add-roomstylename">Room Style Name</label>
                             <select class="form-control" id="add-roomstylename">
                                 <option disabled selected value="">--Select Style--</option>
                                 @{
@@ -388,7 +390,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="add-roomsizename">RoomSizeName</label>
+                            <label for="add-roomsizename">Room Size Name</label>
                             <select class="form-control" id="add-roomsizename">
                                 <option disabled selected value="">--Select Size--</option>
                                 @{
@@ -419,13 +421,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="edit-roomid">RoomNumber</label>
+                            <label for="edit-roomid">Room Number</label>
                             <input type="text" class="form-control" id="edit-roomid" required>
                         </div>
                         <div class="form-group">
-                            <label for="edit-roomstylename">RoomStyleName</label>
+                            <label for="edit-roomstylename">Room Style Name</label>
                             <select class="form-control" id="edit-roomstylename">
-                                <option disabled selected value="">--  --</option>
+                                <option disabled selected value="">--Select Style--</option>
                                 @{
                                     for (int i = 0; i < roomstyles.Count; i++)
                                     {
@@ -435,8 +437,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="edit-roomsizename">RoomSizeName</label>
+                            <label for="edit-roomsizename">Room Size Name</label>
                             <select class="form-control" id="edit-roomsizename">
+                                <option disabled selected value="">--Select Size--</option>
                                 @{
                                     for (int i = 0; i < roomsizes.Count; i++)
                                     {
@@ -476,9 +479,264 @@
         </div>
     </div>
 
+    <div id="deleteRoomTypeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Room Type</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="delete-roomtype-btn" type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteRoomStyleModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Room Style</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="delete-roomstyle-btn" type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteRoomSizeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Room Size</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="delete-roomsize-btn" type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Modal RoomType-->
+    <div id="addRoomTypeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Room Type</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="roomtype-style-id">Room Style Name</label>
+                            <select class="form-control" id="roomtype-style-id">
+                                <option disabled selected value="">--Select Style--</option>
+                                @{
+                                    for (int i = 0; i < roomstyles.Count; i++)
+                                    {
+                                        <option value="@roomstyles[i].RoomStyleID">@roomstyles[i].RoomStyleName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomtype-size-id">Room Size Name</label>
+                            <select class="form-control" id="roomtype-size-id">
+                                <option disabled selected value="">--Select Size--</option>
+                                @{
+                                    for (int i = 0; i < roomsizes.Count; i++)
+                                    {
+                                        <option value="@roomsizes[i].RoomSizeID">@roomsizes[i].RoomSizeName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price-id">Price</label>
+                            <input type="number" min="0" max="100000000" step="100000" class="form-control" id="price-id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description-id">Description</label>
+                            <input type="text" class="form-control" id="description-id" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success submit-add-new-roomtype">Add RoomType</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Modal RoomStyle-->
+    <div id="addRoomStyleModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Room Style</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="roomstyle-name">Name</label>
+                            <input type="text" class="form-control" id="roomstyle-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomstyle-shortname">Short Name</label>
+                            <input type="text" class="form-control" id="roomstyle-shortname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomstyle-description">Description</label>
+                            <input type="text" class="form-control" id="roomstyle-description" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success submit-add-new-roomstyle">Add RoomStyle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="editRoomStyleModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Room Style</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="hidden" id="edit-roomstyle-id">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomstyle-name">Name</label>
+                            <input type="text" class="form-control" id="edit-roomstyle-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomstyle-shortname">Short Name</label>
+                            <input type="text" class="form-control" id="edit-roomstyle-shortname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomstyle-description">Description</label>
+                            <input type="text" class="form-control" id="edit-roomstyle-description" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success submit-edit-roomstyle">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Create Modal RoomSize-->
+    <div id="addRoomSizeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Room Size</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="roomsize-name">Name</label>
+                            <input type="text" class="form-control" id="roomsize-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomsize-shortname">Short Name</label>
+                            <input type="text" class="form-control" id="roomsize-shortname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomsize-guestcount">Guest Count</label>
+                            <input type="number" class="form-control" id="roomsize-guestcount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomsize-description">Description</label>
+                            <input type="text" class="form-control" id="roomsize-description" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success submit-add-new-roomsize">Add RoomSize</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="editRoomSizeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Room Size</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="hidden" id="edit-roomsize-id">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomsize-name">Name</label>
+                            <input type="text" class="form-control" id="edit-roomsize-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomsize-shortname">Short Name</label>
+                            <input type="text" class="form-control" id="edit-roomsize-shortname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomsize-guestcount">Guest Count</label>
+                            <input type="number" class="form-control" id="edit-roomsize-guestcount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-roomsize-description">Description</label>
+                            <input type="text" class="form-control" id="edit-roomsize-description" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success submit-edit-roomsize">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         function OpenEdit(event) {
-          
             debugger;
             var roomid = event.currentTarget.getAttribute("data-roomid");
             var styleid = event.currentTarget.getAttribute("data-styleid");
@@ -492,6 +750,38 @@
 
         }
 
+        function OpenEditStyle(event) {
+            debugger;
+            var styleid = event.currentTarget.getAttribute("data-styleid");
+            var stylename = event.currentTarget.getAttribute("data-stylename");
+            var styleshortname = event.currentTarget.getAttribute("data-styleshortname");
+            var styledescription = event.currentTarget.getAttribute("data-styledescription");
+
+            $("#editRoomStyleModal").modal('show');
+
+            $("#edit-roomstyle-id").val(styleid);
+            $("#edit-roomstyle-name").val(stylename);
+            $("#edit-roomstyle-shortname").val(styleshortname);
+            $("#edit-roomstyle-description").val(styledescription);
+        }
+
+        function OpenEditSize(event) {
+            debugger;
+            var sizeid = event.currentTarget.getAttribute("data-sizeid");
+            var sizename = event.currentTarget.getAttribute("data-sizename");
+            var sizeshortname = event.currentTarget.getAttribute("data-sizeshortname");
+            var sizeguestcount = event.currentTarget.getAttribute("data-sizeguestcount");
+            var sizedescription = event.currentTarget.getAttribute("data-sizedescription");
+
+            $("#editRoomSizeModal").modal('show');
+
+            $("#edit-roomsize-id").val(sizeid);
+            $("#edit-roomsize-name").val(sizename);
+            $("#edit-roomsize-shortname").val(sizeshortname);
+            $("#edit-roomsize-guestcount").val(sizeguestcount);
+            $("#edit-roomsize-description").val(sizedescription);
+        }
+
         function OpenDelete(event) {
             debugger;
             var roomid = event.currentTarget.getAttribute("data-roomid");
@@ -499,6 +789,26 @@
             $('#deleteRoomModal').modal('show');
         }
 
+        function OpenDeleteRoomType(event) {
+            debugger;
+            var roomtypeid = event.currentTarget.getAttribute("data-roomtypeid");
+            $("#delete-roomtype-btn").attr("data-roomtypeid", roomtypeid);
+            $('#deleteRoomTypeModal').modal('show');
+        }
+
+        function OpenDeleteRoomStyle(event) {
+            debugger;
+            var roomstyleid = event.currentTarget.getAttribute("data-roomstyleid");
+            $("#delete-roomstyle-btn").attr("data-roomstyleid", roomstyleid);
+            $('#deleteRoomStyleModal').modal('show');
+        }
+
+        function OpenDeleteRoomSize(event) {
+            debugger;
+            var roomsizeid = event.currentTarget.getAttribute("data-roomsizeid");
+            $("#delete-roomsize-btn").attr("data-roomsizeid", roomsizeid);
+            $('#deleteRoomSizeModal').modal('show');
+        }
     </script>
 
     <script type="text/javascript">
@@ -532,6 +842,21 @@
                 $('#addRoomModal').modal('show');
             });
 
+            $(".create-new-roomtype").click(function () {
+                $('#addRoomTypeModal').find("input[type=text],input[type=number], select").val("");
+                $('#addRoomTypeModal').modal('show');
+            });
+
+            $(".create-new-roomstyle").click(function () {
+                $('#addRoomStyleModal').find("input[type=text]").val("");
+                $('#addRoomStyleModal').modal('show');
+            });
+
+
+            $(".create-new-roomsize").click(function () {
+                $('#addRoomSizeModal').find("input[type=text],input[type=number]").val("");
+                $('#addRoomSizeModal').modal('show');
+            });
 
             $("#room-id").focusout(function () {
                 var roomid = $("#room-id").val();
@@ -550,6 +875,40 @@
                 });
             });
 
+            $("#roomstyle-name").focusout(function () {
+                var name = $("#roomstyle-name").val();
+                debugger;
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/CheckStyleNameExists",
+                    data: { name: name },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            alert("Style Name is exists!");
+                        }
+                    }
+                });
+            });
+
+            $("#roomsize-name").focusout(function () {
+                var name = $("#roomsize-name").val();
+                debugger;
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/CheckSizeNameExists",
+                    data: { name: name },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            alert("Size Name is exists!");
+                        }
+                    }
+                });
+            });
+
             $(".submit-add-new-room").click(function () {
                 debugger;
                 var roomid = $("#room-id").val();
@@ -557,7 +916,7 @@
                 var roomsizeid = $("#add-roomsizename").val();
                 $.ajax({
                     url: "https://localhost:44329/Receptionists/Rooms/CreateRoom",
-                    data: {roomId:roomid , roomStyleId:roomstyleid ,roomSizeId:roomsizeid},
+                    data: { roomId: roomid, roomStyleId: roomstyleid, roomSizeId: roomsizeid },
                     type: "POST",
                     dataType: "json",
                     success: function (response) {
@@ -598,19 +957,215 @@
                 var roomid = $(this).attr("data-roomid");
                 $.ajax({
                     url: "https://localhost:44329/Receptionists/Rooms/DeleteRoom",
-                    data: { roomId: roomid},
+                    data: { roomId: roomid },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            location.reload();
+                            $('#deleteRoomModal').modal('hide');
+                        }
+                        else {
+                            alert("Khong duoc xoa !")
+                        }
+                    }
+                });
+            });
+
+
+            $(".submit-add-new-roomtype").click(function () {
+                debugger;
+                var roomstyleid = $("#roomtype-style-id").val();
+                var roomsizeid = $("#roomtype-size-id").val();
+                var price = $("#price-id").val();
+                var description = $("#description-id").val();
+                if (roomstyleid != 0 && roomstyleid != null && roomstyleid != "" && roomsizeid != 0 && roomsizeid != null && roomsizeid != "" && price != null && price != "" && description != null && description != "") {
+                    $.ajax({
+                        url: "https://localhost:44329/Receptionists/Rooms/CreateRoomType",
+                        data: { roomStyleId: roomstyleid, roomSizeId: roomsizeid, price: price, description: description },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (response) {
+                            debugger;
+                            if (response != null && response != "") {
+                                location.reload();
+                                $('#addRoomTypeModal').modal('hide');
+                            }
+                            else {
+                                alert("Room type is exists!");
+                            }
+                        }
+                    });
+                }
+                else {
+                    alert("Không được bỏ trống !");
+                }
+            });
+
+            $("#delete-roomtype-btn").click(function () {
+                debugger;
+                var roomtypeid = $(this).attr("data-roomtypeid");
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/DeleteRoomType",
+                    data: { roomTypeId: roomtypeid },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            location.reload();
+                            $('#deleteRoomTypeModal').modal('hide');
+                        }
+                        else {
+                            alert("Khong duoc xoa !")
+                        }
+                    }
+                });
+            });
+
+            $(".submit-add-new-roomstyle").click(function () {
+                debugger;
+                var stylename = $("#roomstyle-name").val();
+                var styleshortname = $("#roomstyle-shortname").val();
+                var description = $("#roomstyle-description").val();
+                if (stylename != null && stylename != "" && styleshortname != null && styleshortname != "" && description != null && description != "") {
+                    $.ajax({
+                        url: "https://localhost:44329/Receptionists/Rooms/CreateRoomStyle",
+                        data: { name: stylename, shortname: styleshortname, description: description },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (response) {
+                            debugger;
+                            if (response != null && response != "") {
+                                location.reload();
+                                $('#addRoomStyleModal').modal('hide');
+                            }
+                            else {
+                                alert("Room style is exists!");
+                            }
+                        }
+                    });
+                }
+                else {
+                    alert("Không được bỏ trống !");
+                }
+            });
+
+            $(".submit-edit-roomstyle").click(function () {
+                debugger;
+                var styleid = $("#edit-roomstyle-id").val();
+                var stylename = $("#edit-roomstyle-name").val();
+                var styleshortname = $("#edit-roomstyle-shortname").val();
+                var description = $("#edit-roomstyle-description").val();            
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/UpdateRoomStyle",
+                    data: { RoomStyleID: styleid, RoomStyleName: stylename, RoomStyleShortName: styleshortname, Description: description },
                     type: "POST",
                     dataType: "json",
                     success: function (response) {
                         debugger;
                         if (response != null && response != "") {
                             location.reload();
-                            $('#deleteRoomModal').modal('hide');
+                            $('#editRoomStyleModal').modal('hide');
                         }
                     }
                 });
             });
-            
+
+            $("#delete-roomstyle-btn").click(function () {
+                debugger;
+                var roomstyleid = $(this).attr("data-roomstyleid");
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/DeleteRoomStyle",
+                    data: { roomStyleId: roomstyleid },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            location.reload();
+                            $('#deleteRoomStyleModal').modal('hide');
+                        }
+                        else {
+                            alert("Khong duoc xoa !")
+                        }
+                    }
+                });
+            });
+
+
+            $(".submit-add-new-roomsize").click(function () {
+                debugger;
+                var sizename = $("#roomsize-name").val();
+                var sizeshortname = $("#roomsize-shortname").val();
+                var guestcount = $("#roomsize-guestcount").val();
+                var description = $("#roomsize-description").val();
+                if (sizename != null && sizename != "" && sizeshortname != null && sizeshortname != "" && description != null && description != "" && guestcount !=null && guestcount != "") {
+                    $.ajax({
+                        url: "https://localhost:44329/Receptionists/Rooms/CreateRoomSize",
+                        data: { sizeName: sizename, sizeShortName: sizeshortname , guestCount :guestcount, description: description },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (response) {
+                            debugger;
+                            if (response != null && response != "") {
+                                location.reload();
+                                $('#addRoomSizeModal').modal('hide');
+                            }
+                            else {
+                                alert("Room size is exists!");
+                            }
+                        }
+                    });
+                }
+                else {
+                    alert("Không được bỏ trống !");
+                }
+            });
+
+            $(".submit-edit-roomsize").click(function () {
+                debugger;
+                var sizeid = $("#edit-roomsize-id").val();;
+                var sizename = $("#edit-roomsize-name").val();
+                var sizeshortname = $("#edit-roomsize-shortname").val();
+                var guestcount = $("#edit-roomsize-guestcount").val();
+                var description = $("#edit-roomsize-description").val();               
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/UpdateRoomSize",
+                    data: {RoomSizeID:sizeid, RoomSizeName: sizename, RoomSizeShortName: sizeshortname, GuestCount: guestcount, Description: description },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response != null && response != "") {
+                            location.reload();
+                            $('#editRoomSizeModal').modal('hide');
+                        }
+                    }
+                });
+            });
+
+            $("#delete-roomsize-btn").click(function () {
+                debugger;
+                var roomsizeid = $(this).attr("data-roomsizeid");
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Rooms/DeleteRoomSize",
+                    data: { roomSizeId: roomsizeid },
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response == true) {
+                            location.reload();
+                            $('#deleteRoomSizeModal').modal('hide');
+                        }
+                        else {
+                            alert("Khong duoc xoa !")
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>

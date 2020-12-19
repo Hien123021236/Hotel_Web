@@ -64,7 +64,7 @@ namespace Hotel_Web.Areas.Guests.Data
 
         public static int GetAvailableRoomID(int RoomTypeID, DateTime CheckInDate, DateTime CheckOutDate) {
             SqlConnection conn = Connection.GetConnection();
-            string sql = "SELECT RoomID from Room where RoomTypeID = @roomtypeid EXCEPT SELECT RoomID from Booking WHERE (CheckInDate < @checkoutdate) AND (@checkoutdate <= CheckOutDate)	OR(CheckOutDate > @checkindate) AND	(@checkindate >= CheckInDate) OR (CheckInDate > @checkindate) AND (CheckOutDate < @checkoutdate)";
+            string sql = "SELECT RoomID from Room where RoomTypeID = @roomtypeid EXCEPT SELECT RoomID from Booking WHERE Status <> 'Checked-Out' AND ((CheckInDate < @checkoutdate) AND (@checkoutdate <= CheckOutDate)	OR(CheckOutDate > @checkindate) AND	(@checkindate >= CheckInDate) OR (CheckInDate > @checkindate) AND (CheckOutDate < @checkoutdate))";
             SqlCommand cm = new SqlCommand(sql, conn);
             cm.Parameters.AddWithValue("@roomtypeid", RoomTypeID);
             cm.Parameters.AddWithValue("@checkindate", CheckInDate);

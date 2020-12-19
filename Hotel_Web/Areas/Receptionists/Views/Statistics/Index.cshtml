@@ -1,12 +1,129 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
 }
+@using Hotel_Web.Areas.Receptionists.Data;
+@using Hotel_Web.Areas.Receptionists.Models;
 
-<br />
-<br />
-<br />
-<br />
-<h2>Statistics</h2>
+@model ReportModel
+<!DOCTYPE html>
+<html5>
+    <head>
+        <link rel="stylesheet" href="~/receptionists/css/guests.css">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+        <style>
+            body {
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid guest-container">
+            <div class="row top-container">
+                <nav class="nav nav-pills nav-justified">
+                    <a class="nav-link active" href="@Url.Action("Index", "Statistics")">Biểu đồ doanh thu theo năm</a>
+                    <a class="nav-link" href="@Url.Action("ReportTable", null, new { area = "Receptionists", controller = "Statistics" })">Báo cáo doanh thu</a>
+                </nav>
+            </div>
+            <div class="row body-container">
+
+                <div class="input-group">
+                    <select id="year-id" class="yearselect"></select>
+                    <div class="input-group-append">
+                        <button class="btn btn-success search-year" type="submit" style="z-index:0">Go</button>
+                    </div>
+                </div>
+                <figure class="highcharts-figure">
+                    <div id="container" style="height:600px ;width:900px"></div>
+                </figure>
+            </div>
+        </div>
+    </body>
+    <script src="~/receptionists/js/year-select.js"></script>
+    <script>
+        var months = [];
+        var amounts = [];
+
+        $(document).ready(function () {
+            $('.yearselect').yearselect();
+            $('.yearselect').yearselect({
+                start: 2017,
+                end: 2021,
+                order: 'desc',
+                selected:2020
+            });
+
+
+
+            $(".search-year").click(function () {
+                debugger;
+                var year = $("#year-id").val();
+                $.ajax({
+                    url: "https://localhost:44329/Receptionists/Statistics/ReportYear",
+                    data: { year: year },
+                    type: "post",
+                    dataType: "json",
+                    success: function (response) {
+                        debugger;
+                        if (response != null) {
+                            InitChart(Object.keys(response), Object.values(response));
+                        }
+                    }
+                });
+            });
+        });
+
+        function InitChart(months, amounts) {
+            var chart = new Highcharts.Chart('container', {
+                chart: {
+                    type: 'column',
+                    options3d: {
+                        enabled: true,
+                        alpha: 15,
+                        beta: 15,
+                        depth: 50,
+                        viewDistance: 25
+                    }
+                },
+                title: {
+                    text: 'Revenue Month'
+                },
+                xAxis: {
+                    categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    labels: {
+                        skew3d: true,
+                        style: {
+                            fontSize: '16px'
+                        }
+                    },
+                    data: months,
+                    name:"Month"
+                },
+                yAxis: {
+
+                },
+                plotOptions: {
+                    column: {
+                        depth: 50
+                    }
+                },
+                series: [{
+                    data: amounts,
+                    name: "Amount"
+                }]
+            });
+
+        }
+    </script>
+</html5>
+
+
+
 

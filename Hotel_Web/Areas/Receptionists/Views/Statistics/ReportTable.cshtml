@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "ReportTable";
+    Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
+}
+@using Hotel_Web.Areas.Receptionists.Data;
+@using Hotel_Web.Areas.Receptionists.Models;
+@model List<ReportModel>
+
+<link rel="stylesheet" type="text/css" href="~/receptionists/lib/DataTables/datatables.min.css" />
+<link rel="stylesheet" href="~/receptionists/css/guests.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="~/receptionists/lib/DataTables/datatables.min.js"></script>
+
+<style>
+
+    .pagination .active a {
+        z-index: 1;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .page-btn a {
+        padding: 0.25rem 0.75rem;
+    }
+
+    .table-infor {
+        font-size: 15px;
+        height: 100%;
+        line-height: 34px;
+    }
+</style>
+
+<div class="container-fluid guest-container">
+    <div class="row top-container">
+        <nav class="nav nav-pills nav-justified">
+            <a class="nav-link" href="@Url.Action("Index", "Statistics")">Biểu đồ doanh thu theo năm</a>
+            <a class="nav-link" href="@Url.Action("ReportTable", null, new { area = "Receptionists", controller = "Statistics" })">Báo cáo doanh thu</a>
+        </nav>
+    </div>
+    <div class="row body-container">
+
+        <table id="all-guests-table" class="table table-sm dataTable">
+            <thead class="thead-light">
+                <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="all-guests-table" aria-sort="ascending" style="width: 250px; ">Year</th>
+                    <th class="sorting" aria-controls="all-guests-table" style="width: 250px;">Month</th>
+                    <th class="sorting" aria-controls="all-guests-table" style="width: 500px;">Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var r in Model)
+                    {
+                        <tr role="row">
+                            <td> @r.Year</td>
+                            <td> @r.Month </td>
+                            <td> @r.Amount </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <button onclick="exportTableToExcel('all-guests-table')" style="font-size:16px">Export Table Data To Excel File</button>
+
+    </div>
+</div>
+
+<script>
+    function exportTableToExcel(tableID, filename = '') {
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+        // Specify file name
+        filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+        // Create download link element
+        downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if (navigator.msSaveOrOpenBlob) {
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.fn.dataTable.ext.classes.sPageButton = 'page-btn';
+        $.fn.dataTable.ext.classes.sInfo = 'table-infor';
+
+        $('#all-guests-table').DataTable({
+            lengthMenu: [10, 25, 50, 100],
+            pageLength: 25,
+        });
+
+        $(".nav a").click(function () {
+            var tabid = $(this).attr("href");
+            $(this).removeClass("active");
+            $(this).addClass("active");
+            $(tabid).addClass("active");
+        });
+
+    });
+</script>

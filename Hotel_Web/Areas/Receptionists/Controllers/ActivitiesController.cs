@@ -17,6 +17,8 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
             if (!Authentication.AuthenticateByCookie(HttpContext))
                 return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Index");
 
+            BookingDAO.Update();
+
             ActivitiesViewModel model = ActivitiesDAO.GetActivitiesViewModel();
 
             return View(model);
@@ -24,11 +26,12 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
 
 
         [Area("Receptionists")]
-        public IActionResult Checkin(int id)
+        public IActionResult Checkin(int id, bool isEdit = true)
         {
             if (!Authentication.AuthenticateByCookie(HttpContext))
                 return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Index");
 
+            ViewBag.isEdit = isEdit;
             BookingModel model = BookingDAO.GetBookingModel(id);
             
             if(StayDAO.GetALLGuestsOfBooking(id).Count == 0)
@@ -46,12 +49,31 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
             return View(model);
         }
 
+        [Area("Receptionists")]
+        public IActionResult Checkout(int id , bool isEdit = true)
+        {
+            if (!Authentication.AuthenticateByCookie(HttpContext))
+                return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Index");
+
+            ViewBag.isEdit = isEdit;
+            BookingModel model = BookingDAO.GetBookingModel(id);
+            return View(model);
+        }
+
 
         [Area("Receptionists")]
         [HttpPost]
-        public IActionResult ConfirmCheckin(int bookingId)
+        public IActionResult ConfirmCheckin(int bookingId, int extraChange)
         {
-            return Json(BookingDAO.ConfirmBooking(bookingId));
+
+            return Json(BookingDAO.ConfirmBooking(bookingId,extraChange));
+        }
+
+        [Area("Receptionists")]
+        [HttpPost]
+        public IActionResult ConfirmCheckOut(int bookingId , int extraChange)
+        {
+            return Json(BookingDAO.ConfirmCheckOut(bookingId, extraChange));
         }
 
         [Area("Receptionists")]

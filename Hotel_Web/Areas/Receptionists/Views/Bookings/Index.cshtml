@@ -4,6 +4,7 @@
     Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
 }
 @using Hotel_Web.Areas.Receptionists.Models;
+@using Hotel_Web;
 @model  List<BookingModel>
 
 <link rel="stylesheet" type="text/css" href="~/receptionists/lib/DataTables/datatables.min.css" />
@@ -92,11 +93,25 @@
                                     <td> <a href="/Receptionists/Rooms/Detail?id=@bk.Room.RoomID"> @bk.Room.RoomID </a> </td>
                                     <td> @bk.Room.RoomType.RoomStyle.RoomStyleName </td>
                                     <td> @bk.Room.RoomType.RoomSize.RoomSizeName </td>
-                                    <td> @bk.Room.RoomType.Price $</td>
+                                    <td> @(Utlities.IntToCurrencyString(bk.Amount,",")) $</td>
                                     <td> @bk.CheckInDate.ToString("MM/dd/yyyy") </td>
                                     <td> @bk.CheckOutDate.ToString("MM/dd/yyyy")</td>
                                     <td> @bk.Status</td>
-                                    <td> ........ </td>
+                                    @if (bk.Status == "Confirmed")
+                                    {
+                                        <td><a href="/Receptionists/Activities/Checkin?id=@bk.BookingID&isEdit=true"><img src="~/receptionists/img/checkin_icon.png" height="20" /></a></td>
+
+                                    }
+                                    else
+                                    if (bk.Status == "Checked-In")
+                                    {
+                                        <td><a href="/Receptionists/Activities/Checkout?id=@bk.BookingID&isEdit=true"><img src="~/receptionists/img/checkout_icon.png" height="20" /></a></td>
+                                    }
+                                    else
+                                    if (bk.Status == "Checked-Out")
+                                    {
+                                        <td>...</td>
+                                    }
                                 </tr>
                     }
                 }
@@ -117,3 +132,4 @@
         });
     });
 </script>
+

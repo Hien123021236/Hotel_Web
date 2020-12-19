@@ -3,7 +3,9 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
 }
-
+@using Hotel_Web.Areas.Receptionists.Data;
+@using Hotel_Web.Areas.Receptionists.Models;
+@model RoomTypeModel
 <!DOCTYPE html>
 <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 <head>
@@ -59,11 +61,11 @@
                                             <td colspan="5" style="text-align:center; width:366px"><strong>Promotional Rates (US$)</strong></td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align:center; width:72px"><strong>Single</strong></td>
-                                            <td style="text-align:center; width:72px"><strong>Double/Twin</strong></td>
-                                            <td style="text-align:center; width:72px"><strong>Triple</strong></td>
-                                            <td style="text-align:center; width:78px"><strong>Quadruple</strong></td>
-                                            <td style="text-align:center; width:72px"><strong>Quintuple</strong></td>
+
+                                            @foreach (var size in RoomSizeDAO.GetAllRoomSizeViewModel())
+                                            {
+                                                <td style="text-align:center; width:72px"><strong>@size.RoomSize.RoomSizeName</strong></td>
+                                            }
                                         </tr>
                                         <tr>
                                             <td style="height:48px; text-align:center; width:199px">Superior&nbsp; Room</td>
@@ -182,7 +184,7 @@
 
                                 <ul>
                                     <li>Throughout the months, we offer discounted rates for certain room allotment on&nbsp;certain days. Please click on&nbsp;certain dates to check the best rates available.</li>
-                                    <li>Contact us at&nbsp;<a href="#" style="box-sizing: border-box; background-color: transparent; color: rgb(51, 122, 183); text-decoration-line: none;"><strong><u>nguyenhuuminhkhai@gmail.com</u>&nbsp;</strong></a>or click the&nbsp;online support&nbsp;if you want to know more of the deals.</li>
+                                    <li>Contact us at&nbsp;<a href="#" style="box-sizing: border-box; background-color: transparent; color: rgb(51, 122, 183); text-decoration-line: none;"><strong><u>ngochienpr2014@gmail.com</u>&nbsp;</strong></a>or click the&nbsp;online support&nbsp;if you want to know more of the deals.</li>
                                     <li>Applicable for direct booking at&nbsp;<a href="#" style="box-sizing: border-box; background-color: transparent; color: rgb(51, 122, 183); text-decoration-line: none;"><strong>www.HotelOfila.com</strong></a></li>
                                 </ul>
 

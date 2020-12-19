@@ -30,7 +30,7 @@ namespace Hotel_Web.Areas.Guests.Data
                     conn.Open();
                     if (id > 0)
                     {
-                        string sql = "UPDATE Booking SET GuestID = @guestid, RoomID = @roomid, BookingDate = CURRENT_TIMESTAMP, CheckInDate = @checkindate, CheckOutDate = @checkoutdate, PaymentID = @paymentid, Status = 'Confirmed' where BookingID = @bookingid ";
+                        string sql = "UPDATE Booking SET GuestID = @guestid, RoomID = @roomid, BookingDate = CURRENT_TIMESTAMP, CheckInDate = @checkindate, CheckOutDate = @checkoutdate, PaymentID = @paymentid, Amount = @amount, Status = 'Confirmed' where BookingID = @bookingid ";
                         cm = new SqlCommand(sql, conn);
                         cm.Parameters.AddWithValue("@bookingid", SqlDbType.Int).Value = id;
                         cm.Parameters.AddWithValue("@guestid", SqlDbType.NVarChar).Value = booking.GuestID; 
@@ -38,7 +38,7 @@ namespace Hotel_Web.Areas.Guests.Data
                         cm.Parameters.AddWithValue("@checkindate", SqlDbType.NVarChar).Value = booking.CheckInDate; 
                         cm.Parameters.AddWithValue("@checkoutdate", SqlDbType.NVarChar).Value = booking.CheckOutDate;
                         cm.Parameters.AddWithValue("@paymentid", SqlDbType.NVarChar).Value = booking.PaymentID;
-                       
+                        cm.Parameters.AddWithValue("@amount", SqlDbType.Int).Value = booking.Amount;
                         int row = cm.ExecuteNonQuery();
 
                         if (row > 0) return id;

@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "~/Areas/Receptionists/Views/_Shared/_Layout.cshtml";
+}
+@using Hotel_Web.Areas.Receptionists.Models;
+@using Hotel_Web.Areas.Receptionists.Data;
+@using Hotel_Web;
+
+@model BookingModel
+
+<link rel="stylesheet" href="~/receptionists/lib/DataTables/datatables.min.css" />
+<link rel="stylesheet" href="~/receptionists/css/checkin.css" />
+<script type="text/javascript" src="~/receptionists/lib/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+<div class="checkin-container">
+    <div class="row top-container">
+        <div class="col-10" style="font-weight: bold; font-size: 18px; margin-top: 7px;">CHECK - OUT</div>
+        @if ((bool)ViewBag.isEdit == true)
+        {
+            <div class="col-1"><button class="btn btn-primary confirm-checkout" data-bookingid="@Model.BookingID">Confirm</button></div>
+        }
+    </div>
+    <div class="row body-container">
+        <div class="col booking-container">
+            <div class="row title-group">Booking Informations</div>
+            <div class="row body-group">
+                <div class="col">
+                    <div class="row group-item">
+                        <div class="col text-left">Booking ID :</div>
+                        <div class="col text-right font-weight-bold"> @Model.BookingID</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Booking Time :</div>
+                        <div class="col text-right font-weight-bold"> @Model.BookingDate.ToString("MM/dd/yyyy") </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Arrival :</div>
+                        <div class="col text-right font-weight-bold"> @Model.CheckInDate.ToString("MM/dd/yyyy") </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Departure :</div>
+                        <div class="col text-right font-weight-bold"> @Model.CheckOutDate.ToString("MM/dd/yyyy") </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Amount:</div>
+                        <div class="col text-right font-weight-bold">@(Utlities.IntToCurrencyString(Model.Amount,","))</div>
+                    </div>
+                    @if ((bool)ViewBag.isEdit == true)
+                    {
+                        <div class="row group-item">
+                            <div class="col text-left center">ExtraChange:</div>
+                            @if ((int)((((Model.Room.RoomType.Price) / 22)) * (DateTime.Now - Model.CheckOutDate).TotalHours) < 0)
+                            {
+                                <div class="col text-right font-weight-bold"><input id="extraChange" class="form-control" type="text" name="extraChange" value="0" /></div>
+                            }
+                            else
+                            {
+                                <div class="col text-right font-weight-bold"><input id="extraChange" class="form-control" type="text" name="extraChange" value="@(Utlities.IntToCurrencyString((int)((((Model.Room.RoomType.Price)/22))*(DateTime.Now - Model.CheckOutDate).TotalHours), ","))" /></div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col room-container">
+            <div class="row title-group">Room Informations</div>
+            <div class="row body-group">
+                <div class="col">
+                    <div class="row group-item">
+                        <div class="col text-left">Room ID :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomID</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Room Style :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.RoomStyle.RoomStyleName</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Room Size :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.RoomSize.RoomSizeName</div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Room Price :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.Price </div>
+                    </div>
+                    <div class="row group-item">
+                        <div class="col text-left">Descriptions :</div>
+                        <div class="col text-right font-weight-bold"> @Model.Room.RoomType.Description </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col guests-container">
+            <div class="row title-group">Guests Informations</div>
+            <div class="row body-group">
+                <div class="col" id="list-guest">
+                    <div class="row">Checked-in 1 of 3 </div>
+                    @{
+                        var stays = StayDAO.GetStaysOfBooking(Model.BookingID);
+                        for (int i = 0; i < stays.Count; i++)
+                        {
+                            var guest = GuestDAO.GetGuest((int)stays[i].GuestID);
+                            <div class="row guest-slot justify-content-center"> <span class="guest" data-stayid="@stays[i].StayID"> @guest.FullName </span> </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".confirm-checkout").click(function () {
+            debugger;
+            var bookingid = $(this).attr("data-bookingid");
+            var str = $("#extraChange").val().replace(',', '');
+            var extraChange = parseInt(str);
+            $.ajax({
+                url: "https://localhost:44329/Receptionists/Activities/ConfirmCheckout",
+                data: { bookingId: bookingid, extraChange: extraChange },
+                type: "POST",
+                dataType: "json",
+                success: function (response) {
+                    debugger;
+                    location.reload();
+                    alert("Successful Check-Out !");
+                }
+            });
+        });
+    });
+</script>

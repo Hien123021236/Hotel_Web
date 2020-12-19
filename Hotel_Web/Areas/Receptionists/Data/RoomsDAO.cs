@@ -226,7 +226,7 @@ namespace Hotel_Web.Areas.Receptionists.Data
                             RoomViewModel room = GetRoomViewModel(rs.GetInt32(0));
                             if (room.Status == "Empty") model.EmptyCount++;
                             if (room.Status == "Reserved") model.ReservedCount++;
-                            if (room.Status == "Occupied") model.OccupiedCount++;
+                            if (room.Status == "Occupied" || room.Status == "Stayover") model.OccupiedCount++;
                             if (room.Status == "Stayover") model.StayoverCount++;
                             model.Rooms.Add(room);
                         }

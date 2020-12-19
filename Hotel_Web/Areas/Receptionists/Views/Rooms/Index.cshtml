@@ -120,7 +120,7 @@
                                 <div class="room-number row reserved-bg justify-content-center"> @room.RoomID </div>
                                 <div class="room-status row">
                                     <img class="remaining-time remaining-time-icon" data-toggle="tooltip" title="remaining time" style="margin: 2px;" width="18" height="18" src="~/receptionists/img/time_icon.png" />
-                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @room.RemainingTime.TotalDays d @room.RemainingTime.TotalHours h </span>
+                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @((int)room.RemainingTime.TotalDays) d @((int)room.RemainingTime.TotalHours) h </span>
                                     @for (int i = 0; i < room.RoomType.RoomSize.GuestCount; i++)
                                     {
                                         <img class="non-guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
@@ -129,7 +129,7 @@
                                     <div class="options-hidden-container">
                                         <div class="options-hidden-wrapper">
                                             <div class="row menu-item">Detail</div>
-                                            <div class="row menu-item"><a href="/Receptionists/Activities/Checkin?id=@BookingDAO.GetCurrentBookingOfRoom(room.RoomID)"><img src="~/receptionists/img/checkin_icon.png" height="20" /></a>Check-in</div>
+                                            <div class="row menu-item"><a href="/Receptionists/Activities/Checkin?id=@BookingDAO.GetCurrentBookingOfRoom(room.RoomID).BookingID"><img src="~/receptionists/img/checkin_icon.png" height="20" /></a>Check-In</div>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                 <div class="room-number row occupied-bg justify-content-center"> @room.RoomID </div>
                                 <div class="room-status row">
                                     <img class="remaining-time remaining-time-icon" style="margin: 2px;" width="18" height="18" src="~/receptionists/img/time_icon.png" />
-                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @room.RemainingTime.TotalDays d @room.RemainingTime.TotalHours h </span>
+                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @((int)room.RemainingTime.TotalDays) d @((int)room.RemainingTime.TotalHours) h </span>
                                     @foreach (var guest in room.Guests)
                                     {
                                         <img class="guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
@@ -161,7 +161,7 @@
                                     <div class="options-hidden-container">
                                         <div class="options-hidden-wrapper">
                                             <div class="row menu-item">Detail</div>
-                                            <div class="row menu-item">Check-out</div>
+                                            <div class="row menu-item"><a href="/Receptionists/Activities/Checkout?id=@BookingDAO.GetCurrentBookingOfRoom(room.RoomID).BookingID"><img src="~/receptionists/img/checkout_icon.png" height="20" /></a>Check-Out</div>
                                         </div>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@
                                 <div class="room-number row stayover-bg justify-content-center"> @room.RoomID </div>
                                 <div class="room-status row">
                                     <img class="remaining-time remaining-time-icon" style="margin: 2px;" width="18" height="18" src="~/receptionists/img/time_icon.png" />
-                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @room.RemainingTime.TotalDays d @room.RemainingTime.TotalHours h </span>
+                                    <span class="remaining-time remaining-time-value" style="margin-right:20px"> @((int)room.RemainingTime.TotalDays) d @((int)room.RemainingTime.TotalHours) h </span>
                                     @foreach (var guest in room.Guests)
                                     {
                                         <img class="guest" style="margin-top: 3px;" width="16" height="16" src="~/receptionists/img/guest_nonactive_icon.png" />
@@ -193,7 +193,7 @@
                                     <div class="options-hidden-container">
                                         <div class="options-hidden-wrapper">
                                             <div class="row menu-item">Detail</div>
-                                            <div class="row menu-item">Check-out</div>
+                                            <div class="row menu-item"><a href="/Receptionists/Activities/Checkout?id=@BookingDAO.GetCurrentBookingOfRoom(room.RoomID).BookingID"><img src="~/receptionists/img/checkout_icon.png" height="20" /></a>Check-Out</div>
                                         </div>
                                     </div>
                                 </div>
@@ -208,4 +208,5 @@
 </div>
 
 <script type="text/javascript" src="~/receptionists/js/rooms.js"></script>
+
 

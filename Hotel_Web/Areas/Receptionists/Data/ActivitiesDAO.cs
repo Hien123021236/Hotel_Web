@@ -118,7 +118,7 @@ namespace Hotel_Web.Areas.Receptionists.Data
                 if (conn != null)
                 {
                     BookingModel bk = null;
-                    string sql = "SELECT BookingID FROM dbo.Booking WHERE YEAR(CheckOutDate) <= YEAR(CURRENT_TIMESTAMP) and MONTH(CheckOutDate) <= MONTH(CURRENT_TIMESTAMP) and DAY(CheckOutDate) <= DAY(CURRENT_TIMESTAMP) and Status ='Checked-Out'";
+                    string sql = "SELECT BookingID FROM dbo.Booking WHERE YEAR(CheckOutDate) >= YEAR(CURRENT_TIMESTAMP) and MONTH(CheckOutDate) >= MONTH(CURRENT_TIMESTAMP) and DAY(CheckOutDate) >= DAY(CURRENT_TIMESTAMP) and Status ='Checked-Out'";
                     SqlCommand cm = new SqlCommand(sql, conn);
                     var rs = cm.ExecuteReader();
                     if (rs.HasRows)

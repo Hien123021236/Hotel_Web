@@ -3,9 +3,8 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Guests/Views/Shared/_Layout.cshtml";
 }
-@using Hotel_Web.Areas.Receptionists.Data;
-@using Hotel_Web.Areas.Receptionists.Models;
-@model RoomTypeModel
+@using Hotel_Web.Areas.Guests.Data;
+@using Hotel_Web.Areas.Guests.Models;
 <!DOCTYPE html>
 <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 <head>
@@ -56,100 +55,27 @@
                                 <table border="1" cellpadding="8" cellspacing="0" style="width:100%">
                                     <tbody>
                                         <tr>
-                                            <td rowspan="2" style="text-align:center; width:199px"><strong>Room Type</strong></td>
-                                            <td rowspan="2" style="text-align:center; width:126px"><strong>Public Rates (US$) (start for single)</strong></td>
-                                            <td colspan="5" style="text-align:center; width:366px"><strong>Promotional Rates (US$)</strong></td>
+                                            <td rowspan="2" style="text-align:center; width:199px"><strong>Room Style</strong></td>
+                                            <td colspan="5" style="text-align:center; width:366px"><strong>Price (US$)</strong></td>                                   
                                         </tr>
                                         <tr>
-
-                                            @foreach (var size in RoomSizeDAO.GetAllRoomSizeViewModel())
+                                            @foreach (var size in RoomSizeDAO.GetAllRoomSize())
                                             {
-                                                <td style="text-align:center; width:72px"><strong>@size.RoomSize.RoomSizeName</strong></td>
+                                                <td style="text-align:center; width:72px"><strong>@size.RoomSizeName</strong></td>
                                             }
                                         </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Superior&nbsp; Room</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND2.835.000) US$105++</td>
-                                            <td style="height:48px; text-align:center; width:72px">60</td>
-                                            <td style="height:48px; text-align:center; width:72px">70</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Deluxe Window</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND3.245.000)&nbsp; &nbsp;US$120++</td>
-                                            <td style="height:48px; text-align:center; width:72px">70</td>
-                                            <td style="height:48px; text-align:center; width:72px">80</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Deluxe Balcony</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND3.515.000) US$130++</td>
-                                            <td style="height:48px; text-align:center; width:72px">80</td>
-                                            <td style="height:48px; text-align:center; width:72px">90</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Junior Suite Window</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND3.300.000) US$145++</td>
-                                            <td style="height:48px; text-align:center; width:72px">90</td>
-                                            <td style="height:48px; text-align:center; width:72px">105</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Junior Suite Balcony</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND4.190.000) US$155++</td>
-                                            <td style="height:48px; text-align:center; width:72px">100</td>
-                                            <td style="height:48px; text-align:center; width:72px">115</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Suite City View</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND4.595.000) US$170++</td>
-                                            <td style="height:48px; text-align:center; width:72px">115</td>
-                                            <td style="height:48px; text-align:center; width:72px">130</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Essence Suite Balcony</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND4.595.000) US$170++</td>
-                                            <td style="height:48px; text-align:center; width:72px">115</td>
-                                            <td style="height:48px; text-align:center; width:72px">130</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                            <td style="height:48px; text-align:center; width:78px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Family Interconnecting</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND5.405.000) US$200++&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">130</td>
-                                            <td style="height:48px; text-align:center; width:72px">140</td>
-                                            <td style="height:48px; text-align:center; width:78px">150</td>
-                                            <td style="height:48px; text-align:center; width:72px">*</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="height:48px; text-align:center; width:199px">Family Premier</td>
-                                            <td style="height:48px; text-align:center; width:126px">(VND5.405.000) US$200++&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">&nbsp;</td>
-                                            <td style="height:48px; text-align:center; width:72px">n/a</td>
-                                            <td style="height:48px; text-align:center; width:72px">130</td>
-                                            <td style="height:48px; text-align:center; width:78px">140</td>
-                                            <td style="height:48px; text-align:center; width:72px">150</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                        @foreach (var style in RoomStyleDAO.GetAllRoomStyle())
+                                        {
+                                    <tr>
+                                        <td style="text-align:center; width:72px"><strong>@style.RoomStyleName</strong></td>
+                                        @foreach (var size in RoomSizeDAO.GetAllRoomSize())
+                                        {
+                                            <td style="text-align:center; width:72px"><strong>@(RoomTypeDAO.GetRoomTypeByStyleAndSize(style.RoomStyleID,size.RoomSizeID) == null ? "N/A" : RoomTypeDAO.GetRoomTypeByStyleAndSize(style.RoomStyleID, size.RoomSizeID).Price.ToString())</strong></td>
+                                        }
+                                    </tr>
+                                        }
+                                        </tbody>
+                                  </table>
 
                                 <div>
                                     <br>

@@ -29,7 +29,7 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
         public IActionResult Checkin(int id, bool isEdit = true)
         {
             if (!Authentication.AuthenticateByCookie(HttpContext))
-                return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Index");
+                return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Checkin");
 
             ViewBag.isEdit = isEdit;
             BookingModel model = BookingDAO.GetBookingModel(id);
@@ -53,7 +53,7 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
         public IActionResult Checkout(int id , bool isEdit = true)
         {
             if (!Authentication.AuthenticateByCookie(HttpContext))
-                return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Index");
+                return Redirect("/Receptionists/Authentication/Login?are=Receptionists&ctrl=Activities&act=Checkout");
 
             ViewBag.isEdit = isEdit;
             BookingModel model = BookingDAO.GetBookingModel(id);

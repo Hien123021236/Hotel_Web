@@ -924,6 +924,7 @@
                         if (response != null && response != "") {
                             location.reload();
                             $('#addRoomModal').modal('hide');
+                            alert("Thêm thành công !");
                         }
                         else {
                             alert("Room number is exists!");
@@ -962,12 +963,13 @@
                     dataType: "json",
                     success: function (response) {
                         debugger;
-                        if (response == true) {
+                        if (response == true) {                         
                             location.reload();
                             $('#deleteRoomModal').modal('hide');
+                            alert("Xóa thành công !");
                         }
                         else {
-                            alert("Khong duoc xoa !")
+                            alert("Khong duoc xoa !");
                         }
                     }
                 });
@@ -991,6 +993,7 @@
                             if (response != null && response != "") {
                                 location.reload();
                                 $('#addRoomTypeModal').modal('hide');
+                                alert("Thêm thành công !");
                             }
                             else {
                                 alert("Room type is exists!");
@@ -1013,12 +1016,13 @@
                     dataType: "json",
                     success: function (response) {
                         debugger;
-                        if (response == true) {
+                        if (response == true) {                           
                             location.reload();
                             $('#deleteRoomTypeModal').modal('hide');
+                            alert("Xóa thành công !");
                         }
                         else {
-                            alert("Khong duoc xoa !")
+                            alert("Khong duoc xoa !");
                         }
                     }
                 });
@@ -1040,6 +1044,7 @@
                             if (response != null && response != "") {
                                 location.reload();
                                 $('#addRoomStyleModal').modal('hide');
+                                alert("Thêm thành công !");
                             }
                             else {
                                 alert("Room style is exists!");
@@ -1068,6 +1073,7 @@
                         if (response != null && response != "") {
                             location.reload();
                             $('#editRoomStyleModal').modal('hide');
+                            alert("Sửa thành công !");
                         }
                     }
                 });
@@ -1083,12 +1089,13 @@
                     dataType: "json",
                     success: function (response) {
                         debugger;
-                        if (response == true) {
+                        if (response == true) {                          
                             location.reload();
                             $('#deleteRoomStyleModal').modal('hide');
+                            alert("Xóa thành công !");
                         }
                         else {
-                            alert("Khong duoc xoa !")
+                            alert("Khong duoc xoa !");
                         }
                     }
                 });
@@ -1112,6 +1119,7 @@
                             if (response != null && response != "") {
                                 location.reload();
                                 $('#addRoomSizeModal').modal('hide');
+                                alert("Thêm thành công !");
                             }
                             else {
                                 alert("Room size is exists!");
@@ -1141,6 +1149,7 @@
                         if (response != null && response != "") {
                             location.reload();
                             $('#editRoomSizeModal').modal('hide');
+                            alert("Sửa thành công !");
                         }
                     }
                 });
@@ -1156,12 +1165,13 @@
                     dataType: "json",
                     success: function (response) {
                         debugger;
-                        if (response == true) {
+                        if (response == true) {                           
                             location.reload();
                             $('#deleteRoomSizeModal').modal('hide');
+                            alert("Xóa thành công !");
                         }
                         else {
-                            alert("Khong duoc xoa !")
+                            alert("Khong duoc xoa !");
                         }
                     }
                 });

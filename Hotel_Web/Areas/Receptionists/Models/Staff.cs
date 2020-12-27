@@ -12,5 +12,5 @@ namespace Hotel_Web.Areas.Receptionists.Models
         public string Position { get; set; }
         public string Password { get; set; }
         public bool IsOnline { get; set; } 
-}
+    }
 }

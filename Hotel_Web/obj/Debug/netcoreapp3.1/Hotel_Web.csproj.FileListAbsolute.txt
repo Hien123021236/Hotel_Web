@@ -650,3 +650,4 @@ C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csproj.CopyComplete
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.genruntimeconfig.cache
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\ReportTable.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Staff\Index.cshtml.g.cs

@@ -48,5 +48,40 @@ namespace Hotel_Web.Areas.Guests.Data
 
             return 0;
         }
+
+        public static BookingModel GetBookingModel(int bookingid)
+        {
+            BookingModel bk = null;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                if (conn != null)
+                {
+                    string sql = "SELECT * FROM dbo.Booking WHERE BookingID = @bookingid";
+                    SqlCommand cm = new SqlCommand(sql, conn);
+                    cm.Parameters.AddWithValue("@bookingid", bookingid);
+                    var rs = cm.ExecuteReader();
+                    if (rs.HasRows)
+                    {
+                        while (rs.Read())
+                        {
+                            bk = new BookingModel();
+                            bk.BookingID = rs[0] as int? ?? 0;
+                            bk.Guest = GuestDAO.GetGuest(rs[1] as int? ?? 0);
+                            bk.Room = RoomsDAO.GetRoomModel(rs[2] as int? ?? 0);
+                            bk.BookingDate = rs[3] as DateTime? ?? DateTime.MinValue;
+                            bk.CancelDate = rs[4] as DateTime? ?? DateTime.MinValue;
+                            bk.CheckInDate = rs[5] as DateTime? ?? DateTime.MinValue;
+                            bk.CheckOutDate = rs[6] as DateTime? ?? DateTime.MinValue;
+                            bk.Payment = PaymentDAO.GetPayment(rs[7] as int? ?? 0);
+                            bk.Deposit = rs[8] as int? ?? 0;
+                            bk.Amount = rs[9] as int? ?? 0;
+                            bk.Status = rs[10] as string;
+                        }
+                    }
+                }
+            }
+            return bk;
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Hotel_Web.Areas.Guests.Data;
 using Hotel_Web.Areas.Guests.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 
 namespace Hotel_Web.Areas.Guests.Controllers
 {
@@ -32,9 +33,16 @@ namespace Hotel_Web.Areas.Guests.Controllers
         }
 
 
+        [Area("Guests")]
+        public IActionResult OnGetPartial() =>
+            new PartialViewResult
+            {
+                ViewName = "_ConfirmEmail",
+                ViewData = ViewData,
+            };
 
         [Area("Guests")]
-        public IActionResult Create(int RoomID, DateTime CheckInDate, DateTime CheckOutDate, Guest guest, Payment payment, int Amount)
+        public async Task<IActionResult> Create(int RoomID, DateTime CheckInDate, DateTime CheckOutDate, Guest guest, Payment payment, int Amount)
         {
             int guestid = GuestDAO.InsertGuest(guest);
             int paymentid = PaymentDAO.InsertPayment(payment);
@@ -48,10 +56,21 @@ namespace Hotel_Web.Areas.Guests.Controllers
                 PaymentID = paymentid,             
             });
 
+            var model = BookingDAO.GetBookingModel(bookingid);
+            string body = await Utlities.RenderViewToStringAsync<BookingModel>(this, "~/Areas/Guests/Views/Partial/_ConfirmEmail.cshtml", model);
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("hien@gmail.com");
+            mail.To.Add(guest.Email);
+            mail.Subject = "Congratulations on your successful booking";
+            mail.Body = body;
+            mail.IsBodyHtml = true;
+
+            Utlities.SendEmail(mail);
+
             return View();
         }
 
-
+       
 
         [Area("Guests")]
         [HttpPost]

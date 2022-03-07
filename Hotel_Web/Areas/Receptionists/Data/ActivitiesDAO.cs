@@ -38,7 +38,7 @@ namespace Hotel_Web.Areas.Receptionists.Data
             {
                 if (conn != null)
                 {
-                    string sql = "SELECT COUNT(RoomID) FROM Room WHERE Status = 'Occupited' or Status = 'Stayover' ";
+                    string sql = "SELECT COUNT(RoomID) FROM Room WHERE Status = 'Occupied' or Status = 'Stayover' ";
                     SqlCommand cm = new SqlCommand(sql, conn);
                     var rs = cm.ExecuteReader();
                     if (rs.Read())
@@ -76,7 +76,7 @@ namespace Hotel_Web.Areas.Receptionists.Data
                 if (conn != null)
                 {
                     BookingModel bk = null;
-                    string sql = "SELECT BookingID FROM dbo.Booking WHERE YEAR(CheckInDate) <= YEAR(CURRENT_TIMESTAMP) and MONTH(CheckInDate) <= MONTH(CURRENT_TIMESTAMP) and DAY(CheckInDate) <= DAY(CURRENT_TIMESTAMP) and Status = 'Checked-In'";
+                    string sql = "SELECT BookingID FROM dbo.Booking WHERE YEAR(CheckInDate) >= YEAR(CURRENT_TIMESTAMP) and MONTH(CheckInDate) >= MONTH(CURRENT_TIMESTAMP) and DAY(CheckInDate) >= DAY(CURRENT_TIMESTAMP) and Status = 'Checked-In'";
                     SqlCommand cm = new SqlCommand(sql, conn);
                     var rs = cm.ExecuteReader();
                     if (rs.HasRows)

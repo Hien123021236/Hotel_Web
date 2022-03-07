@@ -27,12 +27,18 @@ namespace Hotel_Web.Areas.Receptionists.Data
                             if (rs.GetInt32(0) == i)
                             {
                                 values.Add(i.ToString(), rs.GetInt32(1));
-                                rs.Read();
+                                if (!rs.Read()) {
+                                    for (int j = i+1; j <= 12; j++) {
+                                        values.Add(j.ToString(), 0);
+                                    }
+                                    return values;
+                                }
                             }
                             else
                             {
                                 values.Add(i.ToString(), 0);
                             }
+
                         }
                     };
                     

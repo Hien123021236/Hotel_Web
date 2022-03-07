@@ -122,6 +122,7 @@ namespace Hotel_Web.Areas.Receptionists.Data
             SqlConnection conn = Connection.GetConnection();
             if (conn != null)
             {
+              
                 string sql = "select * from RoomType where RoomSizeID = @sizeid and RoomStyleID = @styleid";
                 SqlCommand cm = new SqlCommand(sql, conn);
                 cm.Parameters.AddWithValue("@styleid", styleid);

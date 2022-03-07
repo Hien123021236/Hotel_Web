@@ -226,7 +226,7 @@
                                     <td>@room.RoomType.RoomStyle.RoomStyleName</td>
                                     <td>@room.RoomType.RoomSize.RoomSizeName</td>
                                     <td>
-                                        <a class="edit-room" onclick="OpenEdit(event)" data-roomid="@room.RoomID" data-styleid="@room.RoomType.RoomStyle.RoomStyleID" data-sizeid="@room.RoomType.RoomSize.RoomSizeID"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a class="edit-room" onclick="OpenEdit(event)" data-roomid="@room.RoomID" data-typeid="@room.RoomType.RoomTypeID"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <a class="delete-room" onclick="OpenDelete(event)" data-roomid="@room.RoomID"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                     </td>
                                 </tr>
@@ -362,6 +362,7 @@
     @{
         var roomstyles = RoomStyleDAO.GetAllRoomStyle();
         var roomsizes = RoomSizeDAO.GetAllRoomSize();
+        var roomtypes = RoomTypeDAO.GetAllRoomTypeModel();
     }
     <!-- Create Room Modal HTML -->
     <div id="addRoomModal" class="modal fade">
@@ -378,29 +379,17 @@
                             <input type="text" class="form-control" id="room-id" required>
                         </div>
                         <div class="form-group">
-                            <label for="add-roomstylename">Room Style Name</label>
-                            <select class="form-control" id="add-roomstylename">
-                                <option disabled selected value="">--Select Style--</option>
+                            <label for="add-roomtypename">Room Type Name</label>
+                            <select class="form-control" id="add-roomtypename">
+                                <option disabled selected value="">--Select Type--</option>
                                 @{
-                                    for (int i = 0; i < roomstyles.Count; i++)
+                                    for (int i = 0; i < roomtypes.Count; i++)
                                     {
-                                        <option value="@roomstyles[i].RoomStyleID">@roomstyles[i].RoomStyleName</option>
+                                        <option value="@roomtypes[i].RoomTypeID">@roomtypes[i].RoomStyle.RoomStyleName-@roomtypes[i].RoomSize.RoomSizeName</option>
                                     }
                                 }
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="add-roomsizename">Room Size Name</label>
-                            <select class="form-control" id="add-roomsizename">
-                                <option disabled selected value="">--Select Size--</option>
-                                @{
-                                    for (int i = 0; i < roomsizes.Count; i++)
-                                    {
-                                        <option value="@roomsizes[i].RoomSizeID">@roomsizes[i].RoomSizeName</option>
-                                    }
-                                }
-                            </select>
-                        </div>
+                        </div>                       
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -425,29 +414,18 @@
                             <input type="text" class="form-control" id="edit-roomid" required>
                         </div>
                         <div class="form-group">
-                            <label for="edit-roomstylename">Room Style Name</label>
-                            <select class="form-control" id="edit-roomstylename">
-                                <option disabled selected value="">--Select Style--</option>
+                            <label for="edit-roomtypename">Room Type Name</label>
+                            <select class="form-control" id="edit-roomtypename">
+                                <option disabled selected value="">--Select Type--</option>
                                 @{
-                                    for (int i = 0; i < roomstyles.Count; i++)
+                                    for (int i = 0; i < roomtypes.Count; i++)
                                     {
-                                        <option value="@roomstyles[i].RoomStyleID">@roomstyles[i].RoomStyleName</option>
+                                        <option value="@roomtypes[i].RoomTypeID">@roomtypes[i].RoomStyle.RoomStyleName-@roomtypes[i].RoomSize.RoomSizeName</option>
                                     }
                                 }
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="edit-roomsizename">Room Size Name</label>
-                            <select class="form-control" id="edit-roomsizename">
-                                <option disabled selected value="">--Select Size--</option>
-                                @{
-                                    for (int i = 0; i < roomsizes.Count; i++)
-                                    {
-                                        <option value="@roomsizes[i].RoomSizeID">@roomsizes[i].RoomSizeName</option>
-                                    }
-                                }
-                            </select>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -739,14 +717,12 @@
         function OpenEdit(event) {
             debugger;
             var roomid = event.currentTarget.getAttribute("data-roomid");
-            var styleid = event.currentTarget.getAttribute("data-styleid");
-            var sizeid = event.currentTarget.getAttribute("data-sizeid");
+            var typeid = event.currentTarget.getAttribute("data-typeid");          
 
             $("#editRoomModal").modal('show');
 
             $("#edit-roomid").val(roomid);
-            $("#edit-roomstylename").val(styleid);
-            $("#edit-roomsizename").val(sizeid);
+            $("#edit-roomtypename").val(typeid);
 
         }
 
@@ -912,11 +888,10 @@
             $(".submit-add-new-room").click(function () {
                 debugger;
                 var roomid = $("#room-id").val();
-                var roomstyleid = $("#add-roomstylename").val();
-                var roomsizeid = $("#add-roomsizename").val();
+                var roomtypeid = $("#add-roomtypename").val();
                 $.ajax({
                     url: "https://localhost:44329/Receptionists/Rooms/CreateRoom",
-                    data: { roomId: roomid, roomStyleId: roomstyleid, roomSizeId: roomsizeid },
+                    data: { roomId: roomid, roomtypeId: roomtypeid },
                     type: "POST",
                     dataType: "json",
                     success: function (response) {
@@ -936,11 +911,10 @@
             $(".submit-update-room").click(function () {
                 debugger;
                 var roomid = $("#edit-roomid").val();
-                var roomstyleid = $("#edit-roomstylename").val();
-                var roomsizeid = $("#edit-roomsizename").val();
+                var roomtypeid = $("#edit-roomtypename").val();
                 $.ajax({
                     url: "https://localhost:44329/Receptionists/Rooms/UpdateRoom",
-                    data: { roomId: roomid, roomStyleId: roomstyleid, roomSizeId: roomsizeid },
+                    data: { roomId: roomid, roomtypeId: roomtypeid },
                     type: "POST",
                     dataType: "json",
                     success: function (response) {

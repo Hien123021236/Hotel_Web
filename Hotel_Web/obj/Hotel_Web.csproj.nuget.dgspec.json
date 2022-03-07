@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ngoc Hien\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj": {}
+    "C:\\Users\\ngoch\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ngoc Hien\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj": {
+    "C:\\Users\\ngoch\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ngoc Hien\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj",
+        "projectUniqueName": "C:\\Users\\ngoch\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj",
         "projectName": "Hotel_Web",
-        "projectPath": "C:\\Users\\Ngoc Hien\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj",
-        "packagesPath": "C:\\Users\\Ngoc Hien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ngoc Hien\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\obj\\",
+        "projectPath": "C:\\Users\\ngoch\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\Hotel_Web.csproj",
+        "packagesPath": "C:\\Users\\ngoch\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ngoch\\Desktop\\Hotel_Web\\Hotel_Web\\Hotel_Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ngoc Hien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ngoch\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "H:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,6 +58,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.1, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             }
           },
           "imports": [
@@ -72,12 +76,8 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.10, 3.1.10]"
+              "version": "[3.1.13, 3.1.13]"
             }
           ],
           "frameworkReferences": {
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

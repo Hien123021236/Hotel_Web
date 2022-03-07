@@ -87,7 +87,7 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
 
         [Area("Receptionists")]
         [HttpPost]
-        public IActionResult CreateRoom(int roomId , int roomStyleId ,int roomSizeId)
+        public IActionResult CreateRoom(int roomId , int roomtypeId)
         {
             if (!RoomsDAO.CheckIsExistRoomById(roomId))
             {
@@ -95,7 +95,7 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
                 {
                     RoomID = roomId,
                     Status = RoomStatuses.Empty,
-                    RoomTypeID = RoomTypeDAO.GetRoomTypeBySizeAndStyle(roomStyleId, roomSizeId).RoomTypeID
+                    RoomTypeID = RoomTypeDAO.GetRoomType(roomtypeId).RoomTypeID
                 });
                 return Json(roomId);
             }
@@ -107,13 +107,13 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
 
         [Area("Receptionists")]
         [HttpPost]
-        public IActionResult UpdateRoom(int roomId, int roomStyleId, int roomSizeId)
+        public IActionResult UpdateRoom(int roomId, int roomtypeId)
         {
             var room = RoomsDAO.UpdateRoom(new Room()
             {
                 RoomID = roomId,
                 Status = RoomsDAO.GetRoom(roomId).Status,
-                RoomTypeID = RoomTypeDAO.GetRoomTypeBySizeAndStyle(roomStyleId, roomSizeId).RoomTypeID
+                RoomTypeID = RoomTypeDAO.GetRoomType(roomtypeId).RoomTypeID
             }) ;
             return Json(roomId);  
         }

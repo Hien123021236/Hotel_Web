@@ -45,5 +45,35 @@ namespace Hotel_Web.Areas.Guests.Data
             }
             return 0;
         }
+
+        public static Guest GetGuest(int guestid)
+        {
+            Guest g = null;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                if (conn != null)
+                {
+                    SqlCommand cm = new SqlCommand("select * from Guest where GuestID = @guestid", conn);
+                    cm.Parameters.AddWithValue("@guestid", guestid);
+                    var rs = cm.ExecuteReader();
+                    if (rs.HasRows)
+                    {
+                        while (rs.Read())
+                        {
+                            g = new Guest();
+                            g.GuestID = rs[0] as int? ?? 0;
+                            g.FullName = rs[1] as string ?? null;
+                            g.Gender = rs[2] as string ?? null;
+                            g.Address = rs[3] as string ?? null;
+                            g.Email = rs[4] as string ?? null;
+                            g.Phone = rs[5] as string ?? null;
+                            g.IDCardNumber = rs[6] as string ?? null;
+                            g.Country = rs[7] as string ?? null;
+                        }
+                    }
+                }
+            }
+            return g;
+        }
     }
 }

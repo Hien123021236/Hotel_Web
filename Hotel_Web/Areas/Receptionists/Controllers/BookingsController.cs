@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Hotel_Web.Areas.Receptionists.Controllers
 {
+    [Area("Receptionists")]
     public class BookingsController : Controller
     {
         //[Area("Receptionists")]
@@ -19,7 +20,6 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
         //    return View();
         //}
 
-        [Area("Receptionists")]
         public IActionResult Index(DateTime fromdate, DateTime todate)
         {
             if (!Authentication.AuthenticateByCookie(HttpContext))
@@ -37,5 +37,7 @@ namespace Hotel_Web.Areas.Receptionists.Controllers
 
             return View(list);
         }
+
+
     }
 }

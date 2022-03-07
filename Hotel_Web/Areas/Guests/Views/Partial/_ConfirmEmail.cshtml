@@ -1,0 +1,31 @@
+﻿@namespace Hotel_Web.Areas.Guests.Models
+@model BookingModel
+
+<table width="600" border="1" bordercolor="99CCFF">
+    <tbody>
+        <tr>
+            <td colspan="5" bordercolor="99CCFF" bgcolor="99ccff">
+                <div align="center">
+                    <p class="style3">Booking confirmation</p>
+                </div>
+            </td>
+        </tr>
+        <tr><td colspan="5" bordercolor="99CCFF" bgcolor="99ccff"><img src="https://qt5geq.dm2301.livefilestore.com/y2pl-847aAnH1V3nJ1wjwOtYzwYYXuEoKWNsarAPxVy50tg5HOwtwSqyfVIkmh522Tpr575Jh2djOAVCxbTYkhwTtu5GlmNxYEjxJXuFIC8QJ8/Navajo%20header%20web.png?psid=1" alt="Header" width="600" height="188" longdesc="https://qt7hhq.dm1.livefilestore.com/y2pDJs-GHos35inDJBFRa9oltST_jn-fVpZMBewP-Qp5StrXMkOZVuIxKMCfB_6rnHAD0rdd0dzIdjfbYOelVEdQYZWVkoudm0teMf24Cb7UE4/Navajo%20header%20new.jpg?psid=1"></td></tr>
+        <tr><td colspan="5" bordercolor="99CCFF" bgcolor="99ccff"><div align="left">@if (Model.Guest.Gender == "Male")
+        {<strong>Dear Mr. @Model.Guest.FullName</strong> }
+    else
+    {<strong>Dear Ms. @Model.Guest.FullName</strong>}<br><br>Thank you for choosing The Hotel. We are delighted to confirm the following reservation. Should you require further assistance, please contact our Reservations department via return e-mail or by calling the number listed below.<br></div></td></tr>
+        <tr><td colspan="5" bordercolor="99CCFF" bgcolor="#ffc977"><div align="left"><strong>Booking Details:</strong></div></td></tr>
+        <tr><td width="121" bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Guest Name</span></div></td><td width="473" colspan="4" bordercolor="99CCFF" bgcolor="99ccff">&nbsp;@Model.Guest.FullName</td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Arrival Date</span></div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff">&nbsp;@Model.CheckInDate</td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Departure Date</span></div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff">&nbsp;@Model.CheckOutDate</td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Room Type</span></div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff">&nbsp;@Model.Room.RoomType.Description</td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Payment Method</span></div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff">&nbsp;@Model.Payment.CVC</td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Guest Count</span></div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff">&nbsp;@Model.Room.RoomType.RoomSize.GuestCount</td></tr>
+        <tr><td colspan="5" bordercolor="99CCFF" bgcolor="#ffc977"><div align="left"><strong>Hotel Policy:</strong></div></td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left" class="style4">Hotel Check-in</div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style5">14:00</span></div></td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left" class="style4">Hotel Check-out</div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style5">12:00</span></div></td></tr>
+        <tr><td bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style4">Cancellation Policy</span></div></td><td colspan="4" bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><span class="style5">Guaranteed reservations cancelled within 48 hours of arrival will be subject to a one night charge</span></div></td></tr>
+        <tr><td colspan="5" bordercolor="99CCFF" bgcolor="99ccff"><div align="left"><p><a href="https://plus.google.com/u/0/b/117594236911625347964/117594236911625347964" target="_parent"><img src="https://qt4qka.dm2301.livefilestore.com/y2pujRNn1ou36DmrFCDEYaz7p56ysUR48iuhTeuJmgdUC2inysUcpxhSoXAFXeKV1cZEdsgYz4t30Ew5hc-D5GgXMC8FNUtQ3pSFfuOnEVxNOM/googleplus1.gif?psid=1" alt="G+" width="41" height="40" longdesc="https://qt4qka.dm2301.livefilestore.com/y2pujRNn1ou36DmrFCDEYaz7p56ysUR48iuhTeuJmgdUC2inysUcpxhSoXAFXeKV1cZEdsgYz4t30Ew5hc-D5GgXMC8FNUtQ3pSFfuOnEVxNOM/googleplus1.gif?psid=1"></a><a href="https://www.facebook.com/Setupmyhotel" target="_parent"><img src="https://c1uttq.dm1.livefilestore.com/y2p33eMblEybFJiF73eZsNTiC9-rOMfgyH567MjxzqsxQ7PMrteOunVgc5FtvLoqYUA55L0ARvV7WNXj-zaTSZ1Svvy-Ah2qsKoZv-yEfCpiMc/facebook1.gif?psid=1" alt="facebook" width="41" height="40" longdesc="https://c1uttq.dm1.livefilestore.com/y2p33eMblEybFJiF73eZsNTiC9-rOMfgyH567MjxzqsxQ7PMrteOunVgc5FtvLoqYUA55L0ARvV7WNXj-zaTSZ1Svvy-Ah2qsKoZv-yEfCpiMc/facebook1.gif?psid=1"></a><a href="https://twitter.com/Setupmyhotel" target="_self"><img src="https://c1uttq.dm1.livefilestore.com/y2pP56DZ3bJ8jcCimnekyWnzlBwlpatx-Pi_vs8P1JoWsnNsROGZArqMB5huPO2cfTZ_dxfrYRJSJK6DM0g65cgP0hQnm7WUtgg1LXbd2UttXs/twitter1.gif?psid=1" alt="twitter" width="41" height="40" longdesc="https://c1uttq.dm1.livefilestore.com/y2pP56DZ3bJ8jcCimnekyWnzlBwlpatx-Pi_vs8P1JoWsnNsROGZArqMB5huPO2cfTZ_dxfrYRJSJK6DM0g65cgP0hQnm7WUtgg1LXbd2UttXs/twitter1.gif?psid=1"></a></p><p align="left">The Hotel ORFILAR. <a href="https://www.myhotel.com" target="_self">www.myhotel.com</a> | admin@myhotel.com</p></div></td></tr>
+    </tbody>
+</table>

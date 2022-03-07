@@ -49,5 +49,31 @@ namespace Hotel_Web.Areas.Guests.Data
 
             return 0;
         }
+
+        public static Payment GetPayment(int paymentid)
+        {
+            Payment pm = null;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                if (conn != null)
+                {
+                    string sql = "SELECT * FROM Payment WHERE PaymentID = @paymentid";
+                    SqlCommand cm = new SqlCommand(sql, conn);
+                    cm.Parameters.AddWithValue("@paymentid", paymentid);
+                    var rs = cm.ExecuteReader();
+                    if (rs.Read())
+                    {
+                        pm = new Payment();
+                        pm.PaymentID = rs[0] as int? ?? 0;
+                        pm.CardName = rs[1] as string;
+                        pm.CardNumber = rs[2] as string;
+                        pm.Month = rs[3] as int? ?? 0;
+                        pm.Year = rs[4] as int? ?? 0;
+                        pm.CVC = rs[5] as string;
+                    }
+                }
+            }
+            return pm;
+        }
     }
 }

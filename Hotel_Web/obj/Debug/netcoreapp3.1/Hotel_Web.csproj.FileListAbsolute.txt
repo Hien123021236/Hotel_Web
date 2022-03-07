@@ -512,51 +512,6 @@ D:\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_W
 D:\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.dll
 D:\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.pdb
 D:\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.genruntimeconfig.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csprojAssemblyReference.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.AssemblyInfoInputs.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.AssemblyInfo.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csproj.CoreCompileInputs.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorAssemblyInfo.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorAssemblyInfo.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_Web.StaticWebAssets.Manifest.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_Web.StaticWebAssets.xml
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\Hotel_Web.styles.css
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.TagHelpers.input.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.TagHelpers.output.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorCoreGenerate.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Confirmation.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Create.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\ContactUs\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Detail\RoomsDetail.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Gallery\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Home\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Maintenance\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Packages\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Payment\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Rates\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Rooms\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Services\Dining.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Services\Spa.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\SpecialOffers\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Tours\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Checkin.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Checkout.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Authentication\Login.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Bookings\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Guests\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\Filter.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\RoomsManagement.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\Index.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\_Shared\_Layout.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorTargetAssemblyInfo.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorTargetAssemblyInfo.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.dll
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.pdb
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.exe
@@ -646,8 +601,210 @@ C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csprojAssemblyReference.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.AssemblyInfoInputs.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.AssemblyInfo.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csproj.CoreCompileInputs.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorAssemblyInfo.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorAssemblyInfo.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_Web.StaticWebAssets.Manifest.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_Web.StaticWebAssets.xml
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\Hotel_Web.styles.css
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.TagHelpers.input.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.TagHelpers.output.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorCoreGenerate.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Confirmation.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Create.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\ContactUs\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Detail\RoomsDetail.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Gallery\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Home\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Maintenance\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Packages\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Payment\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Rates\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Rooms\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Services\Dining.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Services\Spa.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\SpecialOffers\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Tours\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Checkin.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Checkout.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Authentication\Login.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Bookings\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Guests\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\Filter.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\RoomsManagement.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Staff\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\ReportTable.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\_Shared\_Layout.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorTargetAssemblyInfo.cache
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorTargetAssemblyInfo.cs
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.Views.pdb
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csproj.CopyComplete
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.pdb
 C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.genruntimeconfig.cache
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\ReportTable.cshtml.g.cs
-C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Staff\Index.cshtml.g.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ngoc Hien\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Partial\_ConfirmEmail.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.exe
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.deps.json
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.runtimeconfig.json
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.runtimeconfig.dev.json
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.pdb
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.Views.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Hotel_Web.Views.pdb
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csprojAssemblyReference.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.AssemblyInfoInputs.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.AssemblyInfo.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csproj.CoreCompileInputs.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorAssemblyInfo.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorAssemblyInfo.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_Web.StaticWebAssets.Manifest.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\staticwebassets\Hotel_Web.StaticWebAssets.xml
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\Hotel_Web.styles.css
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.TagHelpers.input.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.TagHelpers.output.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorCoreGenerate.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Confirmation.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Create.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Booking\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\ContactUs\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Detail\RoomsDetail.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Gallery\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Home\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Maintenance\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Packages\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Partial\_ConfirmEmail.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Payment\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Rates\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Rooms\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Services\Dining.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Services\Spa.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\SpecialOffers\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Guests\Views\Tours\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Checkin.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Checkout.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Activities\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Authentication\Login.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Bookings\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Guests\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\Filter.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Rooms\RoomsManagement.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Staff\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\Index.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\Statistics\ReportTable.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Razor\Areas\Receptionists\Views\_Shared\_Layout.cshtml.g.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorTargetAssemblyInfo.cache
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.RazorTargetAssemblyInfo.cs
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.Views.pdb
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.csproj.CopyComplete
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.dll
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.pdb
+C:\Users\ngoch\Desktop\Hotel_Web\Hotel_Web\Hotel_Web\obj\Debug\netcoreapp3.1\Hotel_Web.genruntimeconfig.cache

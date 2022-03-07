@@ -20,10 +20,7 @@ namespace Hotel_Web.Areas.Guests.Data
             {
                 return conn;
             }
-            else
-            {
-                return null;
-            }
+            return null;
         }
     }
 }

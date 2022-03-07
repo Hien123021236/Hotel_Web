@@ -40,7 +40,7 @@
             color: blue;
         }
 
-        .menu .select {
+        .menu a .select {
             line-height: 60px;
             border-top: 5px solid gray;
             padding-bottom: 5px;
